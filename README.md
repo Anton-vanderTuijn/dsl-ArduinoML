@@ -2,7 +2,7 @@
 
 ![illustration image](./assets/readmeImage.png)
 
-## Team A
+## Team ADSL2
 
 Members | Contact
 ----------------------------------------------------------- | ----------------------------------------------------------
