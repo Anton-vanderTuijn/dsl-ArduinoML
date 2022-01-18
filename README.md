@@ -32,7 +32,9 @@ TBD
 TBD
 
 ### Requirements
-- TBD
+- [Groovy 4.0.0](https://groovy.jfrog.io/ui/native/dist-release-local/groovy-windows-installer/groovy-4.0.0-rc-2/)
+- Maven
+- Java 8
 
 <!--
 ## Distribution of points (500)
