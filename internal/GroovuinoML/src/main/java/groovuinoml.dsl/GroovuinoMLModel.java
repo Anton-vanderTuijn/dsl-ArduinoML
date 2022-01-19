@@ -3,6 +3,7 @@ package groovuinoml.dsl;
 import groovy.lang.Binding;
 import io.github.mosser.arduinoml.kernel.App;
 import io.github.mosser.arduinoml.kernel.behavioral.Action;
+import io.github.mosser.arduinoml.kernel.behavioral.ExitError;
 import io.github.mosser.arduinoml.kernel.behavioral.State;
 import io.github.mosser.arduinoml.kernel.behavioral.Transition;
 import io.github.mosser.arduinoml.kernel.generator.ToWiring;
@@ -51,6 +52,14 @@ public class GroovuinoMLModel {
         state.setActions(actions);
         this.states.add(state);
         this.binding.setVariable(name, state);
+    }
+
+    public void createError(String name, Integer code) {
+        ExitError error = new ExitError();
+        error.setName(name);
+        error.setCode(code);
+        this.states.add(error);
+        this.binding.setVariable(name, error);
     }
 
     public void createTransition(State from, State to, List<Sensor> sensor, List<SIGNAL> value) {

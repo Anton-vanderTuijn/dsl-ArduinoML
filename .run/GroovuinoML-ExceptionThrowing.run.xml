@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="GroovuinoML-MultiStateAlarm" type="Application" factoryName="Application">
+  <configuration default="false" name="GroovuinoML-ExceptionThrowing" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="groovuinoml.main.GroovuinoML" />
     <module name="dsl-groovy" />
-    <option name="PROGRAM_PARAMETERS" value="GroovuinoML\scripts\base\MultiStateAlarm.groovy" />
+    <option name="PROGRAM_PARAMETERS" value="GroovuinoML\scripts\extensions\ExceptionThrowing.groovy" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/internal" />
     <extension name="coverage">
       <pattern>

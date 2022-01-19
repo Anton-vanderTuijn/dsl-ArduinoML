@@ -2,7 +2,7 @@
   <configuration default="false" name="GroovuinoML-StateBasedAlarm" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="groovuinoml.main.GroovuinoML" />
     <module name="dsl-groovy" />
-    <option name="PROGRAM_PARAMETERS" value="GroovuinoML\scripts\StateBasedAlarm.groovy" />
+    <option name="PROGRAM_PARAMETERS" value="GroovuinoML\scripts\base\StateBasedAlarm.groovy" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/internal" />
     <extension name="coverage">
       <pattern>

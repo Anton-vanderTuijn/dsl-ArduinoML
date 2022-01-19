@@ -24,8 +24,10 @@ abstract class GroovuinoMLBasescript extends Script {
 
     /**
      * state "name" means actuator becomes signal [and actuator becomes signal]*n
+     * TODO UPDATE
      /**/
     def state(String name) {
+
         List<Action> actions = new ArrayList<Action>()
         ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().createState(name, actions)
         // recursive closure to allow multiple and statements
@@ -39,20 +41,31 @@ abstract class GroovuinoMLBasescript extends Script {
                 [and: closure]
             }]
         }
-        [means: closure]
+
+        [means: closure
+//         exit: { code -> ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().createError(name, code) }
+        ]
+    }
+
+    /**
+     * state "name" means actuator becomes signal [and actuator becomes signal]*n
+     * TODO UPDATE
+     /**/
+    def error(String name) {
+        [code: { n -> ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().createError(name, n) }]
     }
 
     /**
      * initial state
      */
-    def initial(state) {
+    def initial(String state) {
         ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().setInitialState(state instanceof String ? (State) ((GroovuinoMLBinding) this.getBinding()).getVariable(state) : (State) state)
     }
 
     /**
      * from state1 to state2 when sensor becomes signal [and sensor becomes signal]*n
      **/
-    def from(state1) {
+    def from(String state1) {
         [to: { state2 ->
 
             List<Sensor> sensors = new ArrayList<>();

@@ -2,10 +2,12 @@ package io.github.mosser.arduinoml.kernel.generator;
 
 import io.github.mosser.arduinoml.kernel.App;
 import io.github.mosser.arduinoml.kernel.behavioral.Action;
+import io.github.mosser.arduinoml.kernel.behavioral.ExitError;
 import io.github.mosser.arduinoml.kernel.behavioral.State;
 import io.github.mosser.arduinoml.kernel.behavioral.Transition;
 import io.github.mosser.arduinoml.kernel.structural.Actuator;
 import io.github.mosser.arduinoml.kernel.structural.Brick;
+import io.github.mosser.arduinoml.kernel.structural.SIGNAL;
 import io.github.mosser.arduinoml.kernel.structural.Sensor;
 
 /**
@@ -101,6 +103,10 @@ public class ToWiring extends Visitor<StringBuffer> {
                 action.accept(this);
             }
 
+            if (state instanceof ExitError) {
+                throwException(((ExitError) state).getCode());
+            }
+
             if (state.getTransition() != null) {
                 for (Transition transition : state.getTransition()) {
                     transition.accept(this);
@@ -110,6 +116,20 @@ public class ToWiring extends Visitor<StringBuffer> {
             return;
         }
 
+    }
+
+    private void throwException(int code) {
+        w("\t\t\twhile(true){\n");
+
+        w("\t\t\t\tfor(int i = 0; i < " + code + "; i++){\n");
+        w(String.format("\t\t\t\t\tdigitalWrite(%d, %s);\n", ExitError.LED_ERROR_PIN, SIGNAL.HIGH));
+        w("\t\t\t\t\tdelay(500);\n");
+        w(String.format("\t\t\t\t\tdigitalWrite(%d, %s);\n", ExitError.LED_ERROR_PIN, SIGNAL.LOW));
+        w("\t\t\t\t\tdelay(500);\n");
+        w("\t\t\t\t}\n");
+
+        w("\t\t\tdelay(2500);\n");
+        w("\t\t\t}\n");
     }
 
     @Override

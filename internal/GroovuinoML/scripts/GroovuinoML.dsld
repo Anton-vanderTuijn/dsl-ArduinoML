@@ -22,6 +22,7 @@ contribute(currentType(subType('groovy.lang.Script'))) {
 	method type: void, name: 'onPin', params: [pinNumber:Integer], doc: 'Associate Sensor or Actuator to a pin number'
 
 	method type: Script, name: 'state', params: [name:String], doc: 'Create a new State'
+	method type: Script, name: 'stateError', params: [name:String], doc: 'Create a new StateError'
 	method type: Script, name: 'means', params: [actuator:Object], doc: 'Identify which Actuator is concerned by the state'
 	method type: Script, name: 'means', params: [actuatorName:String], doc: 'Identify which Actuator is concerned by the state'
 	method type: Script, name: 'becomes', params: [signal:Object], doc: 'Define new Actuator value'
