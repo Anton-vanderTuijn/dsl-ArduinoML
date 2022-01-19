@@ -150,12 +150,39 @@
             </node>
             <node concept="2Zo12i" id="62oRKDP_cbC" role="2OqNvi">
               <node concept="chp4Y" id="62oRKDP_chE" role="2Zo12j">
-                <ref role="cht4Q" to="ge5j:62oRKDPzNr5" resolve="Actuator" />
+                <ref role="cht4Q" to="ge5j:5iaO0WrUz9k" resolve="IActuator" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="62oRKDP_cYj" role="3cqZAp" />
+        <node concept="3clFbH" id="62oRKDPElYg" role="3cqZAp" />
+        <node concept="3clFbJ" id="62oRKDPEm2C" role="3cqZAp">
+          <node concept="3clFbS" id="62oRKDPEm2E" role="3clFbx">
+            <node concept="3clFbH" id="62oRKDPEnYk" role="3cqZAp" />
+            <node concept="3cpWs6" id="62oRKDPEmXs" role="3cqZAp">
+              <node concept="2YIFZM" id="62oRKDPEneZ" role="3cqZAk">
+                <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
+                <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+                <node concept="13iPFW" id="62oRKDPEnhO" role="37wK5m" />
+                <node concept="359W_D" id="62oRKDPEnlI" role="37wK5m">
+                  <ref role="359W_E" to="ge5j:62oRKDPzNr3" resolve="App" />
+                  <ref role="359W_F" to="ge5j:62oRKDPEl9P" resolve="sensors" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="62oRKDPEmmT" role="3clFbw">
+            <node concept="37vLTw" id="62oRKDPEm6o" role="2Oq$k0">
+              <ref role="3cqZAo" node="62oRKDP_90C" resolve="kind" />
+            </node>
+            <node concept="2Zo12i" id="62oRKDPEmPq" role="2OqNvi">
+              <node concept="chp4Y" id="62oRKDPEmUt" role="2Zo12j">
+                <ref role="cht4Q" to="ge5j:62oRKDPEyDQ" resolve="ISensor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="508e52ROif8" role="3cqZAp" />
         <node concept="3cpWs6" id="62oRKDP_d5e" role="3cqZAp">
           <node concept="10Nm6u" id="62oRKDP_d9O" role="3cqZAk" />
         </node>

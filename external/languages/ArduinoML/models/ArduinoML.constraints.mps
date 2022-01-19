@@ -110,9 +110,9 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="62oRKDP$$ke">
-    <ref role="1M2myG" to="ge5j:62oRKDPzNr5" resolve="Actuator" />
+    <ref role="1M2myG" to="ge5j:5iaO0WrUz9k" resolve="IActuator" />
     <node concept="EnEH3" id="62oRKDP$$kf" role="1MhHOB">
-      <ref role="EomxK" to="ge5j:62oRKDPzNr7" resolve="pin" />
+      <ref role="EomxK" to="ge5j:508e52RMtqq" resolve="pin" />
       <node concept="QB0g5" id="62oRKDP$$o7" role="QCWH9">
         <node concept="3clFbS" id="62oRKDP$$o8" role="2VODD2">
           <node concept="3clFbF" id="62oRKDP$$sJ" role="3cqZAp">
@@ -197,6 +197,62 @@
       <ref role="1N5Vy1" to="ge5j:62oRKDPzNrl" resolve="next" />
       <node concept="1dDu$B" id="62oRKDP_8Ge" role="1N6uqs">
         <ref role="1dDu$A" to="ge5j:62oRKDPzNri" resolve="State" />
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="508e52RJoWI">
+    <ref role="1M2myG" to="ge5j:5iaO0WrUz9o" resolve="ActuatorLCD" />
+    <node concept="EnEH3" id="508e52RJpPF" role="1MhHOB">
+      <ref role="EomxK" to="ge5j:5iaO0WrUz9u" resolve="bus" />
+      <node concept="QB0g5" id="508e52RJpR7" role="QCWH9">
+        <node concept="3clFbS" id="508e52RJpR8" role="2VODD2">
+          <node concept="3clFbF" id="508e52RJpWy" role="3cqZAp">
+            <node concept="1Wc70l" id="508e52RJrdD" role="3clFbG">
+              <node concept="2dkUwp" id="508e52RJs5n" role="3uHU7w">
+                <node concept="3cmrfG" id="508e52RJsmJ" role="3uHU7w">
+                  <property role="3cmrfH" value="3" />
+                </node>
+                <node concept="1Wqviy" id="508e52RJrnC" role="3uHU7B" />
+              </node>
+              <node concept="2d3UOw" id="508e52RJr8p" role="3uHU7B">
+                <node concept="1Wqviy" id="508e52RJpWx" role="3uHU7B" />
+                <node concept="3cmrfG" id="508e52RJr91" role="3uHU7w">
+                  <property role="3cmrfH" value="1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="EnEH3" id="508e52RKHuy" role="1MhHOB">
+      <ref role="EomxK" to="ge5j:508e52RKHj9" resolve="rows" />
+      <node concept="QB0g5" id="508e52RKHwQ" role="QCWH9">
+        <node concept="3clFbS" id="508e52RKHwR" role="2VODD2">
+          <node concept="3clFbF" id="508e52RKHxV" role="3cqZAp">
+            <node concept="2d3UOw" id="508e52RKJdP" role="3clFbG">
+              <node concept="3cmrfG" id="508e52RKJes" role="3uHU7w">
+                <property role="3cmrfH" value="1" />
+              </node>
+              <node concept="1Wqviy" id="508e52RKHxU" role="3uHU7B" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="EnEH3" id="508e52RKJmz" role="1MhHOB">
+      <ref role="EomxK" to="ge5j:508e52RKHjc" resolve="columns" />
+      <node concept="QB0g5" id="508e52RKJnE" role="QCWH9">
+        <node concept="3clFbS" id="508e52RKJnF" role="2VODD2">
+          <node concept="3clFbF" id="508e52RKJoJ" role="3cqZAp">
+            <node concept="2d3UOw" id="508e52RKL4D" role="3clFbG">
+              <node concept="3cmrfG" id="508e52RKL5d" role="3uHU7w">
+                <property role="3cmrfH" value="1" />
+              </node>
+              <node concept="1Wqviy" id="508e52RKJoI" role="3uHU7B" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
