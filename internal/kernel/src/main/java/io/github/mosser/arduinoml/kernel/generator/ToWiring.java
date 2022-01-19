@@ -98,7 +98,9 @@ public class ToWiring extends Visitor<StringBuffer> {
 			}
 
 			if (state.getTransition() != null) {
-				state.getTransition().accept(this);
+				for (Transition transition : state.getTransition()){
+					transition.accept(this);
+				}
 				w("\t\tbreak;\n");
 			}
 			return;
@@ -112,14 +114,32 @@ public class ToWiring extends Visitor<StringBuffer> {
 			return;
 		}
 		if(context.get("pass") == PASS.TWO) {
-			String sensorName = transition.getSensor().getName();
-			w(String.format("\t\t\t%sBounceGuard = millis() - %sLastDebounceTime > debounce;\n",
-					sensorName, sensorName));
-			w(String.format("\t\t\tif( digitalRead(%d) == %s && %sBounceGuard) {\n",
-					transition.getSensor().getPin(), transition.getValue(), sensorName));
-			w(String.format("\t\t\t\t%sLastDebounceTime = millis();\n", sensorName));
+
+			for (int i = 0; i < transition.getSensor().size(); i++){
+				String sensorName = transition.getSensor().get(i).getName();
+				w(String.format("\t\t\t%sBounceGuard = millis() - %sLastDebounceTime > debounce;\n",
+						sensorName, sensorName));
+			}
+
+			w("\t\t\tif( ");
+
+			for (int i = 0; i < transition.getSensor().size(); i++){
+				String sensorName = transition.getSensor().get(i).getName();
+				w(String.format("(digitalRead(%d) == %s && %sBounceGuard)",
+						transition.getSensor().get(i).getPin(), transition.getValue().get(i), sensorName));
+				if (i+1 < transition.getSensor().size()){
+					w(" && ");
+				}
+			}
+			w(" ) {\n");
+
+			for (int i = 0; i < transition.getSensor().size(); i++){
+				String sensorName = transition.getSensor().get(i).getName();
+				w(String.format("\t\t\t\t%sLastDebounceTime = millis();\n", sensorName));
+			}
 			w("\t\t\t\tcurrentState = " + transition.getNext().getName() + ";\n");
 			w("\t\t\t}\n");
+
 			return;
 		}
 	}
@@ -130,7 +150,7 @@ public class ToWiring extends Visitor<StringBuffer> {
 			return;
 		}
 		if(context.get("pass") == PASS.TWO) {
-			w(String.format("\t\t\tdigitalWrite(%d,%s);\n",action.getActuator().getPin(),action.getValue()));
+			w(String.format("\t\t\tdigitalWrite(%d, %s);\n",action.getActuator().getPin(),action.getValue()));
 			return;
 		}
 	}

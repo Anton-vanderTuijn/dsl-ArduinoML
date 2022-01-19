@@ -7,6 +7,7 @@ import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.*;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Switch {
 
@@ -44,17 +45,17 @@ public class Switch {
 		// Creating transitions
 		Transition on2off = new Transition();
 		on2off.setNext(off);
-		on2off.setSensor(button);
-		on2off.setValue(SIGNAL.HIGH);
+		on2off.setSensor(Collections.singletonList(button));
+		on2off.setValue(Collections.singletonList(SIGNAL.HIGH));
 
 		Transition off2on = new Transition();
 		off2on.setNext(on);
-		off2on.setSensor(button);
-		off2on.setValue(SIGNAL.HIGH);
+		off2on.setSensor(Collections.singletonList(button));
+		off2on.setValue(Collections.singletonList(SIGNAL.HIGH));
 
 		// Binding transitions to states
-		on.setTransition(on2off);
-		off.setTransition(off2on);
+		on.setTransition(Collections.singletonList(on2off));
+		off.setTransition(Collections.singletonList(off2on));
 
 		// Building the App
 		App theSwitch = new App();
