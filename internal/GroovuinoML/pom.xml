@@ -28,6 +28,7 @@
 			<version>${groovy.version}</version>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<sourceDirectory>src/main/groovy</sourceDirectory>
 		<plugins>
@@ -44,7 +45,7 @@
 						<artifactId>groovy-eclipse-compiler</artifactId>
 						<version>2.9.1-01</version>
 					</dependency>
-					<!-- for 2.8.0-01 and later you must have an explicit dependency on 
+					<!-- for 2.8.0-01 and later you must have an explicit dependency on
 						groovy-eclipse-batch -->
 					<dependency>
 						<groupId>org.codehaus.groovy</groupId>
