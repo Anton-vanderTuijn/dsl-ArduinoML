@@ -2,19 +2,20 @@ package io.github.mosser.arduinoml.kernel.behavioral;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.Actuator;
-import io.github.mosser.arduinoml.kernel.structural.Lcd;
+import io.github.mosser.arduinoml.kernel.structural.Signal;
 
-public class ActionLcdActuator extends Action {
+public class ActionDigital extends Action {
 
+    private Signal value;
     private Actuator actuator;
-    private Lcd lcd;
 
-    public Lcd getLcd() {
-        return lcd;
+
+    public Signal getValue() {
+        return value;
     }
 
-    public void setLcd(Lcd lcd) {
-        this.lcd = lcd;
+    public void setValue(Signal value) {
+        this.value = value;
     }
 
     public Actuator getActuator() {

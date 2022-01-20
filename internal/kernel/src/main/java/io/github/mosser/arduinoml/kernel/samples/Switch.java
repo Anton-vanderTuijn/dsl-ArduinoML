@@ -1,13 +1,13 @@
 package io.github.mosser.arduinoml.kernel.samples;
 
 import io.github.mosser.arduinoml.kernel.App;
-import io.github.mosser.arduinoml.kernel.behavioral.Action;
+import io.github.mosser.arduinoml.kernel.behavioral.ActionDigital;
 import io.github.mosser.arduinoml.kernel.behavioral.State;
 import io.github.mosser.arduinoml.kernel.behavioral.Transition;
 import io.github.mosser.arduinoml.kernel.generator.ToWiring;
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.Actuator;
-import io.github.mosser.arduinoml.kernel.structural.SIGNAL;
+import io.github.mosser.arduinoml.kernel.structural.Signal;
 import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
 
 import java.util.Arrays;
@@ -34,13 +34,13 @@ public class Switch {
         off.setName("off");
 
         // Creating actions
-        Action switchTheLightOn = new Action();
+        ActionDigital switchTheLightOn = new ActionDigital();
         switchTheLightOn.setActuator(led);
-        switchTheLightOn.setValue(SIGNAL.HIGH);
+        switchTheLightOn.setValue(Signal.HIGH);
 
-        Action switchTheLightOff = new Action();
+        ActionDigital switchTheLightOff = new ActionDigital();
         switchTheLightOff.setActuator(led);
-        switchTheLightOff.setValue(SIGNAL.LOW);
+        switchTheLightOff.setValue(Signal.LOW);
 
         // Binding actions to states
         on.setActions(Arrays.asList(switchTheLightOn));
@@ -50,12 +50,12 @@ public class Switch {
         Transition on2off = new Transition();
         on2off.setNext(off);
         on2off.setSensor(Collections.singletonList(button));
-        on2off.setValue(Collections.singletonList(SIGNAL.HIGH));
+        on2off.setOperators(Collections.singletonList(Signal.HIGH));
 
         Transition off2on = new Transition();
         off2on.setNext(on);
         off2on.setSensor(Collections.singletonList(button));
-        off2on.setValue(Collections.singletonList(SIGNAL.HIGH));
+        off2on.setOperators(Collections.singletonList(Signal.HIGH));
 
         // Binding transitions to states
         on.setTransition(Collections.singletonList(on2off));

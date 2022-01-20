@@ -1,6 +1,7 @@
 package groovuinoml.dsl
 
-import io.github.mosser.arduinoml.kernel.structural.SIGNAL
+import io.github.mosser.arduinoml.kernel.structural.MathOperator
+import io.github.mosser.arduinoml.kernel.structural.Signal
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.codehaus.groovy.control.customizers.SecureASTCustomizer
 
@@ -17,8 +18,15 @@ class GroovuinoMLDSL {
         configuration.setScriptBaseClass("groovuinoml.dsl.GroovuinoMLBasescript")
         shell = new GroovyShell(configuration)
 
-        binding.setVariable("high", SIGNAL.HIGH)
-        binding.setVariable("low", SIGNAL.LOW)
+        binding.setVariable("high", Signal.HIGH)
+        binding.setVariable("low", Signal.LOW)
+
+        binding.setVariable("==", MathOperator.EQUAL)
+        binding.setVariable("!=", MathOperator.NOT_EQUAL)
+        binding.setVariable(">", MathOperator.GREATER)
+        binding.setVariable(">=", MathOperator.GREATER_OR_EQUAL)
+        binding.setVariable("<", MathOperator.LESS)
+        binding.setVariable("<=", MathOperator.LESS_OR_EQUAL)
     }
 
     private static CompilerConfiguration getDSLConfiguration() {

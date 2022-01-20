@@ -2,16 +2,17 @@ package io.github.mosser.arduinoml.kernel.behavioral;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitable;
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
-import io.github.mosser.arduinoml.kernel.structural.SIGNAL;
-import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
+import io.github.mosser.arduinoml.kernel.structural.Operators;
+import io.github.mosser.arduinoml.kernel.structural.Sensor;
 
 import java.util.List;
 
 public class Transition implements Visitable {
 
     private State next;
-    private List<SensorDigital> sensor;
-    private List<SIGNAL> value;
+    private List<Sensor> sensor;
+    private List<Operators> operators;
+    private List<Float> values;
 
 
     public State getNext() {
@@ -22,20 +23,28 @@ public class Transition implements Visitable {
         this.next = next;
     }
 
-    public List<SensorDigital> getSensor() {
+    public List<Sensor> getSensor() {
         return sensor;
     }
 
-    public void setSensor(List<SensorDigital> sensor) {
+    public void setSensor(List<Sensor> sensor) {
         this.sensor = sensor;
     }
 
-    public List<SIGNAL> getValue() {
-        return value;
+    public List<Operators> getOperators() {
+        return operators;
     }
 
-    public void setValue(List<SIGNAL> value) {
-        this.value = value;
+    public void setOperators(List<Operators> operators) {
+        this.operators = operators;
+    }
+
+    public List<Float> getValues() {
+        return values;
+    }
+
+    public void setValues(List<Float> values) {
+        this.values = values;
     }
 
     @Override
