@@ -1,4 +1,4 @@
-# 🇩.🇸.🇱 - (ArduinoML) 
+# 🇩.🇸.🇱 - (ArduinoML)
 
 ![illustration image](./assets/readmeImage.png)
 
@@ -25,14 +25,44 @@ TBD
 ## How to use MPS <a name="MPS"></a>
 TBD
 
+### Scenarios supported
+
+Basic scenarios:
+- [ ] Very simple alarm
+- [ ] Dual-check alarm
+- [ ] State-based alarm
+- [ ] Multi-state alarm
+
+“A la carte” features:
+- [ ] Exception Throwing
+- [ ] Temporal transitions
+- [ ] Supporting the LCD screen
+- [ ] Handling Analogical Bricks
+- [ ] Parallel periodic Region
+
 ### Requirements
-- TBD
+- [MPS](https://www.jetbrains.com/mps/)
 
 ## How to use Groovy <a name="Groovy"></a>
 TBD
 
+### Scenarios supported
+
+Basic scenarios:
+- [X] Very simple alarm
+- [X] Dual-check alarm
+- [X] State-based alarm
+- [X] Multi-state alarm
+
+“A la carte” features:
+- [X] Exception Throwing
+- [ ] Temporal transitions
+- [X] Supporting the LCD screen
+- [X] Handling Analogical Bricks
+- [ ] Parallel periodic Region
+
 ### Requirements
-- [Groovy 4.0.0](https://groovy.jfrog.io/ui/native/dist-release-local/groovy-windows-installer/groovy-4.0.0-rc-2/)
+- [Groovy](https://groovy-lang.org/)
 - Maven
 - Java 8
 

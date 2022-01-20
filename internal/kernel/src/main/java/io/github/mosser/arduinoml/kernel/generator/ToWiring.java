@@ -165,7 +165,7 @@ public class ToWiring extends Visitor<StringBuffer> {
                             transition.getSensor().get(i).getPin(), transition.getOperators().get(i), sensorName));
                 } else {
                     w(String.format("(analogRead(A%d) %s %s && %sBounceGuard)",
-                            transition.getSensor().get(i).getPin(), transition.getOperators().get(i).getValue(), transition.getValues().get(i),sensorName));
+                            transition.getSensor().get(i).getPin(), transition.getOperators().get(i).getValue(), transition.getValues().get(i), sensorName));
                 }
                 if (i + 1 < transition.getSensor().size()) {
                     w(" && ");

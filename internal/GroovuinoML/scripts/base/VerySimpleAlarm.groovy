@@ -1,4 +1,4 @@
-sensor "button" pin 9
+sensorDigital "button" pin 9
 actuator "led" pin 12
 actuator "buzzer" pin 11
 

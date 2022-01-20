@@ -1,5 +1,5 @@
 lcd "lcd" cols 16 rows 2
-sensor "button" pin 9
+sensorDigital "button" pin 9
 actuator "led" pin 8
 
 state "text" means "lcd" displayText "Hello World!"

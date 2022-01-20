@@ -1,5 +1,5 @@
-sensor "button_right" pin 9
-sensor "button_left" pin 10
+sensorDigital "button_right" pin 9
+sensorDigital "button_left" pin 10
 actuator "door_led" pin 12
 
 state "open" means "door_led" becomes "high"

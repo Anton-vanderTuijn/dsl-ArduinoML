@@ -1,5 +1,5 @@
-sensor "button_1" pin 9
-sensor "button_2" pin 10
+sensorDigital "button_1" pin 9
+sensorDigital "button_2" pin 10
 actuator "led" pin 12
 
 state "off_1" means "led" becomes "low"

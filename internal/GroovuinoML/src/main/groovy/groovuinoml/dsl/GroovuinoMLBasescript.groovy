@@ -1,22 +1,14 @@
 package groovuinoml.dsl
 
 import io.github.mosser.arduinoml.kernel.behavioral.*
-import io.github.mosser.arduinoml.kernel.structural.Actuator
-import io.github.mosser.arduinoml.kernel.structural.Brick
-import io.github.mosser.arduinoml.kernel.structural.Lcd
-import io.github.mosser.arduinoml.kernel.structural.MathOperator
-import io.github.mosser.arduinoml.kernel.structural.Operators
-import io.github.mosser.arduinoml.kernel.structural.Sensor
-import io.github.mosser.arduinoml.kernel.structural.Signal
-import io.github.mosser.arduinoml.kernel.structural.SensorAnalogical
-import io.github.mosser.arduinoml.kernel.structural.SensorDigital
+import io.github.mosser.arduinoml.kernel.structural.*
 
 abstract class GroovuinoMLBasescript extends Script {
 
     /**
      * sensor "name" pin n
      */
-    def sensor(String name) {
+    def sensorDigital(String name) {
         [pin: { n -> ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().createSensorDigital(name, n) }]
     }
 
@@ -129,13 +121,13 @@ abstract class GroovuinoMLBasescript extends Script {
                      values.add(value)
                      [and: closure]
                  },
-                 ">"   : { value ->
+                 ">"    : { value ->
                      sensors.add(sensor instanceof String ? (SensorAnalogical) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (SensorAnalogical) sensor)
                      operators.add(MathOperator.GREATER)
                      values.add(value)
                      [and: closure]
                  },
-                 "<"   : { value ->
+                 "<"    : { value ->
                      sensors.add(sensor instanceof String ? (SensorAnalogical) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (SensorAnalogical) sensor)
                      operators.add(MathOperator.LESS)
                      values.add(value)

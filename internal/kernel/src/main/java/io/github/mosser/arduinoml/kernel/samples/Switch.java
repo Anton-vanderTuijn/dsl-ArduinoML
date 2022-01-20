@@ -7,8 +7,8 @@ import io.github.mosser.arduinoml.kernel.behavioral.Transition;
 import io.github.mosser.arduinoml.kernel.generator.ToWiring;
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.Actuator;
-import io.github.mosser.arduinoml.kernel.structural.Signal;
 import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
+import io.github.mosser.arduinoml.kernel.structural.Signal;
 
 import java.util.Arrays;
 import java.util.Collections;

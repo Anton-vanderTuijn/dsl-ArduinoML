@@ -1,4 +1,4 @@
-sensor "button" pin 9
+sensorDigital "button" pin 9
 actuator "led1" pin 12
 actuator "led2" pin 13
 actuator "led3" pin 14
