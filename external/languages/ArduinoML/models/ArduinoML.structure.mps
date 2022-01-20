@@ -78,27 +78,6 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="O0bPWK9L_P" resolve="IBrick" />
     </node>
-    <node concept="1TJgyj" id="62oRKDPzNrq" role="1TKVEi">
-      <property role="IQ2ns" value="6960558460116088538" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="actuators" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="5iaO0WrUz9k" resolve="IActuator" />
-    </node>
-    <node concept="1TJgyj" id="62oRKDPEl9P" role="1TKVEi">
-      <property role="IQ2ns" value="6960558460117799541" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="sensors" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="62oRKDPEyDQ" resolve="ISensor" />
-    </node>
-    <node concept="1TJgyj" id="508e52RKbsH" role="1TKVEi">
-      <property role="IQ2ns" value="5766921242179319597" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="lcd_screens" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="5iaO0WrUz9o" resolve="ActuatorLCD" />
-    </node>
     <node concept="PrWs8" id="62oRKDP_8HH" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>

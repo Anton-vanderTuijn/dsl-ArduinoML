@@ -68,7 +68,6 @@
         <child id="1206060619838" name="condition" index="3eO9$A" />
         <child id="1206060644605" name="statementList" index="3eOfB_" />
       </concept>
-      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -289,29 +288,11 @@
           </node>
           <node concept="l8MVK" id="62oRKDP_qb$" role="lcghm" />
         </node>
-        <node concept="3clFbJ" id="508e52RVeCj" role="3cqZAp">
-          <node concept="3clFbS" id="508e52RVeCl" role="3clFbx">
-            <node concept="lc7rE" id="508e52RVq1y" role="3cqZAp">
-              <node concept="la8eA" id="508e52RVq1S" role="lcghm">
-                <property role="lacIc" value="#include &lt;LiquidCrystal.h&gt;" />
-              </node>
-              <node concept="l8MVK" id="508e52S2HTM" role="lcghm" />
-            </node>
+        <node concept="lc7rE" id="508e52RVq1y" role="3cqZAp">
+          <node concept="la8eA" id="508e52RVq1S" role="lcghm">
+            <property role="lacIc" value="#include &lt;LiquidCrystal.h&gt;" />
           </node>
-          <node concept="3eOSWO" id="508e52RVpeF" role="3clFbw">
-            <node concept="3cmrfG" id="508e52RVpU_" role="3uHU7w">
-              <property role="3cmrfH" value="0" />
-            </node>
-            <node concept="2OqwBi" id="508e52RVhI0" role="3uHU7B">
-              <node concept="2OqwBi" id="508e52RVfIn" role="2Oq$k0">
-                <node concept="117lpO" id="508e52RVf$3" role="2Oq$k0" />
-                <node concept="3Tsc0h" id="508e52RVg5I" role="2OqNvi">
-                  <ref role="3TtcxE" to="ge5j:508e52RKbsH" resolve="lcd_screens" />
-                </node>
-              </node>
-              <node concept="34oBXx" id="508e52RVljs" role="2OqNvi" />
-            </node>
-          </node>
+          <node concept="l8MVK" id="508e52S2HTM" role="lcghm" />
         </node>
         <node concept="lc7rE" id="62oRKDP_qc4" role="3cqZAp">
           <node concept="l8MVK" id="62oRKDP_qco" role="lcghm" />
@@ -486,8 +467,8 @@
           <node concept="la8eA" id="O0bPWJVoKl" role="lcghm">
             <property role="lacIc" value=";" />
           </node>
+          <node concept="l8MVK" id="1QS_xBSvmxg" role="lcghm" />
         </node>
-        <node concept="3clFbH" id="O0bPWJVoPu" role="3cqZAp" />
         <node concept="lc7rE" id="508e52S0znE" role="3cqZAp">
           <node concept="la8eA" id="508e52S0zIO" role="lcghm">
             <property role="lacIc" value="long debounce = 200;" />

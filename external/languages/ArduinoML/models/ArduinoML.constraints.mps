@@ -104,7 +104,7 @@
   <node concept="1M2fIO" id="62oRKDP$$ke">
     <ref role="1M2myG" to="ge5j:5iaO0WrUz9k" resolve="IActuator" />
     <node concept="EnEH3" id="62oRKDP$$kf" role="1MhHOB">
-      <ref role="EomxK" to="ge5j:508e52RMtqq" resolve="pin" />
+      <ref role="EomxK" to="ge5j:O0bPWKaXTl" resolve="pin" />
       <node concept="QB0g5" id="62oRKDP$$o7" role="QCWH9">
         <node concept="3clFbS" id="62oRKDP$$o8" role="2VODD2">
           <node concept="3clFbF" id="62oRKDP$$sJ" role="3cqZAp">
@@ -189,7 +189,7 @@
   <node concept="1M2fIO" id="508e52RJoWI">
     <ref role="1M2myG" to="ge5j:5iaO0WrUz9o" resolve="ActuatorLCD" />
     <node concept="EnEH3" id="508e52RJpPF" role="1MhHOB">
-      <ref role="EomxK" to="ge5j:5iaO0WrUz9u" resolve="bus" />
+      <ref role="EomxK" to="ge5j:O0bPWKaXTl" resolve="pin" />
       <node concept="QB0g5" id="508e52RJpR7" role="QCWH9">
         <node concept="3clFbS" id="508e52RJpR8" role="2VODD2">
           <node concept="3clFbF" id="508e52RJpWy" role="3cqZAp">

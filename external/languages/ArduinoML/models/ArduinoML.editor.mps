@@ -86,48 +86,6 @@
         </node>
         <node concept="l2Vlx" id="62oRKDP$hDQ" role="2iSdaV" />
       </node>
-      <node concept="35HoNQ" id="62oRKDP$t55" role="3EZMnx" />
-      <node concept="3EZMnI" id="62oRKDP$hEy" role="3EZMnx">
-        <node concept="VPM3Z" id="62oRKDP$hE$" role="3F10Kt" />
-        <node concept="3XFhqQ" id="62oRKDP$hEL" role="3EZMnx" />
-        <node concept="3F2HdR" id="62oRKDP$hEO" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:62oRKDPzNrq" resolve="actuators" />
-          <node concept="2iRkQZ" id="62oRKDP$hER" role="2czzBx" />
-          <node concept="VPM3Z" id="62oRKDP$hES" role="3F10Kt" />
-          <node concept="3F0ifn" id="62oRKDP$hEU" role="2czzBI">
-            <property role="3F0ifm" value="[no actuators defined]" />
-          </node>
-        </node>
-        <node concept="l2Vlx" id="62oRKDP$hEB" role="2iSdaV" />
-      </node>
-      <node concept="35HoNQ" id="62oRKDPEpvn" role="3EZMnx" />
-      <node concept="3EZMnI" id="62oRKDPEpwW" role="3EZMnx">
-        <node concept="VPM3Z" id="62oRKDPEpwY" role="3F10Kt" />
-        <node concept="3XFhqQ" id="62oRKDPEpxV" role="3EZMnx" />
-        <node concept="3F2HdR" id="62oRKDPEpy4" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:62oRKDPEl9P" resolve="sensors" />
-          <node concept="2iRkQZ" id="62oRKDPEpy7" role="2czzBx" />
-          <node concept="VPM3Z" id="62oRKDPEpy8" role="3F10Kt" />
-          <node concept="3F0ifn" id="62oRKDPEpyk" role="2czzBI">
-            <property role="3F0ifm" value="[no sensors defined]" />
-          </node>
-        </node>
-        <node concept="l2Vlx" id="62oRKDPEpx1" role="2iSdaV" />
-      </node>
-      <node concept="35HoNQ" id="508e52RKbto" role="3EZMnx" />
-      <node concept="3EZMnI" id="508e52RKbuu" role="3EZMnx">
-        <node concept="VPM3Z" id="508e52RKbuw" role="3F10Kt" />
-        <node concept="3XFhqQ" id="508e52RKbva" role="3EZMnx" />
-        <node concept="3F2HdR" id="508e52RKbvg" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:508e52RKbsH" resolve="lcd_screens" />
-          <node concept="2iRkQZ" id="508e52RKbvj" role="2czzBx" />
-          <node concept="VPM3Z" id="508e52RKbvk" role="3F10Kt" />
-          <node concept="3F0ifn" id="508e52RKbvr" role="2czzBI">
-            <property role="3F0ifm" value="[no LCD screens defined]" />
-          </node>
-        </node>
-        <node concept="l2Vlx" id="508e52RKbuz" role="2iSdaV" />
-      </node>
       <node concept="35HoNQ" id="1QS_xBSr5Wl" role="3EZMnx" />
       <node concept="3EZMnI" id="1QS_xBSr61O" role="3EZMnx">
         <node concept="VPM3Z" id="1QS_xBSr61P" role="3F10Kt" />
