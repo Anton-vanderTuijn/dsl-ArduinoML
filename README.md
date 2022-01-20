@@ -19,20 +19,57 @@ Members | Contact
 - The ```internal``` directory contains an approach using Groovy (more [here](#Groovy))
 - The ```document``` directory contains the subject and our report
 
-## Syntax language
+---
+
+## External DSL: MPS <a name="MPS"></a>
+TBD: how to run
+
+### Syntax language
 TBD
 
-## How to use MPS <a name="MPS"></a>
-TBD
+### Scenarios supported
+
+Basic scenarios:
+- [ ] Very simple alarm
+- [ ] Dual-check alarm
+- [ ] State-based alarm
+- [ ] Multi-state alarm
+
+“A la carte” features:
+- [ ] Exception Throwing
+- [ ] Temporal transitions
+- [ ] Supporting the LCD screen
+- [ ] Handling Analogical Bricks
+- [ ] Parallel periodic Region
 
 ### Requirements
-- TBD
+- [MPS](https://www.jetbrains.com/mps/)
 
-## How to use Groovy <a name="Groovy"></a>
+## Internal DSL: Groovy <a name="Groovy"></a>
+TBD: how to run
+
+### Syntax language
 TBD
 
+### Scenarios supported
+
+Basic scenarios:
+- [X] Very simple alarm
+- [X] Dual-check alarm
+- [X] State-based alarm
+- [X] Multi-state alarm
+
+“A la carte” features:
+- [X] Exception Throwing
+- [ ] Temporal transitions
+- [X] Supporting the LCD screen
+- [X] Handling Analogical Bricks
+- [ ] Parallel periodic Region
+
 ### Requirements
-- TBD
+- [Groovy](https://groovy-lang.org/)
+- Maven
+- Java 8
 
 <!--
 ## Distribution of points (500)
