@@ -139,12 +139,6 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="508e52RTjbA" resolve="ITransition" />
     </node>
-    <node concept="1TJgyj" id="62oRKDPzNrl" role="1TKVEi">
-      <property role="IQ2ns" value="6960558460116088533" />
-      <property role="20kJfa" value="next" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="62oRKDPzNri" resolve="State" />
-    </node>
     <node concept="1TJgyi" id="62oRKDP$6Yy" role="1TKVEl">
       <property role="IQ2nx" value="6960558460116168610" />
       <property role="TrG5h" value="isInitial" />
@@ -294,6 +288,19 @@
     <node concept="PrWs8" id="508e52RTjbC" role="PzmwI">
       <ref role="PrY4T" node="508e52RTjbA" resolve="ITransition" />
     </node>
+    <node concept="1TJgyj" id="508e52RUbFQ" role="1TKVEi">
+      <property role="IQ2ns" value="5766921242181942006" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="conditions" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="508e52RU3_T" resolve="ICondition" />
+    </node>
+    <node concept="1TJgyj" id="508e52RUUwN" role="1TKVEi">
+      <property role="IQ2ns" value="5766921242182133811" />
+      <property role="20kJfa" value="state" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="62oRKDPzNri" resolve="State" />
+    </node>
   </node>
   <node concept="1TIwiD" id="508e52RTjJJ">
     <property role="EcuMT" value="5766921242181712879" />
@@ -306,6 +313,80 @@
       <property role="IQ2nx" value="5766921242181712882" />
       <property role="TrG5h" value="time_ms" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="508e52RTY3y">
+    <property role="EcuMT" value="5766921242181886178" />
+    <property role="TrG5h" value="ConditionAnalog" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="508e52RTY3_" role="1TKVEi">
+      <property role="IQ2ns" value="5766921242181886181" />
+      <property role="20kJfa" value="sensor" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="62oRKDPEyEi" resolve="SensorAnalog" />
+    </node>
+    <node concept="1TJgyi" id="508e52RTZfk" role="1TKVEl">
+      <property role="IQ2nx" value="5766921242181891028" />
+      <property role="TrG5h" value="comparator" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="508e52RTZg6" role="1TKVEl">
+      <property role="IQ2nx" value="5766921242181891078" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="PrWs8" id="508e52RU3_X" role="PzmwI">
+      <ref role="PrY4T" node="508e52RU3_T" resolve="ICondition" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="508e52RU3_T">
+    <property role="EcuMT" value="5766921242181908857" />
+    <property role="TrG5h" value="ICondition" />
+  </node>
+  <node concept="1TIwiD" id="508e52RU3_U">
+    <property role="EcuMT" value="5766921242181908858" />
+    <property role="TrG5h" value="ConditionDigital" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="508e52RU3_V" role="PzmwI">
+      <ref role="PrY4T" node="508e52RU3_T" resolve="ICondition" />
+    </node>
+    <node concept="1TJgyi" id="508e52RU3_Z" role="1TKVEl">
+      <property role="IQ2nx" value="5766921242181908863" />
+      <property role="TrG5h" value="signal" />
+      <ref role="AX2Wp" node="62oRKDPzNrc" resolve="SIGNAL" />
+    </node>
+    <node concept="1TJgyj" id="508e52RU3A1" role="1TKVEi">
+      <property role="IQ2ns" value="5766921242181908865" />
+      <property role="20kJfa" value="sensor" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="62oRKDPEcmR" resolve="SensorDigital" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="508e52S08mg">
+    <property role="EcuMT" value="5766921242183501200" />
+    <property role="TrG5h" value="SensorButtonDigital" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="508e52S08mh" role="PzmwI">
+      <ref role="PrY4T" node="62oRKDPEyDQ" resolve="ISensor" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="508e52S0CVd">
+    <property role="EcuMT" value="5766921242183634637" />
+    <property role="TrG5h" value="ConditionDigitalButton" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="508e52S2E4A" role="1TKVEi">
+      <property role="IQ2ns" value="5766921242184163622" />
+      <property role="20kJfa" value="sensor" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="508e52S08mg" resolve="SensorButtonDigital" />
+    </node>
+    <node concept="1TJgyi" id="508e52S2E4$" role="1TKVEl">
+      <property role="IQ2nx" value="5766921242184163620" />
+      <property role="TrG5h" value="signal" />
+      <ref role="AX2Wp" node="62oRKDPzNrc" resolve="SIGNAL" />
+    </node>
+    <node concept="PrWs8" id="508e52S2BSl" role="PzmwI">
+      <ref role="PrY4T" node="508e52RU3_T" resolve="ICondition" />
     </node>
   </node>
 </model>

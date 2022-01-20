@@ -95,7 +95,7 @@
           <node concept="2iRkQZ" id="62oRKDP$hER" role="2czzBx" />
           <node concept="VPM3Z" id="62oRKDP$hES" role="3F10Kt" />
           <node concept="3F0ifn" id="62oRKDP$hEU" role="2czzBI">
-            <property role="3F0ifm" value="no actuators defined" />
+            <property role="3F0ifm" value="[no actuators defined]" />
           </node>
         </node>
         <node concept="l2Vlx" id="62oRKDP$hEB" role="2iSdaV" />
@@ -109,7 +109,7 @@
           <node concept="2iRkQZ" id="62oRKDPEpy7" role="2czzBx" />
           <node concept="VPM3Z" id="62oRKDPEpy8" role="3F10Kt" />
           <node concept="3F0ifn" id="62oRKDPEpyk" role="2czzBI">
-            <property role="3F0ifm" value="no sensors defined" />
+            <property role="3F0ifm" value="[no sensors defined]" />
           </node>
         </node>
         <node concept="l2Vlx" id="62oRKDPEpx1" role="2iSdaV" />
@@ -123,7 +123,7 @@
           <node concept="2iRkQZ" id="508e52RKbvj" role="2czzBx" />
           <node concept="VPM3Z" id="508e52RKbvk" role="3F10Kt" />
           <node concept="3F0ifn" id="508e52RKbvr" role="2czzBI">
-            <property role="3F0ifm" value="no lcd screens defined" />
+            <property role="3F0ifm" value="[no LCD screens defined]" />
           </node>
         </node>
         <node concept="l2Vlx" id="508e52RKbuz" role="2iSdaV" />
@@ -137,7 +137,7 @@
           <node concept="2iRkQZ" id="62oRKDP$hFf" role="2czzBx" />
           <node concept="VPM3Z" id="62oRKDP$hFg" role="3F10Kt" />
           <node concept="3F0ifn" id="62oRKDP$hFi" role="2czzBI">
-            <property role="3F0ifm" value="no states defined" />
+            <property role="3F0ifm" value="[no states defined]" />
           </node>
         </node>
         <node concept="l2Vlx" id="62oRKDP$hF3" role="2iSdaV" />
@@ -167,37 +167,51 @@
         </node>
         <node concept="l2Vlx" id="62oRKDP$hFU" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="508e52RUUyD" role="3EZMnx">
+        <node concept="VPM3Z" id="508e52RUUyF" role="3F10Kt" />
+        <node concept="3XFhqQ" id="508e52RUUzn" role="3EZMnx" />
+        <node concept="3F0ifn" id="508e52RUUzt" role="3EZMnx">
+          <property role="3F0ifm" value="actions:" />
+        </node>
+        <node concept="l2Vlx" id="508e52RUUyI" role="2iSdaV" />
+      </node>
       <node concept="3EZMnI" id="62oRKDP$hGp" role="3EZMnx">
         <node concept="VPM3Z" id="62oRKDP$hGr" role="3F10Kt" />
         <node concept="3XFhqQ" id="62oRKDP$hGw" role="3EZMnx" />
+        <node concept="3XFhqQ" id="508e52RVUQY" role="3EZMnx" />
         <node concept="3F2HdR" id="62oRKDP$hGz" role="3EZMnx">
           <ref role="1NtTu8" to="ge5j:62oRKDPzNrk" resolve="actions" />
           <node concept="2iRkQZ" id="62oRKDP$hGA" role="2czzBx" />
           <node concept="VPM3Z" id="62oRKDP$hGB" role="3F10Kt" />
           <node concept="3F0ifn" id="62oRKDP$hGD" role="2czzBI">
-            <property role="3F0ifm" value="no actions defined" />
+            <property role="3F0ifm" value="[no actions defined]" />
           </node>
         </node>
         <node concept="l2Vlx" id="62oRKDP$hGu" role="2iSdaV" />
       </node>
-      <node concept="3EZMnI" id="62oRKDP$hGI" role="3EZMnx">
-        <node concept="VPM3Z" id="62oRKDP$hGK" role="3F10Kt" />
-        <node concept="3XFhqQ" id="62oRKDP$hGT" role="3EZMnx" />
-        <node concept="3F0ifn" id="62oRKDP$hH0" role="3EZMnx">
-          <property role="3F0ifm" value="going to" />
+      <node concept="3EZMnI" id="508e52RUU$b" role="3EZMnx">
+        <node concept="VPM3Z" id="508e52RUU$d" role="3F10Kt" />
+        <node concept="3XFhqQ" id="508e52RUU$Y" role="3EZMnx" />
+        <node concept="3F0ifn" id="508e52RUU_4" role="3EZMnx">
+          <property role="3F0ifm" value="transitions:" />
         </node>
-        <node concept="1iCGBv" id="62oRKDP$hH5" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:62oRKDPzNrl" resolve="next" />
-          <node concept="1sVBvm" id="62oRKDP$hH7" role="1sWHZn">
-            <node concept="3F0A7n" id="62oRKDP$hHb" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            </node>
+        <node concept="l2Vlx" id="508e52RUU$g" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="508e52RUDLr" role="3EZMnx">
+        <node concept="VPM3Z" id="508e52RUDLt" role="3F10Kt" />
+        <node concept="3XFhqQ" id="508e52RUDM1" role="3EZMnx" />
+        <node concept="3XFhqQ" id="508e52RVURd" role="3EZMnx" />
+        <node concept="3F2HdR" id="508e52RUDM7" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:508e52RTiuv" resolve="transitions" />
+          <node concept="2iRkQZ" id="508e52RUDMa" role="2czzBx" />
+          <node concept="VPM3Z" id="508e52RUDMb" role="3F10Kt" />
+          <node concept="3F0ifn" id="508e52RUDMg" role="2czzBI">
+            <property role="3F0ifm" value="[no transitions defined]" />
           </node>
         </node>
-        <node concept="l2Vlx" id="62oRKDP$hGN" role="2iSdaV" />
+        <node concept="l2Vlx" id="508e52RUDLw" role="2iSdaV" />
       </node>
-      <node concept="35HoNQ" id="62oRKDP$hHe" role="3EZMnx" />
+      <node concept="35HoNQ" id="508e52RWjta" role="3EZMnx" />
       <node concept="2iRkQZ" id="62oRKDP$hFO" role="2iSdaV" />
     </node>
   </node>
@@ -380,6 +394,124 @@
         <property role="3F0ifm" value="ms" />
       </node>
       <node concept="2iRfu4" id="508e52RTjJT" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="508e52RTZfm">
+    <ref role="1XX52x" to="ge5j:508e52RTY3y" resolve="ConditionAnalog" />
+    <node concept="3EZMnI" id="508e52RTZfo" role="2wV5jI">
+      <node concept="1iCGBv" id="508e52RTZfv" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:508e52RTY3_" resolve="sensor" />
+        <node concept="1sVBvm" id="508e52RTZfx" role="1sWHZn">
+          <node concept="3F0A7n" id="508e52RTZfF" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="508e52RTZfr" role="2iSdaV" />
+      <node concept="3F0A7n" id="508e52RTZfN" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:508e52RTZfk" resolve="comparator" />
+      </node>
+      <node concept="3F0A7n" id="508e52RU3A3" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:508e52RTZg6" resolve="value" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="508e52RU3Aa">
+    <ref role="1XX52x" to="ge5j:508e52RU3_U" resolve="ConditionDigital" />
+    <node concept="3EZMnI" id="508e52RU3Ac" role="2wV5jI">
+      <node concept="1iCGBv" id="508e52RU3Aj" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:508e52RU3A1" resolve="sensor" />
+        <node concept="1sVBvm" id="508e52RU3Al" role="1sWHZn">
+          <node concept="3F0A7n" id="508e52RU3As" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="508e52RU3AE" role="3EZMnx">
+        <property role="3F0ifm" value="==" />
+      </node>
+      <node concept="3F0A7n" id="508e52RU3AQ" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:508e52RU3_Z" resolve="signal" />
+      </node>
+      <node concept="2iRfu4" id="508e52RU3Af" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="508e52RUbFU">
+    <ref role="1XX52x" to="ge5j:508e52RTjbB" resolve="Transition" />
+    <node concept="3EZMnI" id="508e52RUbGp" role="2wV5jI">
+      <node concept="3EZMnI" id="508e52RUUBo" role="3EZMnx">
+        <node concept="VPM3Z" id="508e52RUUBq" role="3F10Kt" />
+        <node concept="3F0ifn" id="508e52RUUBB" role="3EZMnx">
+          <property role="3F0ifm" value="to" />
+        </node>
+        <node concept="1iCGBv" id="508e52RUUBL" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:508e52RUUwN" resolve="state" />
+          <node concept="1sVBvm" id="508e52RUUBN" role="1sWHZn">
+            <node concept="3F0A7n" id="508e52RUUBV" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="2iRfu4" id="508e52RUUBt" role="2iSdaV" />
+        <node concept="3F0ifn" id="508e52RVsdt" role="3EZMnx">
+          <property role="3F0ifm" value="if" />
+        </node>
+        <node concept="3F2HdR" id="508e52RVsex" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:508e52RUbFQ" resolve="conditions" />
+          <node concept="2iRkQZ" id="508e52RVse$" role="2czzBx" />
+          <node concept="VPM3Z" id="508e52RVse_" role="3F10Kt" />
+          <node concept="3F0ifn" id="508e52RVseI" role="2czzBI">
+            <property role="3F0ifm" value="[no conditions defined]" />
+          </node>
+        </node>
+      </node>
+      <node concept="2iRkQZ" id="508e52RUUB1" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="508e52S08mj">
+    <ref role="1XX52x" to="ge5j:508e52S08mg" resolve="SensorButtonDigital" />
+    <node concept="3EZMnI" id="508e52S08ml" role="2wV5jI">
+      <node concept="3EZMnI" id="508e52S08ms" role="3EZMnx">
+        <node concept="VPM3Z" id="508e52S08mu" role="3F10Kt" />
+        <node concept="3F0ifn" id="508e52S08mE" role="3EZMnx">
+          <property role="3F0ifm" value="digital button:" />
+        </node>
+        <node concept="3F0A7n" id="508e52S08mK" role="3EZMnx">
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+        <node concept="3F0ifn" id="508e52S08mX" role="3EZMnx">
+          <property role="3F0ifm" value="on pin" />
+        </node>
+        <node concept="3F0A7n" id="508e52S08n7" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:62oRKDPEyEf" resolve="pin" />
+        </node>
+        <node concept="l2Vlx" id="508e52S08mx" role="2iSdaV" />
+      </node>
+      <node concept="2iRfu4" id="508e52S08mo" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="508e52S0CVe">
+    <ref role="1XX52x" to="ge5j:508e52S0CVd" resolve="ConditionDigitalButton" />
+    <node concept="3EZMnI" id="508e52S0CVy" role="2wV5jI">
+      <node concept="1iCGBv" id="508e52S0CVz" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:508e52S2E4A" resolve="sensor" />
+        <node concept="1sVBvm" id="508e52S0CV$" role="1sWHZn">
+          <node concept="3F0A7n" id="508e52S0CV_" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="508e52S0CVA" role="3EZMnx">
+        <property role="3F0ifm" value="==" />
+      </node>
+      <node concept="3F0A7n" id="508e52S0CVB" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:508e52S2E4$" resolve="signal" />
+      </node>
+      <node concept="2iRfu4" id="508e52S0CVC" role="2iSdaV" />
     </node>
   </node>
 </model>
