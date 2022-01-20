@@ -6,7 +6,8 @@ import io.github.mosser.arduinoml.kernel.behavioral.State;
 import io.github.mosser.arduinoml.kernel.behavioral.Transition;
 import io.github.mosser.arduinoml.kernel.structural.Actuator;
 import io.github.mosser.arduinoml.kernel.structural.Lcd;
-import io.github.mosser.arduinoml.kernel.structural.Sensor;
+import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
+import io.github.mosser.arduinoml.kernel.structural.SensorAnalogical;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +24,9 @@ public abstract class Visitor<T> {
 
     public abstract void visit(Actuator actuator);
 
-    public abstract void visit(Sensor sensor);
+    public abstract void visit(SensorDigital sensor);
+
+    public abstract void visit(SensorAnalogical sensor);
 
     public abstract void visit(Lcd lcd);
 

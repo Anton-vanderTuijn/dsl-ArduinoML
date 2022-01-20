@@ -8,7 +8,7 @@ import io.github.mosser.arduinoml.kernel.behavioral.State
 import io.github.mosser.arduinoml.kernel.structural.Actuator
 import io.github.mosser.arduinoml.kernel.structural.Lcd
 import io.github.mosser.arduinoml.kernel.structural.SIGNAL
-import io.github.mosser.arduinoml.kernel.structural.Sensor
+import io.github.mosser.arduinoml.kernel.structural.SensorDigital
 
 abstract class GroovuinoMLBasescript extends Script {
 
@@ -62,7 +62,7 @@ abstract class GroovuinoMLBasescript extends Script {
              displaySensor  : { sensor ->
                  ActionLcdSensor action = new ActionLcdSensor()
                  action.setLcd(actuator instanceof String ? (Lcd) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Lcd) actuator)
-                 action.setSensor(sensor instanceof String ? (Sensor) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (Sensor) sensor)
+                 action.setSensor(sensor instanceof String ? (SensorDigital) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (SensorDigital) sensor)
                  actions.add(action)
              },
              displayActuator: { act ->
@@ -96,14 +96,14 @@ abstract class GroovuinoMLBasescript extends Script {
     def from(String state1) {
         [to: { state2 ->
 
-            List<Sensor> sensors = new ArrayList<>();
+            List<SensorDigital> sensors = new ArrayList<>();
             List<SIGNAL> signals = new ArrayList<>();
 
             // recursive closure to allow multiple and statements
             def closure
             closure = { sensor ->
                 [becomes: { signal ->
-                    sensors.add(sensor instanceof String ? (Sensor) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (Sensor) sensor)
+                    sensors.add(sensor instanceof String ? (SensorDigital) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (SensorDigital) sensor)
                     signals.add(signal instanceof String ? (SIGNAL) ((GroovuinoMLBinding) this.getBinding()).getVariable(signal) : (SIGNAL) signal)
 
                     [and: closure]

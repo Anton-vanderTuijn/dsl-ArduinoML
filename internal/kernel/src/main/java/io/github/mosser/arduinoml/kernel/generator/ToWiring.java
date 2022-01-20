@@ -73,7 +73,7 @@ public class ToWiring extends Visitor<StringBuffer> {
 
 
     @Override
-    public void visit(Sensor sensor) {
+    public void visit(SensorDigital sensor) {
         if (context.get("pass") == PASS.ONE) {
             w(String.format("\nboolean %sBounceGuard = false;\n", sensor.getName()));
             w(String.format("long %sLastDebounceTime = 0;\n", sensor.getName()));
@@ -83,6 +83,11 @@ public class ToWiring extends Visitor<StringBuffer> {
             w(String.format("\tpinMode(%d, INPUT);  // %s [Sensor]\n", sensor.getPin(), sensor.getName()));
             return;
         }
+    }
+
+    @Override
+    public void visit(SensorAnalogical sensor) {
+        //TODO Implement
     }
 
     @Override
@@ -203,7 +208,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         return "digitalRead(" + actuator.getPin() + ")";
     }
 
-    private String retrieveSensorStatus(Sensor sensor) {
+    private String retrieveSensorStatus(SensorDigital sensor) {
         return "digitalRead(" + sensor.getPin() + ")";
     }
 

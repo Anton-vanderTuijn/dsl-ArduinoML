@@ -2,11 +2,11 @@ package io.github.mosser.arduinoml.kernel.behavioral;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.Lcd;
-import io.github.mosser.arduinoml.kernel.structural.Sensor;
+import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
 
 public class ActionLcdSensor extends Action {
 
-    private Sensor sensor;
+    private SensorDigital sensor;
     private Lcd lcd;
 
     public Lcd getLcd() {
@@ -17,11 +17,11 @@ public class ActionLcdSensor extends Action {
         this.lcd = lcd;
     }
 
-    public Sensor getSensor() {
+    public SensorDigital getSensor() {
         return sensor;
     }
 
-    public void setSensor(Sensor sensor) {
+    public void setSensor(SensorDigital sensor) {
         this.sensor = sensor;
     }
 

@@ -3,14 +3,14 @@ package io.github.mosser.arduinoml.kernel.behavioral;
 import io.github.mosser.arduinoml.kernel.generator.Visitable;
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.SIGNAL;
-import io.github.mosser.arduinoml.kernel.structural.Sensor;
+import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
 
 import java.util.List;
 
 public class Transition implements Visitable {
 
     private State next;
-    private List<Sensor> sensor;
+    private List<SensorDigital> sensor;
     private List<SIGNAL> value;
 
 
@@ -22,11 +22,11 @@ public class Transition implements Visitable {
         this.next = next;
     }
 
-    public List<Sensor> getSensor() {
+    public List<SensorDigital> getSensor() {
         return sensor;
     }
 
-    public void setSensor(List<Sensor> sensor) {
+    public void setSensor(List<SensorDigital> sensor) {
         this.sensor = sensor;
     }
 

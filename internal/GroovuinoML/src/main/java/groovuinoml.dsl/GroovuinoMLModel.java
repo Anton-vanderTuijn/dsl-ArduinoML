@@ -27,7 +27,7 @@ public class GroovuinoMLModel {
     }
 
     public void createSensor(String name, Integer pinNumber) {
-        Sensor sensor = new Sensor();
+        SensorDigital sensor = new SensorDigital();
         sensor.setName(name);
         sensor.setPin(pinNumber);
         this.bricks.add(sensor);
@@ -68,7 +68,7 @@ public class GroovuinoMLModel {
         this.binding.setVariable(name, error);
     }
 
-    public void createTransition(State from, State to, List<Sensor> sensor, List<SIGNAL> value) {
+    public void createTransition(State from, State to, List<SensorDigital> sensor, List<SIGNAL> value) {
         Transition transition = new Transition();
         transition.setNext(to);
         transition.setSensor(sensor);
