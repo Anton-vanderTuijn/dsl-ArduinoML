@@ -53,24 +53,24 @@
   </registry>
   <node concept="24kQdi" id="62oRKDP$7fo">
     <ref role="1XX52x" to="ge5j:62oRKDPzNr5" resolve="ActuatorDigital" />
-    <node concept="3EZMnI" id="62oRKDP$7fq" role="2wV5jI">
-      <node concept="2iRfu4" id="62oRKDP$7ft" role="2iSdaV" />
-      <node concept="3EZMnI" id="62oRKDP$7fF" role="3EZMnx">
-        <node concept="l2Vlx" id="62oRKDP$7fG" role="2iSdaV" />
-        <node concept="VPM3Z" id="62oRKDP$7fH" role="3F10Kt" />
-        <node concept="3F0ifn" id="508e52RNEJP" role="3EZMnx">
+    <node concept="3EZMnI" id="1QS_xBSlINU" role="2wV5jI">
+      <node concept="3EZMnI" id="1QS_xBSlINV" role="3EZMnx">
+        <node concept="VPM3Z" id="1QS_xBSlINW" role="3F10Kt" />
+        <node concept="3F0ifn" id="1QS_xBSlINX" role="3EZMnx">
           <property role="3F0ifm" value="actuator digital:" />
         </node>
-        <node concept="3F0A7n" id="62oRKDP$hEh" role="3EZMnx">
+        <node concept="3F0A7n" id="1QS_xBSlINY" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
-        <node concept="3F0ifn" id="62oRKDP$hEp" role="3EZMnx">
+        <node concept="3F0ifn" id="1QS_xBSlINZ" role="3EZMnx">
           <property role="3F0ifm" value="on pin" />
         </node>
-        <node concept="3F0A7n" id="62oRKDP$hEs" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:508e52RMtqq" resolve="pin" />
+        <node concept="3F0A7n" id="1QS_xBSlIO0" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:O0bPWKaXTl" resolve="pin" />
         </node>
+        <node concept="l2Vlx" id="1QS_xBSlIO1" role="2iSdaV" />
       </node>
+      <node concept="2iRfu4" id="1QS_xBSlIO2" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="62oRKDP$hDF">
@@ -230,7 +230,7 @@
           <property role="3F0ifm" value="on pin" />
         </node>
         <node concept="3F0A7n" id="62oRKDPEcGe" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:62oRKDPEyEf" resolve="pin" />
+          <ref role="1NtTu8" to="ge5j:O0bPWKaXTl" resolve="pin" />
         </node>
         <node concept="l2Vlx" id="62oRKDPEcFR" role="2iSdaV" />
       </node>
@@ -252,7 +252,7 @@
           <property role="3F0ifm" value="for pin" />
         </node>
         <node concept="3F0A7n" id="62oRKDPEyFG" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:62oRKDPEyEf" resolve="pin" />
+          <ref role="1NtTu8" to="ge5j:O0bPWKaXTl" resolve="pin" />
         </node>
         <node concept="l2Vlx" id="62oRKDPEyEJ" role="2iSdaV" />
       </node>
@@ -353,7 +353,7 @@
           <property role="3F0ifm" value="on pin" />
         </node>
         <node concept="3F0A7n" id="508e52RNEKi" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:508e52RMtqq" resolve="pin" />
+          <ref role="1NtTu8" to="ge5j:O0bPWKaXTl" resolve="pin" />
         </node>
         <node concept="l2Vlx" id="508e52RNEJA" role="2iSdaV" />
       </node>
@@ -361,7 +361,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="508e52RQ$PP">
-    <ref role="1XX52x" to="ge5j:508e52RQ6xK" resolve="ActionLCD" />
+    <ref role="1XX52x" to="ge5j:508e52RQ6xK" resolve="ActionLCDSimpleText" />
     <node concept="3EZMnI" id="508e52RQ$PR" role="2wV5jI">
       <node concept="1iCGBv" id="508e52RQ$PY" role="3EZMnx">
         <ref role="1NtTu8" to="ge5j:508e52RQ6xP" resolve="target" />
@@ -486,7 +486,7 @@
           <property role="3F0ifm" value="on pin" />
         </node>
         <node concept="3F0A7n" id="508e52S08n7" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:62oRKDPEyEf" resolve="pin" />
+          <ref role="1NtTu8" to="ge5j:O0bPWKaXTl" resolve="pin" />
         </node>
         <node concept="l2Vlx" id="508e52S08mx" role="2iSdaV" />
       </node>

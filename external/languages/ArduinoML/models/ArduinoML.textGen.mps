@@ -216,7 +216,7 @@
               <node concept="2OqwBi" id="62oRKDP_jnN" role="37wK5m">
                 <node concept="117lpO" id="62oRKDP_j9E" role="2Oq$k0" />
                 <node concept="3TrcHB" id="62oRKDP_jyk" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:508e52RMtqq" resolve="pin" />
+                  <ref role="3TsBF5" to="ge5j:O0bPWKaXTl" resolve="pin" />
                 </node>
               </node>
             </node>
@@ -1114,7 +1114,7 @@
           <node concept="l9hG8" id="508e52RRcMv" role="lcghm">
             <node concept="2YIFZM" id="508e52RReq$" role="lb14g">
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
               <node concept="2OqwBi" id="508e52RRflD" role="37wK5m">
                 <node concept="2OqwBi" id="508e52RRf06" role="2Oq$k0">
                   <node concept="117lpO" id="508e52RRe$l" role="2Oq$k0" />
@@ -1123,7 +1123,7 @@
                   </node>
                 </node>
                 <node concept="3TrcHB" id="508e52RRfKC" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:508e52RMtqq" resolve="pin" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -1158,7 +1158,7 @@
           <node concept="l9hG8" id="508e52RRhS0" role="lcghm">
             <node concept="2YIFZM" id="508e52RRj7m" role="lb14g">
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
               <node concept="2OqwBi" id="508e52RRjDx" role="37wK5m">
                 <node concept="2OqwBi" id="508e52RRjke" role="2Oq$k0">
                   <node concept="117lpO" id="508e52RRj9_" role="2Oq$k0" />
@@ -1166,8 +1166,8 @@
                     <ref role="3Tt5mk" to="ge5j:508e52RN5HO" resolve="target" />
                   </node>
                 </node>
-                <node concept="3TrcHB" id="508e52RRjQH" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:508e52RMtqq" resolve="pin" />
+                <node concept="3TrcHB" id="1QS_xBSn4ds" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -1221,7 +1221,7 @@
               <node concept="2OqwBi" id="508e52RQPnJ" role="37wK5m">
                 <node concept="117lpO" id="508e52RQP7X" role="2Oq$k0" />
                 <node concept="3TrcHB" id="508e52RQPGV" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:508e52RMtqq" resolve="pin" />
+                  <ref role="3TsBF5" to="ge5j:O0bPWKaXTl" resolve="pin" />
                 </node>
               </node>
             </node>
@@ -1234,9 +1234,28 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="508e52RR03n">
-    <ref role="WuzLi" to="ge5j:508e52RQ6xK" resolve="ActionLCD" />
+    <ref role="WuzLi" to="ge5j:508e52RQ6xK" resolve="ActionLCDSimpleText" />
     <node concept="11bSqf" id="508e52RR03o" role="11c4hB">
       <node concept="3clFbS" id="508e52RR03p" role="2VODD2">
+        <node concept="lc7rE" id="O0bPWK9Lpb" role="3cqZAp">
+          <node concept="l9hG8" id="O0bPWK9Lq$" role="lcghm">
+            <node concept="2OqwBi" id="O0bPWK9Lq_" role="lb14g">
+              <node concept="2OqwBi" id="O0bPWK9LqA" role="2Oq$k0">
+                <node concept="117lpO" id="O0bPWK9LqB" role="2Oq$k0" />
+                <node concept="3TrEf2" id="O0bPWK9LqC" role="2OqNvi">
+                  <ref role="3Tt5mk" to="ge5j:508e52RQ6xP" resolve="target" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="O0bPWK9LqD" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+          </node>
+          <node concept="la8eA" id="O0bPWK9LwC" role="lcghm">
+            <property role="lacIc" value=".setCursor(0,0);" />
+          </node>
+          <node concept="l8MVK" id="O0bPWK9L$H" role="lcghm" />
+        </node>
         <node concept="lc7rE" id="508e52RRb29" role="3cqZAp">
           <node concept="l9hG8" id="508e52RRb2t" role="lcghm">
             <node concept="2OqwBi" id="508e52RRbYC" role="lb14g">
@@ -1309,7 +1328,7 @@
           <node concept="l9hG8" id="508e52RU3IR" role="lcghm">
             <node concept="2YIFZM" id="508e52RU5ka" role="lb14g">
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
               <node concept="2OqwBi" id="508e52RU642" role="37wK5m">
                 <node concept="2OqwBi" id="508e52RU5wZ" role="2Oq$k0">
                   <node concept="117lpO" id="508e52RU5mm" role="2Oq$k0" />
@@ -1318,7 +1337,7 @@
                   </node>
                 </node>
                 <node concept="3TrcHB" id="508e52RU6he" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:62oRKDPEyEf" resolve="pin" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -1361,7 +1380,7 @@
           <node concept="l9hG8" id="508e52RU9aw" role="lcghm">
             <node concept="2YIFZM" id="508e52RU9cf" role="lb14g">
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
               <node concept="2OqwBi" id="508e52RUaCi" role="37wK5m">
                 <node concept="2OqwBi" id="508e52RUa6d" role="2Oq$k0">
                   <node concept="117lpO" id="508e52RU9V$" role="2Oq$k0" />
@@ -1369,8 +1388,8 @@
                     <ref role="3Tt5mk" to="ge5j:508e52RU3A1" resolve="sensor" />
                   </node>
                 </node>
-                <node concept="3TrcHB" id="508e52RUaQw" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:62oRKDPEyEf" resolve="pin" />
+                <node concept="3TrcHB" id="1QS_xBSn96v" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -1618,7 +1637,7 @@
               <node concept="2OqwBi" id="508e52RWSvl" role="37wK5m">
                 <node concept="117lpO" id="508e52RWSjU" role="2Oq$k0" />
                 <node concept="3TrcHB" id="508e52RWSFh" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:62oRKDPEyEf" resolve="pin" />
+                  <ref role="3TsBF5" to="ge5j:O0bPWKaXTl" resolve="pin" />
                 </node>
               </node>
             </node>
@@ -1656,7 +1675,7 @@
               <node concept="2OqwBi" id="508e52RWUcm" role="37wK5m">
                 <node concept="117lpO" id="508e52RWU7r" role="2Oq$k0" />
                 <node concept="3TrcHB" id="508e52RWUfA" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:62oRKDPEyEf" resolve="pin" />
+                  <ref role="3TsBF5" to="ge5j:O0bPWKaXTl" resolve="pin" />
                 </node>
               </node>
             </node>
@@ -1694,7 +1713,7 @@
               <node concept="2OqwBi" id="508e52S090G" role="37wK5m">
                 <node concept="117lpO" id="508e52S090H" role="2Oq$k0" />
                 <node concept="3TrcHB" id="508e52S090I" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:62oRKDPEyEf" resolve="pin" />
+                  <ref role="3TsBF5" to="ge5j:O0bPWKaXTl" resolve="pin" />
                 </node>
               </node>
             </node>
@@ -1716,8 +1735,8 @@
           </node>
           <node concept="l9hG8" id="508e52S0DBa" role="lcghm">
             <node concept="2YIFZM" id="508e52S0DBb" role="lb14g">
-              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
               <node concept="2OqwBi" id="508e52S0DBc" role="37wK5m">
                 <node concept="2OqwBi" id="508e52S0DBd" role="2Oq$k0">
                   <node concept="117lpO" id="508e52S0DBe" role="2Oq$k0" />
@@ -1725,8 +1744,8 @@
                     <ref role="3Tt5mk" to="ge5j:508e52S2E4A" resolve="sensor" />
                   </node>
                 </node>
-                <node concept="3TrcHB" id="508e52S0DBg" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:62oRKDPEyEf" resolve="pin" />
+                <node concept="3TrcHB" id="1QS_xBSn9D2" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -1771,6 +1790,18 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="WtQ9Q" id="1QS_xBSop5W">
+    <ref role="WuzLi" to="ge5j:O0bPWK9L_B" resolve="ActionLCDDigitalReaderText" />
+    <node concept="11bSqf" id="1QS_xBSop5X" role="11c4hB">
+      <node concept="3clFbS" id="1QS_xBSop5Y" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="WtQ9Q" id="1QS_xBSop6j">
+    <ref role="WuzLi" to="ge5j:O0bPWK9L_$" resolve="ActionLCDAnalogReaderText" />
+    <node concept="11bSqf" id="1QS_xBSop6k" role="11c4hB">
+      <node concept="3clFbS" id="1QS_xBSop6l" role="2VODD2" />
     </node>
   </node>
 </model>
