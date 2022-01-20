@@ -71,6 +71,13 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="62oRKDPzNri" resolve="State" />
     </node>
+    <node concept="1TJgyj" id="1QS_xBSr5UP" role="1TKVEi">
+      <property role="IQ2ns" value="2141626661100871349" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="bricks" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="O0bPWK9L_P" resolve="IBrick" />
+    </node>
     <node concept="1TJgyj" id="62oRKDPzNrq" role="1TKVEi">
       <property role="IQ2ns" value="6960558460116088538" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -180,12 +187,7 @@
     <property role="TrG5h" value="ActuatorLCD" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5iaO0WrUz9r" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="1TJgyi" id="5iaO0WrUz9u" role="1TKVEl">
-      <property role="IQ2nx" value="6091910209283437150" />
-      <property role="TrG5h" value="bus" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="PrY4T" node="5iaO0WrUz9k" resolve="IActuator" />
     </node>
     <node concept="1TJgyi" id="508e52RKHj9" role="1TKVEl">
       <property role="IQ2nx" value="5766921242179458249" />
