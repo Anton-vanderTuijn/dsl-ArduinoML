@@ -1,14 +1,8 @@
 package io.github.mosser.arduinoml.kernel.generator;
 
 import io.github.mosser.arduinoml.kernel.App;
-import io.github.mosser.arduinoml.kernel.behavioral.Action;
-import io.github.mosser.arduinoml.kernel.behavioral.ExitError;
-import io.github.mosser.arduinoml.kernel.behavioral.State;
-import io.github.mosser.arduinoml.kernel.behavioral.Transition;
-import io.github.mosser.arduinoml.kernel.structural.Actuator;
-import io.github.mosser.arduinoml.kernel.structural.Brick;
-import io.github.mosser.arduinoml.kernel.structural.SIGNAL;
-import io.github.mosser.arduinoml.kernel.structural.Sensor;
+import io.github.mosser.arduinoml.kernel.behavioral.*;
+import io.github.mosser.arduinoml.kernel.structural.*;
 
 /**
  * Quick and dirty visitor to support the generation of Wiring code
@@ -72,7 +66,7 @@ public class ToWiring extends Visitor<StringBuffer> {
             return;
         }
         if (context.get("pass") == PASS.TWO) {
-            w(String.format("  pinMode(%d, OUTPUT); // %s [Actuator]\n", actuator.getPin(), actuator.getName()));
+            w(String.format("\tpinMode(%d, OUTPUT); // %s [Actuator]\n", actuator.getPin(), actuator.getName()));
             return;
         }
     }
@@ -86,7 +80,20 @@ public class ToWiring extends Visitor<StringBuffer> {
             return;
         }
         if (context.get("pass") == PASS.TWO) {
-            w(String.format("  pinMode(%d, INPUT);  // %s [Sensor]\n", sensor.getPin(), sensor.getName()));
+            w(String.format("\tpinMode(%d, INPUT);  // %s [Sensor]\n", sensor.getPin(), sensor.getName()));
+            return;
+        }
+    }
+
+    @Override
+    public void visit(Lcd lcd) {
+        if (context.get("pass") == PASS.ONE) {
+            w("\n#include <LiquidCrystal.h>\n");
+            w(String.format("LiquidCrystal lcd(%d, %d, %d, %d, %d, %d, %d);\n", lcd.getPins()[0], lcd.getPins()[1], lcd.getPins()[2], lcd.getPins()[3], lcd.getPins()[4], lcd.getPins()[5], lcd.getPins()[6]));
+            return;
+        }
+        if (context.get("pass") == PASS.TWO) {
+            w(String.format("\tlcd.begin(%d, %d);\n", lcd.getCols(), lcd.getRow()));
             return;
         }
     }
@@ -174,9 +181,30 @@ public class ToWiring extends Visitor<StringBuffer> {
             return;
         }
         if (context.get("pass") == PASS.TWO) {
-            w(String.format("\t\t\tdigitalWrite(%d, %s);\n", action.getActuator().getPin(), action.getValue()));
+
+            //TODO FOR LCD CHECK STRING SIZE
+            if (action instanceof ActionLcdText) {
+                w("\t\t\tlcd.setCursor(0, 0);\n");
+                w(String.format("\t\t\tlcd.print(\"%s\");\n", ((ActionLcdText) action).getText()));
+            } else if (action instanceof ActionLcdSensor) {
+                w("\t\t\tlcd.setCursor(0, 0);\n");
+                w(String.format("\t\t\tlcd.print(%s);\n", retrieveSensorStatus(((ActionLcdSensor) action).getSensor())));
+            } else if (action instanceof ActionLcdActuator) {
+                w("\t\t\tlcd.setCursor(0, 0);\n");
+                w(String.format("\t\t\tlcd.print(%s);\n", retrieveActuatorStatus(((ActionLcdActuator) action).getActuator())));
+            } else {
+                w(String.format("\t\t\tdigitalWrite(%d, %s);\n", action.getActuator().getPin(), action.getValue()));
+            }
             return;
         }
+    }
+
+    private String retrieveActuatorStatus(Actuator actuator) {
+        return "digitalRead(" + actuator.getPin() + ")";
+    }
+
+    private String retrieveSensorStatus(Sensor sensor) {
+        return "digitalRead(" + sensor.getPin() + ")";
     }
 
 }

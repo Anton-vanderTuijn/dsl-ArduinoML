@@ -8,10 +8,7 @@ import io.github.mosser.arduinoml.kernel.behavioral.State;
 import io.github.mosser.arduinoml.kernel.behavioral.Transition;
 import io.github.mosser.arduinoml.kernel.generator.ToWiring;
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
-import io.github.mosser.arduinoml.kernel.structural.Actuator;
-import io.github.mosser.arduinoml.kernel.structural.Brick;
-import io.github.mosser.arduinoml.kernel.structural.SIGNAL;
-import io.github.mosser.arduinoml.kernel.structural.Sensor;
+import io.github.mosser.arduinoml.kernel.structural.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +41,15 @@ public class GroovuinoMLModel {
         actuator.setPin(pinNumber);
         this.bricks.add(actuator);
         this.binding.setVariable(name, actuator);
+    }
+
+    public void createLCD(String name, Integer cols, Integer rows) {
+        Lcd lcd = new Lcd();
+        lcd.setName(name);
+        lcd.setCols(cols);
+        lcd.setRow(rows);
+        this.bricks.add(lcd);
+        this.binding.setVariable(name, lcd);
     }
 
     public void createState(String name, List<Action> actions) {
