@@ -334,23 +334,36 @@
   </node>
   <node concept="24kQdi" id="508e52RQ$PP">
     <ref role="1XX52x" to="ge5j:508e52RQ6xK" resolve="ActionLCDSimpleText" />
-    <node concept="3EZMnI" id="508e52RQ$PR" role="2wV5jI">
-      <node concept="1iCGBv" id="508e52RQ$PY" role="3EZMnx">
-        <ref role="1NtTu8" to="ge5j:508e52RQ6xP" resolve="target" />
-        <node concept="1sVBvm" id="508e52RQ$Q0" role="1sWHZn">
-          <node concept="3F0A7n" id="508e52RQ$Q7" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+    <node concept="3EZMnI" id="7Mto9RJ3Uuo" role="2wV5jI">
+      <node concept="3EZMnI" id="7Mto9RJ3Uup" role="3EZMnx">
+        <node concept="VPM3Z" id="7Mto9RJ3Uuq" role="3F10Kt" />
+        <node concept="3F0ifn" id="7Mto9RJ3Uur" role="3EZMnx">
+          <property role="3F0ifm" value="Print &quot;" />
+        </node>
+        <node concept="3F0A7n" id="7Mto9RJ3Uw7" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:508e52RQ6xN" resolve="text" />
+        </node>
+        <node concept="3F0ifn" id="7Mto9RJ3Uuv" role="3EZMnx">
+          <property role="3F0ifm" value="&quot; on" />
+        </node>
+        <node concept="1iCGBv" id="7Mto9RJ3Uuw" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:508e52RQ6xP" resolve="target" />
+          <node concept="1sVBvm" id="7Mto9RJ3Uux" role="1sWHZn">
+            <node concept="3F0A7n" id="7Mto9RJ3Uuy" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
           </node>
         </node>
+        <node concept="3F0ifn" id="7Mto9RJ3Uuz" role="3EZMnx">
+          <property role="3F0ifm" value="row n°" />
+        </node>
+        <node concept="3F0A7n" id="7Mto9RJ3Uu$" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:7Mto9RJ3Uwp" resolve="rowToDisplay" />
+        </node>
+        <node concept="l2Vlx" id="7Mto9RJ3Uu_" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="508e52RQ$Ql" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;=" />
-      </node>
-      <node concept="3F0A7n" id="508e52RQ$Qx" role="3EZMnx">
-        <ref role="1NtTu8" to="ge5j:508e52RQ6xN" resolve="text" />
-      </node>
-      <node concept="2iRfu4" id="508e52RQ$PU" role="2iSdaV" />
+      <node concept="2iRfu4" id="7Mto9RJ3UuA" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="508e52RTjJO">

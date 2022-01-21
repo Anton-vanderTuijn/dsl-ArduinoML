@@ -100,6 +100,9 @@
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
+      </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
@@ -348,6 +351,37 @@
     <node concept="3EP7_v" id="7Mto9RJ3F16" role="1MtirG">
       <node concept="1dDu$B" id="7Mto9RJ3F1c" role="3EP$qY">
         <ref role="1dDu$A" to="ge5j:O0bPWK9L_P" resolve="IBrick" />
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="7Mto9RJ3MrZ">
+    <ref role="1M2myG" to="ge5j:508e52RQ6xK" resolve="ActionLCDSimpleText" />
+    <node concept="EnEH3" id="7Mto9RJ3Ms0" role="1MhHOB">
+      <ref role="EomxK" to="ge5j:508e52RQ6xN" resolve="text" />
+      <node concept="QB0g5" id="7Mto9RJ3MsM" role="QCWH9">
+        <node concept="3clFbS" id="7Mto9RJ3MsN" role="2VODD2">
+          <node concept="3clFbF" id="7Mto9RJ3Mxz" role="3cqZAp">
+            <node concept="2dkUwp" id="7Mto9RJ3P05" role="3clFbG">
+              <node concept="2OqwBi" id="7Mto9RJ3MW4" role="3uHU7B">
+                <node concept="1Wqviy" id="7Mto9RJ3Mxy" role="2Oq$k0" />
+                <node concept="liA8E" id="7Mto9RJ3Nr5" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="7Mto9RJ3Qc4" role="3uHU7w">
+                <node concept="2OqwBi" id="7Mto9RJ3Pvi" role="2Oq$k0">
+                  <node concept="EsrRn" id="7Mto9RJ3P1j" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="7Mto9RJ3PGs" role="2OqNvi">
+                    <ref role="3Tt5mk" to="ge5j:508e52RQ6xP" resolve="target" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="7Mto9RJ3QDb" role="2OqNvi">
+                  <ref role="3TsBF5" to="ge5j:508e52RKHjc" resolve="columns" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
