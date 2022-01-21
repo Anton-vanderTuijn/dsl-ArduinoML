@@ -51,6 +51,7 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
+      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -204,10 +205,10 @@
     </node>
   </node>
   <node concept="1M2fIO" id="62oRKDP_8Eh">
-    <ref role="1M2myG" to="ge5j:62oRKDPzNri" resolve="State" />
+    <ref role="1M2myG" to="ge5j:6LAVG$wQHxa" resolve="IState" />
     <node concept="3EP7_v" id="7Mto9RJ3I4j" role="1MtirG">
       <node concept="1dDu$B" id="7Mto9RJ3I4p" role="3EP$qY">
-        <ref role="1dDu$A" to="ge5j:62oRKDPzNri" resolve="State" />
+        <ref role="1dDu$A" to="ge5j:6LAVG$wQHxa" resolve="IState" />
       </node>
     </node>
   </node>
@@ -378,6 +379,24 @@
                 <node concept="3TrcHB" id="7Mto9RJ3QDb" role="2OqNvi">
                   <ref role="3TsBF5" to="ge5j:508e52RKHjc" resolve="columns" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6LAVG$wVsPG">
+    <ref role="1M2myG" to="ge5j:6LAVG$wRSgK" resolve="StateError" />
+    <node concept="EnEH3" id="6LAVG$wVsPH" role="1MhHOB">
+      <ref role="EomxK" to="ge5j:6LAVG$wRSgN" resolve="errorValue" />
+      <node concept="QB0g5" id="6LAVG$wVsQu" role="QCWH9">
+        <node concept="3clFbS" id="6LAVG$wVsQv" role="2VODD2">
+          <node concept="3clFbF" id="6LAVG$wVsVd" role="3cqZAp">
+            <node concept="3eOSWO" id="6LAVG$wVuEJ" role="3clFbG">
+              <node concept="1Wqviy" id="6LAVG$wVsVc" role="3uHU7B" />
+              <node concept="3cmrfG" id="6LAVG$wVuSG" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
               </node>
             </node>
           </node>
