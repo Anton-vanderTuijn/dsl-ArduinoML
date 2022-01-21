@@ -68,9 +68,16 @@
       </concept>
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
+      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
+        <reference id="8401916545537438643" name="kind" index="1dDu$A" />
+      </concept>
+      <concept id="1159285995602" name="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope" flags="ng" index="3EP7_v">
+        <child id="1159286114227" name="searchScopeFactory" index="3EP$qY" />
+      </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="1213098023997" name="property" index="1MhHOB" />
+        <child id="1213101058038" name="defaultScope" index="1MtirG" />
       </concept>
       <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
@@ -195,6 +202,11 @@
   </node>
   <node concept="1M2fIO" id="62oRKDP_8Eh">
     <ref role="1M2myG" to="ge5j:62oRKDPzNri" resolve="State" />
+    <node concept="3EP7_v" id="7Mto9RJ3I4j" role="1MtirG">
+      <node concept="1dDu$B" id="7Mto9RJ3I4p" role="3EP$qY">
+        <ref role="1dDu$A" to="ge5j:62oRKDPzNri" resolve="State" />
+      </node>
+    </node>
   </node>
   <node concept="1M2fIO" id="508e52RJoWI">
     <ref role="1M2myG" to="ge5j:5iaO0WrUz9o" resolve="ActuatorLCD" />
@@ -325,6 +337,17 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="7Mto9RJ3B7v">
+    <ref role="1M2myG" to="ge5j:O0bPWK9L_$" resolve="ActionLCDAnalogReaderText" />
+  </node>
+  <node concept="1M2fIO" id="7Mto9RJ3F15">
+    <ref role="1M2myG" to="ge5j:O0bPWK9L_P" resolve="IBrick" />
+    <node concept="3EP7_v" id="7Mto9RJ3F16" role="1MtirG">
+      <node concept="1dDu$B" id="7Mto9RJ3F1c" role="3EP$qY">
+        <ref role="1dDu$A" to="ge5j:O0bPWK9L_P" resolve="IBrick" />
       </node>
     </node>
   </node>
