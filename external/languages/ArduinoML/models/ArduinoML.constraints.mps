@@ -16,18 +16,24 @@
   <imports>
     <import index="ge5j" ref="r:5bf5c70d-4c1e-4b5b-ac48-7f5374e997a2(ArduinoML.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="1153422305557" name="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" flags="nn" index="2dkUwp" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
+      </concept>
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
@@ -44,6 +50,10 @@
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -236,6 +246,82 @@
                 <property role="3cmrfH" value="1" />
               </node>
               <node concept="1Wqviy" id="508e52RKJoI" role="3uHU7B" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="7Mto9RJ2ZkI">
+    <ref role="1M2myG" to="ge5j:508e52RTY3y" resolve="ConditionAnalog" />
+    <node concept="EnEH3" id="7Mto9RJ2ZkJ" role="1MhHOB">
+      <ref role="EomxK" to="ge5j:508e52RTZfk" resolve="comparator" />
+      <node concept="QB0g5" id="7Mto9RJ2Zmg" role="QCWH9">
+        <node concept="3clFbS" id="7Mto9RJ2Zmh" role="2VODD2">
+          <node concept="3clFbF" id="7Mto9RJ2Zr1" role="3cqZAp">
+            <node concept="22lmx$" id="7Mto9RJ349W" role="3clFbG">
+              <node concept="2OqwBi" id="7Mto9RJ3jhH" role="3uHU7w">
+                <node concept="1Wqviy" id="7Mto9RJ34dT" role="2Oq$k0" />
+                <node concept="liA8E" id="7Mto9RJ3jUD" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                  <node concept="Xl_RD" id="7Mto9RJ3kix" role="37wK5m">
+                    <property role="Xl_RC" value="!=" />
+                  </node>
+                </node>
+              </node>
+              <node concept="22lmx$" id="7Mto9RJ33P1" role="3uHU7B">
+                <node concept="22lmx$" id="7Mto9RJ32wx" role="3uHU7B">
+                  <node concept="22lmx$" id="7Mto9RJ31zN" role="3uHU7B">
+                    <node concept="22lmx$" id="7Mto9RJ30qw" role="3uHU7B">
+                      <node concept="2OqwBi" id="7Mto9RJ39gK" role="3uHU7B">
+                        <node concept="1Wqviy" id="7Mto9RJ2Zr0" role="2Oq$k0" />
+                        <node concept="liA8E" id="7Mto9RJ3a4T" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                          <node concept="Xl_RD" id="7Mto9RJ3ar2" role="37wK5m">
+                            <property role="Xl_RC" value="&lt;=" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="7Mto9RJ3eu6" role="3uHU7w">
+                        <node concept="1Wqviy" id="7Mto9RJ30Gg" role="2Oq$k0" />
+                        <node concept="liA8E" id="7Mto9RJ3f7n" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                          <node concept="Xl_RD" id="7Mto9RJ3fur" role="37wK5m">
+                            <property role="Xl_RC" value="==" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="7Mto9RJ3ggK" role="3uHU7w">
+                      <node concept="1Wqviy" id="7Mto9RJ31_M" role="2Oq$k0" />
+                      <node concept="liA8E" id="7Mto9RJ3gCC" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                        <node concept="Xl_RD" id="7Mto9RJ3gOa" role="37wK5m">
+                          <property role="Xl_RC" value="&gt;=" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="7Mto9RJ3hka" role="3uHU7w">
+                    <node concept="1Wqviy" id="7Mto9RJ32_3" role="2Oq$k0" />
+                    <node concept="liA8E" id="7Mto9RJ3huu" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                      <node concept="Xl_RD" id="7Mto9RJ3hyf" role="37wK5m">
+                        <property role="Xl_RC" value="&lt;" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7Mto9RJ3iyO" role="3uHU7w">
+                  <node concept="1Wqviy" id="7Mto9RJ33Sk" role="2Oq$k0" />
+                  <node concept="liA8E" id="7Mto9RJ3iPy" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                    <node concept="Xl_RD" id="7Mto9RJ3iTt" role="37wK5m">
+                      <property role="Xl_RC" value="&gt;" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

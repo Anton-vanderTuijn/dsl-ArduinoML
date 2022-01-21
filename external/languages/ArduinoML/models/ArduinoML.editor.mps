@@ -486,5 +486,85 @@
       <node concept="2iRfu4" id="508e52S0CVC" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="1QS_xBSvF0S">
+    <ref role="1XX52x" to="ge5j:O0bPWK9L_B" resolve="ActionLCDDigitalReaderText" />
+    <node concept="3EZMnI" id="1QS_xBSvF0U" role="2wV5jI">
+      <node concept="3EZMnI" id="1QS_xBSvF14" role="3EZMnx">
+        <node concept="VPM3Z" id="1QS_xBSvF16" role="3F10Kt" />
+        <node concept="3F0ifn" id="1QS_xBSvF1Q" role="3EZMnx">
+          <property role="3F0ifm" value="Print" />
+        </node>
+        <node concept="1iCGBv" id="1QS_xBSvF1w" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:O0bPWK9L_M" resolve="brick" />
+          <node concept="1sVBvm" id="1QS_xBSvF1y" role="1sWHZn">
+            <node concept="3F0A7n" id="1QS_xBSvF1M" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1QS_xBSvF2n" role="3EZMnx">
+          <property role="3F0ifm" value="on" />
+        </node>
+        <node concept="1iCGBv" id="1QS_xBSvF2K" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:O0bPWK9L_G" resolve="target" />
+          <node concept="1sVBvm" id="1QS_xBSvF2M" role="1sWHZn">
+            <node concept="3F0A7n" id="1QS_xBSvF3a" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7Mto9RIZgni" role="3EZMnx">
+          <property role="3F0ifm" value="row n°" />
+        </node>
+        <node concept="3F0A7n" id="7Mto9RIZgwF" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:7Mto9RIZgnV" resolve="rowToDisplay" />
+        </node>
+        <node concept="l2Vlx" id="1QS_xBSvF19" role="2iSdaV" />
+      </node>
+      <node concept="2iRfu4" id="1QS_xBSvF0X" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7Mto9RJ0fIb">
+    <ref role="1XX52x" to="ge5j:O0bPWK9L_$" resolve="ActionLCDAnalogReaderText" />
+    <node concept="3EZMnI" id="7Mto9RJ0fId" role="2wV5jI">
+      <node concept="3EZMnI" id="7Mto9RJ0fIe" role="3EZMnx">
+        <node concept="VPM3Z" id="7Mto9RJ0fIf" role="3F10Kt" />
+        <node concept="3F0ifn" id="7Mto9RJ0fIg" role="3EZMnx">
+          <property role="3F0ifm" value="Print" />
+        </node>
+        <node concept="1iCGBv" id="7Mto9RJ0fIh" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:7Mto9RJ0fIU" resolve="brick" />
+          <node concept="1sVBvm" id="7Mto9RJ0fIi" role="1sWHZn">
+            <node concept="3F0A7n" id="7Mto9RJ0fIj" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7Mto9RJ0fIk" role="3EZMnx">
+          <property role="3F0ifm" value="on" />
+        </node>
+        <node concept="1iCGBv" id="7Mto9RJ0fIl" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:O0bPWK9L_K" resolve="target" />
+          <node concept="1sVBvm" id="7Mto9RJ0fIm" role="1sWHZn">
+            <node concept="3F0A7n" id="7Mto9RJ0fIn" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7Mto9RJ0fIo" role="3EZMnx">
+          <property role="3F0ifm" value="row n°" />
+        </node>
+        <node concept="3F0A7n" id="7Mto9RJ0fIp" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:7Mto9RJ0fIZ" resolve="rowToDisplay" />
+        </node>
+        <node concept="l2Vlx" id="7Mto9RJ0fIq" role="2iSdaV" />
+      </node>
+      <node concept="2iRfu4" id="7Mto9RJ0fIr" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

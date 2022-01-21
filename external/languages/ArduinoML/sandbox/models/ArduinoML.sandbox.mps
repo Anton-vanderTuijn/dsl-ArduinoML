@@ -17,18 +17,24 @@
         <child id="6960558460116088532" name="actions" index="l5YBu" />
         <child id="5766921242181707679" name="transitions" index="3BVhZf" />
       </concept>
+      <concept id="6960558460117854866" name="ArduinoML.structure.SensorAnalog" flags="ng" index="lcJmo" />
       <concept id="936800808369330549" name="ArduinoML.structure.IBrick" flags="ng" index="X9NoE">
         <property id="936800808369643093" name="pin" index="XaZ4a" />
       </concept>
       <concept id="936800808369330535" name="ArduinoML.structure.ActionLCDDigitalReaderText" flags="ng" index="X9NoS">
+        <property id="8979439463482328571" name="rowToDisplay" index="2io6lA" />
         <reference id="936800808369330546" name="brick" index="X9NoH" />
         <reference id="936800808369330540" name="target" index="X9NoN" />
+      </concept>
+      <concept id="936800808369330532" name="ArduinoML.structure.ActionLCDAnalogReaderText" flags="ng" index="X9NoV">
+        <property id="8979439463482588095" name="rowToDisplay" index="2jBpGy" />
+        <reference id="8979439463482588090" name="brick" index="2jBpGB" />
+        <reference id="936800808369330544" name="target" index="X9NoJ" />
       </concept>
       <concept id="6091910209283437144" name="ArduinoML.structure.ActuatorLCD" flags="ng" index="1foe9n">
         <property id="5766921242179458249" name="rows" index="3BMIMp" />
         <property id="5766921242179458252" name="columns" index="3BMIMs" />
       </concept>
-      <concept id="5766921242179917474" name="ArduinoML.structure.ActuatorAnalog" flags="ng" index="3BKuVM" />
       <concept id="5766921242180068163" name="ArduinoML.structure.ActionDigital" flags="ng" index="3BL1Gj">
         <property id="5766921242180082541" name="signal" index="3BL6cX" />
         <reference id="5766921242180082543" name="target" index="3BL6cZ" />
@@ -36,6 +42,11 @@
       <concept id="5766921242181710567" name="ArduinoML.structure.Transition" flags="ng" index="3BVgER">
         <reference id="5766921242182133811" name="state" index="3BST1z" />
         <child id="5766921242181942006" name="conditions" index="3BS8aA" />
+      </concept>
+      <concept id="5766921242181886178" name="ArduinoML.structure.ConditionAnalog" flags="ng" index="3BVXyM">
+        <property id="5766921242181891028" name="comparator" index="3BVWI4" />
+        <property id="5766921242181891078" name="value" index="3BVWLm" />
+        <reference id="5766921242181886181" name="sensor" index="3BVXyP" />
       </concept>
       <concept id="5766921242183501200" name="ArduinoML.structure.SensorButtonDigital" flags="ng" index="3C2bR0" />
       <concept id="5766921242183634637" name="ArduinoML.structure.ConditionDigitalButton" flags="ng" index="3C2Fqt">
@@ -50,10 +61,14 @@
     </language>
   </registry>
   <node concept="l5YB9" id="62oRKDP$6Yq">
-    <property role="TrG5h" value="LCD Screen Demo" />
-    <node concept="3BKuVM" id="1QS_xBSuAUg" role="3_PcyG">
+    <property role="TrG5h" value="LCD Screen Demo State" />
+    <node concept="lcJmo" id="7Mto9RIYh0c" role="3_PcyG">
+      <property role="TrG5h" value="light" />
+      <property role="XaZ4a" value="1" />
+    </node>
+    <node concept="l5YBf" id="7Mto9RIYgZY" role="3_PcyG">
       <property role="TrG5h" value="led" />
-      <property role="XaZ4a" value="11" />
+      <property role="XaZ4a" value="8" />
     </node>
     <node concept="3C2bR0" id="1QS_xBSuAUm" role="3_PcyG">
       <property role="TrG5h" value="button" />
@@ -67,12 +82,49 @@
     </node>
     <node concept="l5YBo" id="O0bPWK9$gw" role="l5YBj">
       <property role="TrG5h" value="off" />
+      <property role="l2b2C" value="true" />
       <node concept="3BVgER" id="1QS_xBSpCrO" role="3BVhZf">
-        <ref role="3BST1z" node="O0bPWK9$gw" resolve="off" />
+        <ref role="3BST1z" node="7Mto9RIYbuo" resolve="on" />
+        <node concept="3C2Fqt" id="7Mto9RIYgZE" role="3BS8aA">
+          <ref role="3C0D_Q" node="1QS_xBSuAUm" resolve="button" />
+        </node>
+      </node>
+      <node concept="3BL1Gj" id="7Mto9RIYh0m" role="l5YBu">
+        <property role="3BL6cX" value="62oRKDPzNre/LOW" />
+        <ref role="3BL6cZ" node="7Mto9RIYgZY" resolve="led" />
       </node>
       <node concept="X9NoS" id="O0bPWKbw7T" role="l5YBu">
+        <property role="2io6lA" value="0" />
         <ref role="X9NoN" node="1QS_xBSuAUu" resolve="lcd" />
-        <ref role="X9NoH" node="1QS_xBSuAUg" resolve="led" />
+        <ref role="X9NoH" node="7Mto9RIYgZY" resolve="led" />
+      </node>
+      <node concept="X9NoV" id="7Mto9RJ18rQ" role="l5YBu">
+        <property role="2jBpGy" value="1" />
+        <ref role="2jBpGB" node="7Mto9RIYh0c" resolve="temperature" />
+        <ref role="X9NoJ" node="1QS_xBSuAUu" resolve="lcd" />
+      </node>
+    </node>
+    <node concept="l5YBo" id="7Mto9RIYbuo" role="l5YBj">
+      <property role="TrG5h" value="on" />
+      <node concept="3BL1Gj" id="7Mto9RIYhoW" role="l5YBu">
+        <ref role="3BL6cZ" node="7Mto9RIYgZY" resolve="led" />
+      </node>
+      <node concept="3BVgER" id="7Mto9RIYgZx" role="3BVhZf">
+        <ref role="3BST1z" node="O0bPWK9$gw" resolve="off" />
+        <node concept="3C2Fqt" id="7Mto9RIYgZJ" role="3BS8aA">
+          <property role="3C0D_O" value="62oRKDPzNre/LOW" />
+          <ref role="3C0D_Q" node="1QS_xBSuAUm" resolve="button" />
+        </node>
+      </node>
+      <node concept="X9NoS" id="7Mto9RIYgZs" role="l5YBu">
+        <property role="2io6lA" value="0" />
+        <ref role="X9NoN" node="1QS_xBSuAUu" resolve="lcd" />
+        <ref role="X9NoH" node="7Mto9RIYgZY" resolve="led" />
+      </node>
+      <node concept="X9NoV" id="7Mto9RJ18sa" role="l5YBu">
+        <property role="2jBpGy" value="1" />
+        <ref role="2jBpGB" node="7Mto9RIYh0c" resolve="temperature" />
+        <ref role="X9NoJ" node="1QS_xBSuAUu" resolve="lcd" />
       </node>
     </node>
   </node>
@@ -89,12 +141,6 @@
     <node concept="3C2bR0" id="1QS_xBSrq1r" role="3_PcyG">
       <property role="TrG5h" value="btn" />
       <property role="XaZ4a" value="9" />
-    </node>
-    <node concept="1foe9n" id="1QS_xBStPwn" role="3_PcyG">
-      <property role="TrG5h" value="lcd" />
-      <property role="3BMIMs" value="16" />
-      <property role="3BMIMp" value="2" />
-      <property role="XaZ4a" value="2" />
     </node>
     <node concept="l5YBo" id="508e52RWjqZ" role="l5YBj">
       <property role="TrG5h" value="off" />
@@ -327,6 +373,77 @@
           <property role="3C0D_O" value="62oRKDPzNre/LOW" />
           <ref role="3C0D_Q" node="1QS_xBSuAUN" resolve="button" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="l5YB9" id="7Mto9RJ2Yvf">
+    <property role="TrG5h" value="LCD Screen Demo Alarm" />
+    <node concept="lcJmo" id="7Mto9RJ2Yvg" role="3_PcyG">
+      <property role="TrG5h" value="light" />
+      <property role="XaZ4a" value="1" />
+    </node>
+    <node concept="l5YBf" id="7Mto9RJ2Yvh" role="3_PcyG">
+      <property role="TrG5h" value="led" />
+      <property role="XaZ4a" value="8" />
+    </node>
+    <node concept="3C2bR0" id="7Mto9RJ2Yvi" role="3_PcyG">
+      <property role="TrG5h" value="button" />
+      <property role="XaZ4a" value="9" />
+    </node>
+    <node concept="1foe9n" id="7Mto9RJ2Yvj" role="3_PcyG">
+      <property role="TrG5h" value="lcd" />
+      <property role="XaZ4a" value="2" />
+      <property role="3BMIMs" value="16" />
+      <property role="3BMIMp" value="2" />
+    </node>
+    <node concept="l5YBo" id="7Mto9RJ2Yvk" role="l5YBj">
+      <property role="TrG5h" value="off" />
+      <property role="l2b2C" value="true" />
+      <node concept="3BVgER" id="7Mto9RJ2Yvl" role="3BVhZf">
+        <ref role="3BST1z" node="7Mto9RJ2Yvq" resolve="on" />
+        <node concept="3BVXyM" id="7Mto9RJ2Yvy" role="3BS8aA">
+          <property role="3BVWI4" value="&lt;" />
+          <property role="3BVWLm" value="30" />
+          <ref role="3BVXyP" node="7Mto9RJ2Yvg" resolve="light" />
+        </node>
+      </node>
+      <node concept="3BL1Gj" id="7Mto9RJ2Yvn" role="l5YBu">
+        <property role="3BL6cX" value="62oRKDPzNre/LOW" />
+        <ref role="3BL6cZ" node="7Mto9RJ2Yvh" resolve="led" />
+      </node>
+      <node concept="X9NoS" id="7Mto9RJ2Yvo" role="l5YBu">
+        <property role="2io6lA" value="0" />
+        <ref role="X9NoN" node="7Mto9RJ2Yvj" resolve="lcd" />
+        <ref role="X9NoH" node="7Mto9RJ2Yvh" resolve="led" />
+      </node>
+      <node concept="X9NoV" id="7Mto9RJ2Yvp" role="l5YBu">
+        <property role="2jBpGy" value="1" />
+        <ref role="X9NoJ" node="7Mto9RJ2Yvj" resolve="lcd" />
+        <ref role="2jBpGB" node="7Mto9RJ2Yvg" resolve="light" />
+      </node>
+    </node>
+    <node concept="l5YBo" id="7Mto9RJ2Yvq" role="l5YBj">
+      <property role="TrG5h" value="on" />
+      <node concept="3BL1Gj" id="7Mto9RJ2Yvr" role="l5YBu">
+        <ref role="3BL6cZ" node="7Mto9RJ2Yvh" resolve="led" />
+      </node>
+      <node concept="3BVgER" id="7Mto9RJ2Yvs" role="3BVhZf">
+        <ref role="3BST1z" node="7Mto9RJ2Yvk" resolve="off" />
+        <node concept="3BVXyM" id="7Mto9RJ3lKR" role="3BS8aA">
+          <property role="3BVWLm" value="30" />
+          <property role="3BVWI4" value="&gt;=" />
+          <ref role="3BVXyP" node="7Mto9RJ2Yvg" resolve="light" />
+        </node>
+      </node>
+      <node concept="X9NoS" id="7Mto9RJ2Yvu" role="l5YBu">
+        <property role="2io6lA" value="0" />
+        <ref role="X9NoN" node="7Mto9RJ2Yvj" resolve="lcd" />
+        <ref role="X9NoH" node="7Mto9RJ2Yvh" resolve="led" />
+      </node>
+      <node concept="X9NoV" id="7Mto9RJ2Yvv" role="l5YBu">
+        <property role="2jBpGy" value="1" />
+        <ref role="2jBpGB" node="7Mto9RJ2Yvg" resolve="light" />
+        <ref role="X9NoJ" node="7Mto9RJ2Yvj" resolve="lcd" />
       </node>
     </node>
   </node>
