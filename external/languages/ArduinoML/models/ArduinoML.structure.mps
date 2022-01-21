@@ -234,23 +234,12 @@
     <property role="TrG5h" value="ActionLCDSimpleText" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
     <node concept="PrWs8" id="508e52RQ6xL" role="PzmwI">
-      <ref role="PrY4T" node="508e52RN17J" resolve="IAction" />
+      <ref role="PrY4T" node="7Mto9RJ57U7" resolve="IActionLCD" />
     </node>
     <node concept="1TJgyi" id="508e52RQ6xN" role="1TKVEl">
       <property role="IQ2nx" value="5766921242180872307" />
       <property role="TrG5h" value="text" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="7Mto9RJ3Uwp" role="1TKVEl">
-      <property role="IQ2nx" value="8979439463483549721" />
-      <property role="TrG5h" value="rowToDisplay" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyj" id="508e52RQ6xP" role="1TKVEi">
-      <property role="IQ2ns" value="5766921242180872309" />
-      <property role="20kJfa" value="target" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5iaO0WrUz9o" resolve="ActuatorLCD" />
     </node>
   </node>
   <node concept="PlHQZ" id="508e52RTjbA">
@@ -369,17 +358,6 @@
     <property role="EcuMT" value="936800808369330532" />
     <property role="TrG5h" value="ActionLCDAnalogReaderText" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyi" id="7Mto9RJ0fIZ" role="1TKVEl">
-      <property role="IQ2nx" value="8979439463482588095" />
-      <property role="TrG5h" value="rowToDisplay" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyj" id="O0bPWK9L_K" role="1TKVEi">
-      <property role="IQ2ns" value="936800808369330544" />
-      <property role="20kJfa" value="target" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5iaO0WrUz9o" resolve="ActuatorLCD" />
-    </node>
     <node concept="1TJgyj" id="7Mto9RJ0fIU" role="1TKVEi">
       <property role="IQ2ns" value="8979439463482588090" />
       <property role="20kJfa" value="brick" />
@@ -387,19 +365,13 @@
       <ref role="20lvS9" node="O0bPWK9L_P" resolve="IBrick" />
     </node>
     <node concept="PrWs8" id="O0bPWK9L__" role="PzmwI">
-      <ref role="PrY4T" node="508e52RN17J" resolve="IAction" />
+      <ref role="PrY4T" node="7Mto9RJ57U7" resolve="IActionLCD" />
     </node>
   </node>
   <node concept="1TIwiD" id="O0bPWK9L_B">
     <property role="EcuMT" value="936800808369330535" />
     <property role="TrG5h" value="ActionLCDDigitalReaderText" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyj" id="O0bPWK9L_G" role="1TKVEi">
-      <property role="IQ2ns" value="936800808369330540" />
-      <property role="20kJfa" value="target" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5iaO0WrUz9o" resolve="ActuatorLCD" />
-    </node>
     <node concept="1TJgyj" id="O0bPWK9L_M" role="1TKVEi">
       <property role="IQ2ns" value="936800808369330546" />
       <property role="20kJfa" value="brick" />
@@ -407,12 +379,7 @@
       <ref role="20lvS9" node="O0bPWK9L_P" resolve="IBrick" />
     </node>
     <node concept="PrWs8" id="O0bPWK9L_C" role="PzmwI">
-      <ref role="PrY4T" node="508e52RN17J" resolve="IAction" />
-    </node>
-    <node concept="1TJgyi" id="7Mto9RIZgnV" role="1TKVEl">
-      <property role="IQ2nx" value="8979439463482328571" />
-      <property role="TrG5h" value="rowToDisplay" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="PrY4T" node="7Mto9RJ57U7" resolve="IActionLCD" />
     </node>
   </node>
   <node concept="PlHQZ" id="O0bPWK9L_P">
@@ -425,6 +392,24 @@
     </node>
     <node concept="PrWs8" id="O0bPWKaXTn" role="PrDN$">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="7Mto9RJ57U7">
+    <property role="EcuMT" value="8979439463483866759" />
+    <property role="TrG5h" value="IActionLCD" />
+    <node concept="1TJgyj" id="7Mto9RJ57Ue" role="1TKVEi">
+      <property role="IQ2ns" value="8979439463483866766" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5iaO0WrUz9o" resolve="ActuatorLCD" />
+    </node>
+    <node concept="1TJgyi" id="7Mto9RJ57Ub" role="1TKVEl">
+      <property role="IQ2nx" value="8979439463483866763" />
+      <property role="TrG5h" value="rowToDisplay" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="PrWs8" id="7Mto9RJ57U8" role="PrDN$">
+      <ref role="PrY4T" node="508e52RN17J" resolve="IAction" />
     </node>
   </node>
 </model>

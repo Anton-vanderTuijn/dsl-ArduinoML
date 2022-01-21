@@ -7,6 +7,10 @@
   <imports />
   <registry>
     <language id="1109dc8c-11e3-4a8b-99a4-0920dc512ac2" name="ArduinoML">
+      <concept id="8979439463483866759" name="ArduinoML.structure.IActionLCD" flags="ng" index="2jyhSq">
+        <property id="8979439463483866763" name="rowToDisplay" index="2jyhSm" />
+        <reference id="8979439463483866766" name="target" index="2jyhSj" />
+      </concept>
       <concept id="6960558460116088515" name="ArduinoML.structure.App" flags="ng" index="l5YB9">
         <child id="6960558460116088537" name="states" index="l5YBj" />
         <child id="2141626661100871349" name="bricks" index="3_PcyG" />
@@ -22,14 +26,10 @@
         <property id="936800808369643093" name="pin" index="XaZ4a" />
       </concept>
       <concept id="936800808369330535" name="ArduinoML.structure.ActionLCDDigitalReaderText" flags="ng" index="X9NoS">
-        <property id="8979439463482328571" name="rowToDisplay" index="2io6lA" />
         <reference id="936800808369330546" name="brick" index="X9NoH" />
-        <reference id="936800808369330540" name="target" index="X9NoN" />
       </concept>
       <concept id="936800808369330532" name="ArduinoML.structure.ActionLCDAnalogReaderText" flags="ng" index="X9NoV">
-        <property id="8979439463482588095" name="rowToDisplay" index="2jBpGy" />
         <reference id="8979439463482588090" name="brick" index="2jBpGB" />
-        <reference id="936800808369330544" name="target" index="X9NoJ" />
       </concept>
       <concept id="6091910209283437144" name="ArduinoML.structure.ActuatorLCD" flags="ng" index="1foe9n">
         <property id="5766921242179458249" name="rows" index="3BMIMp" />
@@ -93,15 +93,15 @@
         <property role="3BL6cX" value="62oRKDPzNre/LOW" />
         <ref role="3BL6cZ" node="7Mto9RIYgZY" resolve="led" />
       </node>
-      <node concept="X9NoS" id="O0bPWKbw7T" role="l5YBu">
-        <property role="2io6lA" value="0" />
-        <ref role="X9NoN" node="1QS_xBSuAUu" resolve="lcd" />
+      <node concept="X9NoS" id="7Mto9RJ65ly" role="l5YBu">
+        <property role="2jyhSm" value="0" />
         <ref role="X9NoH" node="7Mto9RIYgZY" resolve="led" />
+        <ref role="2jyhSj" node="1QS_xBSuAUu" resolve="lcd" />
       </node>
-      <node concept="X9NoV" id="7Mto9RJ18rQ" role="l5YBu">
-        <property role="2jBpGy" value="1" />
-        <ref role="2jBpGB" node="7Mto9RIYh0c" resolve="temperature" />
-        <ref role="X9NoJ" node="1QS_xBSuAUu" resolve="lcd" />
+      <node concept="X9NoV" id="7Mto9RJ65lI" role="l5YBu">
+        <property role="2jyhSm" value="1" />
+        <ref role="2jBpGB" node="7Mto9RIYh0c" resolve="light" />
+        <ref role="2jyhSj" node="1QS_xBSuAUu" resolve="lcd" />
       </node>
     </node>
     <node concept="l5YBo" id="7Mto9RIYbuo" role="l5YBj">
@@ -116,15 +116,15 @@
           <ref role="3C0D_Q" node="1QS_xBSuAUm" resolve="button" />
         </node>
       </node>
-      <node concept="X9NoS" id="7Mto9RIYgZs" role="l5YBu">
-        <property role="2io6lA" value="0" />
-        <ref role="X9NoN" node="1QS_xBSuAUu" resolve="lcd" />
+      <node concept="X9NoS" id="7Mto9RJ65m1" role="l5YBu">
+        <property role="2jyhSm" value="0" />
         <ref role="X9NoH" node="7Mto9RIYgZY" resolve="led" />
+        <ref role="2jyhSj" node="1QS_xBSuAUu" resolve="lcd" />
       </node>
-      <node concept="X9NoV" id="7Mto9RJ18sa" role="l5YBu">
-        <property role="2jBpGy" value="1" />
-        <ref role="2jBpGB" node="7Mto9RIYh0c" resolve="temperature" />
-        <ref role="X9NoJ" node="1QS_xBSuAUu" resolve="lcd" />
+      <node concept="X9NoV" id="7Mto9RJ65m2" role="l5YBu">
+        <property role="2jyhSm" value="1" />
+        <ref role="2jyhSj" node="1QS_xBSuAUu" resolve="lcd" />
+        <ref role="2jBpGB" node="7Mto9RIYh0c" resolve="light" />
       </node>
     </node>
   </node>
@@ -255,7 +255,7 @@
     <node concept="l5YBo" id="O0bPWK9$cV" role="l5YBj">
       <property role="TrG5h" value="on_intermediary" />
       <node concept="3BVgER" id="O0bPWK9$d3" role="3BVhZf">
-        <ref role="3BST1z" node="508e52RWjrn" resolve="on" />
+        <ref role="3BST1z" node="O0bPWK9$cM" resolve="on" />
         <node concept="3C2Fqt" id="O0bPWK9$dc" role="3BS8aA">
           <property role="3C0D_O" value="62oRKDPzNre/LOW" />
           <ref role="3C0D_Q" node="1QS_xBSuAV1" resolve="button" />
@@ -411,15 +411,15 @@
         <property role="3BL6cX" value="62oRKDPzNre/LOW" />
         <ref role="3BL6cZ" node="7Mto9RJ2Yvh" resolve="led" />
       </node>
-      <node concept="X9NoS" id="7Mto9RJ2Yvo" role="l5YBu">
-        <property role="2io6lA" value="0" />
-        <ref role="X9NoN" node="7Mto9RJ2Yvj" resolve="lcd" />
+      <node concept="X9NoS" id="7Mto9RJ65kQ" role="l5YBu">
+        <property role="2jyhSm" value="0" />
         <ref role="X9NoH" node="7Mto9RJ2Yvh" resolve="led" />
+        <ref role="2jyhSj" node="7Mto9RJ2Yvj" resolve="lcd" />
       </node>
-      <node concept="X9NoV" id="7Mto9RJ2Yvp" role="l5YBu">
-        <property role="2jBpGy" value="1" />
-        <ref role="X9NoJ" node="7Mto9RJ2Yvj" resolve="lcd" />
+      <node concept="X9NoV" id="7Mto9RJ65kE" role="l5YBu">
+        <property role="2jyhSm" value="1" />
         <ref role="2jBpGB" node="7Mto9RJ2Yvg" resolve="light" />
+        <ref role="2jyhSj" node="7Mto9RJ2Yvj" resolve="lcd" />
       </node>
     </node>
     <node concept="l5YBo" id="7Mto9RJ2Yvq" role="l5YBj">
@@ -435,15 +435,15 @@
           <ref role="3BVXyP" node="7Mto9RJ2Yvg" resolve="light" />
         </node>
       </node>
-      <node concept="X9NoS" id="7Mto9RJ2Yvu" role="l5YBu">
-        <property role="2io6lA" value="0" />
-        <ref role="X9NoN" node="7Mto9RJ2Yvj" resolve="lcd" />
+      <node concept="X9NoS" id="7Mto9RJ65l9" role="l5YBu">
+        <property role="2jyhSm" value="0" />
+        <ref role="2jyhSj" node="7Mto9RJ2Yvj" resolve="lcd" />
         <ref role="X9NoH" node="7Mto9RJ2Yvh" resolve="led" />
       </node>
-      <node concept="X9NoV" id="7Mto9RJ2Yvv" role="l5YBu">
-        <property role="2jBpGy" value="1" />
+      <node concept="X9NoV" id="7Mto9RJ65l4" role="l5YBu">
+        <property role="2jyhSm" value="1" />
         <ref role="2jBpGB" node="7Mto9RJ2Yvg" resolve="light" />
-        <ref role="X9NoJ" node="7Mto9RJ2Yvj" resolve="lcd" />
+        <ref role="2jyhSj" node="7Mto9RJ2Yvj" resolve="lcd" />
       </node>
     </node>
   </node>
