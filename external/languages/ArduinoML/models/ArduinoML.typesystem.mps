@@ -26,6 +26,7 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -62,7 +63,9 @@
       <concept id="1195213580585" name="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" flags="ig" index="18hYwZ">
         <child id="1195213635060" name="body" index="18ibNy" />
       </concept>
-      <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
+      <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G">
+        <property id="7181286126212894140" name="doNotApplyOnTheFly" index="1$Xk0j" />
+      </concept>
       <concept id="3937244445246642777" name="jetbrains.mps.lang.typesystem.structure.AbstractReportStatement" flags="ng" index="1urrMJ">
         <child id="3937244445246642781" name="nodeToReport" index="1urrMF" />
       </concept>
@@ -80,6 +83,9 @@
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
+      </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
@@ -93,6 +99,7 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
+      <concept id="1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" flags="nn" index="2HwmR7" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
@@ -100,6 +107,7 @@
   </registry>
   <node concept="18kY7G" id="62oRKDP$QVK">
     <property role="TrG5h" value="unique_initial_state" />
+    <property role="1$Xk0j" value="true" />
     <node concept="3clFbS" id="62oRKDP$QVL" role="18ibNy">
       <node concept="3clFbJ" id="62oRKDP$QVZ" role="3cqZAp">
         <node concept="3eOSWO" id="62oRKDP_1zP" role="3clFbw">
@@ -129,14 +137,14 @@
                             <ref role="3cqZAo" node="62oRKDP$WZe" resolve="it" />
                           </node>
                           <node concept="3TrcHB" id="62oRKDP$XK_" role="2OqNvi">
-                            <ref role="3TsBF5" to="ge5j:62oRKDP$6Yy" resolve="isInitial" />
+                            <ref role="3TsBF5" to="ge5j:6LAVG$wQHxf" resolve="isInitial" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="Rh6nW" id="62oRKDP$WZe" role="1bW2Oz">
-                    <property role="TrG5h" value="it" />
+                    <property role="TrG5h" value="state" />
                     <node concept="2jxLKc" id="62oRKDP$WZf" role="1tU5fm" />
                   </node>
                 </node>
@@ -175,6 +183,82 @@
     <node concept="1YaCAy" id="62oRKDP$QVN" role="1YuTPh">
       <property role="TrG5h" value="app" />
       <ref role="1YaFvo" to="ge5j:62oRKDPzNr3" resolve="App" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="2JnYSShTEIs">
+    <property role="TrG5h" value="no_transition_to_same_state" />
+    <node concept="3clFbS" id="2JnYSShTEIt" role="18ibNy">
+      <node concept="3clFbJ" id="2JnYSShTHpq" role="3cqZAp">
+        <node concept="2OqwBi" id="2JnYSShTKjm" role="3clFbw">
+          <node concept="2OqwBi" id="2JnYSShTIBw" role="2Oq$k0">
+            <node concept="1YBJjd" id="2JnYSShTItM" role="2Oq$k0">
+              <ref role="1YBMHb" node="2JnYSShTEIv" resolve="state" />
+            </node>
+            <node concept="3Tsc0h" id="2JnYSShTIUH" role="2OqNvi">
+              <ref role="3TtcxE" to="ge5j:508e52RTiuv" resolve="transitions" />
+            </node>
+          </node>
+          <node concept="2HwmR7" id="2JnYSShTRy_" role="2OqNvi">
+            <node concept="1bVj0M" id="2JnYSShTRyB" role="23t8la">
+              <node concept="3clFbS" id="2JnYSShTRyC" role="1bW5cS">
+                <node concept="3clFbF" id="2JnYSShTRyD" role="3cqZAp">
+                  <node concept="3clFbC" id="2JnYSShTRyE" role="3clFbG">
+                    <node concept="2OqwBi" id="2JnYSShTSj7" role="3uHU7w">
+                      <node concept="1YBJjd" id="2JnYSShTRDf" role="2Oq$k0">
+                        <ref role="1YBMHb" node="2JnYSShTEIv" resolve="state" />
+                      </node>
+                      <node concept="3TrcHB" id="2JnYSShTSHP" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="2JnYSShTRyG" role="3uHU7B">
+                      <node concept="2OqwBi" id="2JnYSShTRyH" role="2Oq$k0">
+                        <node concept="37vLTw" id="2JnYSShTRyI" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2JnYSShTRyL" resolve="transition" />
+                        </node>
+                        <node concept="3TrEf2" id="2JnYSShTRyJ" role="2OqNvi">
+                          <ref role="3Tt5mk" to="ge5j:2JnYSShNRF1" resolve="state" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="2JnYSShTRyK" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="Rh6nW" id="2JnYSShTRyL" role="1bW2Oz">
+                <property role="TrG5h" value="transition" />
+                <node concept="2jxLKc" id="2JnYSShTRyM" role="1tU5fm" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="2JnYSShTHps" role="3clFbx">
+          <node concept="2MkqsV" id="2JnYSShTSKw" role="3cqZAp">
+            <node concept="3cpWs3" id="2JnYSShTTq5" role="2MkJ7o">
+              <node concept="2OqwBi" id="2JnYSShTU4a" role="3uHU7w">
+                <node concept="1YBJjd" id="2JnYSShTTOo" role="2Oq$k0">
+                  <ref role="1YBMHb" node="2JnYSShTEIv" resolve="state" />
+                </node>
+                <node concept="3TrcHB" id="2JnYSShTUs8" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="2JnYSShTSKG" role="3uHU7B">
+                <property role="Xl_RC" value="Can't set transition's state to the current state where it's defined:" />
+              </node>
+            </node>
+            <node concept="1YBJjd" id="2JnYSShTSLQ" role="1urrMF">
+              <ref role="1YBMHb" node="2JnYSShTEIv" resolve="state" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="2JnYSShTEIv" role="1YuTPh">
+      <property role="TrG5h" value="state" />
+      <ref role="1YaFvo" to="ge5j:62oRKDPzNri" resolve="State" />
     </node>
   </node>
 </model>

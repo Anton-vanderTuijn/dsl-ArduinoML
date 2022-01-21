@@ -432,5 +432,18 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
+  <node concept="1TIwiD" id="2JnYSShP1DU">
+    <property role="EcuMT" value="3159270251226733178" />
+    <property role="TrG5h" value="TransitionTime" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="2JnYSShP1DX" role="1TKVEl">
+      <property role="IQ2nx" value="3159270251226733181" />
+      <property role="TrG5h" value="timeBeforeTransition" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="PrWs8" id="2JnYSShP1DV" role="PzmwI">
+      <ref role="PrY4T" node="508e52RTjbA" resolve="ITransition" />
+    </node>
+  </node>
 </model>
 

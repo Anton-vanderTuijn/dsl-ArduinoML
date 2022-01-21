@@ -21,6 +21,9 @@
         <child id="5766921242181707679" name="transitions" index="3BVhZf" />
       </concept>
       <concept id="6960558460117854866" name="ArduinoML.structure.SensorAnalog" flags="ng" index="lcJmo" />
+      <concept id="3159270251226733178" name="ArduinoML.structure.TransitionTime" flags="ng" index="U0Y7O">
+        <property id="3159270251226733181" name="timeBeforeTransition" index="U0Y7N" />
+      </concept>
       <concept id="936800808369330549" name="ArduinoML.structure.IBrick" flags="ng" index="X9NoE">
         <property id="936800808369643093" name="pin" index="XaZ4a" />
       </concept>
@@ -527,6 +530,71 @@
     <node concept="1cImFT" id="6LAVG$wSi3T" role="l5YBj">
       <property role="TrG5h" value="double_door_error" />
       <property role="1cImFU" value="3" />
+    </node>
+  </node>
+  <node concept="l5YB9" id="2JnYSShQqa2">
+    <property role="TrG5h" value="Temporal transition Demo State" />
+    <node concept="l5YBf" id="2JnYSShQqa3" role="3_PcyG">
+      <property role="TrG5h" value="led" />
+      <property role="XaZ4a" value="12" />
+    </node>
+    <node concept="3C2bR0" id="2JnYSShQqa4" role="3_PcyG">
+      <property role="TrG5h" value="button" />
+      <property role="XaZ4a" value="10" />
+    </node>
+    <node concept="l5YBo" id="2JnYSShQqa5" role="l5YBj">
+      <property role="TrG5h" value="off" />
+      <property role="1cJ3q6" value="true" />
+      <node concept="3BVgER" id="2JnYSShQqa6" role="3BVhZf">
+        <ref role="U685f" node="2JnYSShQqa9" resolve="on_intermediary" />
+        <node concept="3C2Fqt" id="2JnYSShQqa7" role="3BS8aA">
+          <ref role="3C0D_Q" node="2JnYSShQqa4" resolve="button" />
+        </node>
+      </node>
+      <node concept="3BL1Gj" id="2JnYSShQqa8" role="l5YBu">
+        <property role="3BL6cX" value="62oRKDPzNre/LOW" />
+        <ref role="3BL6cZ" node="2JnYSShQqa3" resolve="led" />
+      </node>
+    </node>
+    <node concept="l5YBo" id="2JnYSShQqa9" role="l5YBj">
+      <property role="TrG5h" value="on_intermediary" />
+      <node concept="3BVgER" id="2JnYSShQqaa" role="3BVhZf">
+        <ref role="U685f" node="2JnYSShQqac" resolve="on" />
+        <node concept="3C2Fqt" id="2JnYSShQqab" role="3BS8aA">
+          <property role="3C0D_O" value="62oRKDPzNre/LOW" />
+          <ref role="3C0D_Q" node="2JnYSShQqa4" resolve="button" />
+        </node>
+      </node>
+    </node>
+    <node concept="l5YBo" id="2JnYSShQqac" role="l5YBj">
+      <property role="TrG5h" value="on" />
+      <node concept="3BVgER" id="2JnYSShQqad" role="3BVhZf">
+        <ref role="U685f" node="2JnYSShQqag" resolve="off_intermediary" />
+        <node concept="3C2Fqt" id="2JnYSShQqae" role="3BS8aA">
+          <ref role="3C0D_Q" node="2JnYSShQqa4" resolve="button" />
+        </node>
+      </node>
+      <node concept="U0Y7O" id="2JnYSShQqa$" role="3BVhZf">
+        <property role="U0Y7N" value="800" />
+        <ref role="U685f" node="2JnYSShQqa5" resolve="off" />
+      </node>
+      <node concept="3BL1Gj" id="2JnYSShQqaf" role="l5YBu">
+        <ref role="3BL6cZ" node="2JnYSShQqa3" resolve="led" />
+      </node>
+    </node>
+    <node concept="l5YBo" id="2JnYSShQqag" role="l5YBj">
+      <property role="TrG5h" value="off_intermediary" />
+      <node concept="3BVgER" id="2JnYSShQqah" role="3BVhZf">
+        <ref role="U685f" node="2JnYSShQqa5" resolve="off" />
+        <node concept="3C2Fqt" id="2JnYSShQqai" role="3BS8aA">
+          <property role="3C0D_O" value="62oRKDPzNre/LOW" />
+          <ref role="3C0D_Q" node="2JnYSShQqa4" resolve="button" />
+        </node>
+      </node>
+      <node concept="U0Y7O" id="2JnYSShQqaH" role="3BVhZf">
+        <property role="U0Y7N" value="800" />
+        <ref role="U685f" node="2JnYSShQqa5" resolve="off" />
+      </node>
     </node>
   </node>
 </model>

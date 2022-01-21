@@ -605,5 +605,33 @@
       <node concept="2iRkQZ" id="6LAVG$wRShe" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="2JnYSShP1DZ">
+    <ref role="1XX52x" to="ge5j:2JnYSShP1DU" resolve="TransitionTime" />
+    <node concept="3EZMnI" id="2JnYSShP1E2" role="2wV5jI">
+      <node concept="VPM3Z" id="2JnYSShP1E3" role="3F10Kt" />
+      <node concept="3F0ifn" id="2JnYSShP1E4" role="3EZMnx">
+        <property role="3F0ifm" value="to" />
+      </node>
+      <node concept="1iCGBv" id="2JnYSShP1E5" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:2JnYSShNRF1" resolve="state" />
+        <node concept="1sVBvm" id="2JnYSShP1E6" role="1sWHZn">
+          <node concept="3F0A7n" id="2JnYSShP1E7" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="2JnYSShP1E8" role="2iSdaV" />
+      <node concept="3F0ifn" id="2JnYSShP1E9" role="3EZMnx">
+        <property role="3F0ifm" value="after" />
+      </node>
+      <node concept="3F0A7n" id="2JnYSShP1F8" role="3EZMnx">
+        <ref role="1NtTu8" to="ge5j:2JnYSShP1DX" resolve="timeBeforeTransition" />
+      </node>
+      <node concept="3F0ifn" id="2JnYSShP1Fo" role="3EZMnx">
+        <property role="3F0ifm" value="ms" />
+      </node>
+    </node>
+  </node>
 </model>
 
