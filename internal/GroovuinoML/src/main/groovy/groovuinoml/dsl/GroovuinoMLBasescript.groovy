@@ -6,28 +6,28 @@ import io.github.mosser.arduinoml.kernel.structural.*
 abstract class GroovuinoMLBasescript extends Script {
 
     /**
-     * sensor "name" pin n
+     * sensorDigital "name" pin "n"
      */
     def sensorDigital(String name) {
         [pin: { n -> ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().createSensorDigital(name, n) }]
     }
 
     /**
-     * sensor "name" pin n
+     * sensorAnalogical "name" pin "n"
      */
     def sensorAnalogical(String name) {
         [pin: { n -> ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().createSensorAnalogical(name, n) }]
     }
 
     /**
-     * actuator "name" pin n
+     * actuator "name" pin "n"
      */
     def actuator(String name) {
         [pin: { n -> ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().createActuator(name, n) }]
     }
 
     /**
-     * lcd "name" cols c rows r
+     * lcd "name" cols "c" rows "r"
      */
     def lcd(String name) {
         [cols: { c ->
@@ -37,7 +37,7 @@ abstract class GroovuinoMLBasescript extends Script {
     }
 
     /**
-     * state "name" means actuator becomes signal [and actuator becomes signal]*n
+     * state "name" means "actuator" {becomes "signal" | displayText "text" | displaySensor "sensor" | displayActuator "act"} [and "actuator" {becomes "signal" | displayText "text" | displaySensor "sensor" | displayActuator "act"}]*n
      */
     def state(String name) {
 
@@ -77,21 +77,21 @@ abstract class GroovuinoMLBasescript extends Script {
     }
 
     /**
-     * error "name" code number
+     * error "name" code "number"
      */
     def error(String name) {
         [code: { number -> ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().createError(name, number) }]
     }
 
     /**
-     * initial state
+     * initial "state"
      */
     def initial(String state) {
         ((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().setInitialState(state instanceof String ? (State) ((GroovuinoMLBinding) this.getBinding()).getVariable(state) : (State) state)
     }
 
     /**
-     * from state1 to state2 when sensor becomes signal [and sensor becomes signal]*n
+     * from "state1" to "state2" when "sensor" {becomes "signal" | >= "value" | <= "value" | > "value" | < "value" | == "value" | != "value"} [and "sensor" {becomes "signal" | >= "value" | <= "value" | > "value" | < "value" | == "value" | != "value"}]*n
      */
     def from(String state1) {
         [to: { state2 ->
@@ -159,7 +159,7 @@ abstract class GroovuinoMLBasescript extends Script {
     }
 
     /**
-     * export name
+     * export "name"
      */
     def export(String name) {
         println(((GroovuinoMLBinding) this.getBinding()).getGroovuinoMLModel().generateCode(name).toString())

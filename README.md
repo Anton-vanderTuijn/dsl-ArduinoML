@@ -19,10 +19,12 @@ Members | Contact
 - The ```internal``` directory contains an approach using Groovy (more [here](#Groovy))
 - The ```document``` directory contains the subject and our report
 
-## Syntax language
-TBD
+---
 
-## How to use MPS <a name="MPS"></a>
+## External DSL: MPS <a name="MPS"></a>
+TBD: how to run
+
+### Syntax language
 TBD
 
 ### Scenarios supported
@@ -43,8 +45,53 @@ Basic scenarios:
 ### Requirements
 - [MPS](https://www.jetbrains.com/mps/)
 
-## How to use Groovy <a name="Groovy"></a>
-TBD
+## Internal DSL: Groovy <a name="Groovy"></a>
+
+To run the project move into the internal directory which contain the Groovy implementation </br>
+First you must run ```build.sh``` to build the project. </br>
+Then in the GroovuinoML folder you can launch a script using ```run.sh```. </br>
+
+> example: ./run.sh scripts/base/VerySimpleAlarm.groovy </br>
+
+The scenarios emplemented can be found under ```./scripts/base``` and ```./scripts/extensions```. </br>
+The script code for the arduino will be outputed in the ```program.ino``` file. </br>
+
+### Syntax language
+
+```groovy
+sensorDigital "name" pin "n"
+sensorAnalogical "name" pin "n"
+actuator "name" pin "n"
+lcd "name" cols "c" rows "r"
+
+state "name" means "actuator" {becomes "signal" | displayText "text" | displaySensor "sensor" | displayActuator "act"} [and "actuator" {becomes "signal" | displayText "text" | displaySensor "sensor" | displayActuator "act"}]*n
+
+error "name" code "number"
+
+initial "state"
+
+from "state1" to "state2" when "sensor" {becomes "signal" | >= "value" | <= "value" | > "value" | < "value" | == "value" | != "value"} [and "sensor" {becomes "signal" | >= "value" | <= "value" | > "value" | < "value" | == "value" | != "value"}]*n
+
+export "name"
+```
+
+#### Syntax exemple
+
+``` groovy
+sensorDigital "button" pin 9
+actuator "led" pin 12
+actuator "buzzer" pin 11
+
+state "on" means "led" becomes "high" and "buzzer" becomes "high"
+state "off" means "led" becomes "low" and "buzzer" becomes "low"
+
+initial "off"
+
+from "on" to "off" when "button" becomes "low"
+from "off" to "on" when "button" becomes "high"
+
+export "Very Simple Alarm"
+```
 
 ### Scenarios supported
 
@@ -71,14 +118,14 @@ Basic scenarios:
 
 Member | Points
 ----------------------------------------------------------- | ----------------------------------------------------------
-[Anthony Barna](https://github.com/Anthony-Barna)           | 100
-[Leo Burette](https://github.com/LeoBurette)                | 100
-[Lara Defendini](https://github.com/Laradefendini)          | 100
-[Guillaume Savornin](https://github.com/GuillaumeSavornin)  | 100
-[Anton van der Tuijn](https://github.com/Anton-vanderTuijn) | 100
+[Anthony Barna](https://github.com/Anthony-Barna)           | X
+[Leo Burette](https://github.com/LeoBurette)                | X
+[Lara Defendini](https://github.com/Laradefendini)          | X
+[Guillaume Savornin](https://github.com/GuillaumeSavornin)  | X
+[Anton van der Tuijn](https://github.com/Anton-vanderTuijn) | X
 -->
 
 
-![logo_polytech](https://polytech.univ-cotedazur.fr/uas/composante-polytech/LOGO/image_full.png)
+![logo_polytech](assets/image_full.png)
 
  
