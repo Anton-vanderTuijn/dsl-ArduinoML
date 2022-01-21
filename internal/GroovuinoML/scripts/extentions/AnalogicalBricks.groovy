@@ -1,5 +1,5 @@
 sensorAnalogical "temperature" pin 1
-actuator "buzzer" pin 12
+actuator "buzzer" pin 11
 
 state "overheat" means "buzzer" becomes "high"
 state "normal" means "buzzer" becomes "low"

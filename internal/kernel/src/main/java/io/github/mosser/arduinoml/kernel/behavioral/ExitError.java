@@ -4,7 +4,7 @@ import io.github.mosser.arduinoml.kernel.generator.Visitor;
 
 public class ExitError extends State {
 
-    public static final int LED_ERROR_PIN = 13;
+    public static final int LED_ERROR_PIN = 8;
 
     private int code;
 

@@ -18,6 +18,7 @@ Members | Contact
 - The ```external``` directory contains an approach using MPS (more [here](#MPS))
 - The ```internal``` directory contains an approach using Groovy (more [here](#Groovy))
 - The ```document``` directory contains the subject and our report
+- We standardize the Arduino sensor and actuators connection used (more [here](#Arduino))
 
 ---
 
@@ -77,7 +78,7 @@ export "name"
 
 #### Syntax exemple
 
-``` groovy
+```groovy
 sensorDigital "button" pin 9
 actuator "led" pin 12
 actuator "buzzer" pin 11
@@ -112,6 +113,26 @@ Basic scenarios:
 - [Groovy](https://groovy-lang.org/)
 - Maven
 - Java 8
+
+---
+
+## Arduino sensor and actuators connection <a name="Arduino"></a>
+
+The following table was used to define the sensor and actuators connection pins for all the scenarios implemented
+Of course you can change the configuration to suit your needs
+
+Component | Type | Pin(s)
+------------------ | ---------------- | ---------------------------------
+Button 1           | sensorDigital    | 9
+Button 2           | sensorDigital    | 10
+Buzzer             | actuator         | 11
+Led 1              | actuator         | 12
+Led 2              | actuator         | 13
+Error Led          | actuator         | 8
+Temperature sensor | sensorAnalogical | A1
+LCD screen         | lcd              | 10, 11, 12, 13, 14, 15, 16 (bus2)* 
+
+*Lcd screen pins for bus 2 are hardcoded, so no need to give them
 
 <!--
 ## Distribution of points (500)
