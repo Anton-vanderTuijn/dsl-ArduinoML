@@ -125,6 +125,7 @@ Member | Points
 [Anton van der Tuijn](https://github.com/Anton-vanderTuijn) | X
 -->
 
+---
 
 ![logo_polytech](assets/image_full.png)
 
