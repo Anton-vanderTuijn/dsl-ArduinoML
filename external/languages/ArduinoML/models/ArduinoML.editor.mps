@@ -478,27 +478,6 @@
       <node concept="2iRfu4" id="508e52S08mo" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="508e52S0CVe">
-    <ref role="1XX52x" to="ge5j:508e52S0CVd" resolve="ConditionDigitalButton" />
-    <node concept="3EZMnI" id="508e52S0CVy" role="2wV5jI">
-      <node concept="1iCGBv" id="508e52S0CVz" role="3EZMnx">
-        <ref role="1NtTu8" to="ge5j:508e52S2E4A" resolve="sensor" />
-        <node concept="1sVBvm" id="508e52S0CV$" role="1sWHZn">
-          <node concept="3F0A7n" id="508e52S0CV_" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          </node>
-        </node>
-      </node>
-      <node concept="3F0ifn" id="508e52S0CVA" role="3EZMnx">
-        <property role="3F0ifm" value="==" />
-      </node>
-      <node concept="3F0A7n" id="508e52S0CVB" role="3EZMnx">
-        <ref role="1NtTu8" to="ge5j:508e52S2E4$" resolve="signal" />
-      </node>
-      <node concept="2iRfu4" id="508e52S0CVC" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="1QS_xBSvF0S">
     <ref role="1XX52x" to="ge5j:O0bPWK9L_B" resolve="ActionLCDDigitalReaderText" />
     <node concept="3EZMnI" id="1QS_xBSvF0U" role="2wV5jI">

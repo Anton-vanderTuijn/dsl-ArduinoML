@@ -330,25 +330,6 @@
       <ref role="PrY4T" node="62oRKDPEyDQ" resolve="ISensor" />
     </node>
   </node>
-  <node concept="1TIwiD" id="508e52S0CVd">
-    <property role="EcuMT" value="5766921242183634637" />
-    <property role="TrG5h" value="ConditionDigitalButton" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="508e52S2E4A" role="1TKVEi">
-      <property role="IQ2ns" value="5766921242184163622" />
-      <property role="20kJfa" value="sensor" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="508e52S08mg" resolve="SensorButtonDigital" />
-    </node>
-    <node concept="1TJgyi" id="508e52S2E4$" role="1TKVEl">
-      <property role="IQ2nx" value="5766921242184163620" />
-      <property role="TrG5h" value="signal" />
-      <ref role="AX2Wp" node="62oRKDPzNrc" resolve="SIGNAL" />
-    </node>
-    <node concept="PrWs8" id="508e52S2BSl" role="PzmwI">
-      <ref role="PrY4T" node="508e52RU3_T" resolve="ICondition" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="O0bPWK9L_$">
     <property role="EcuMT" value="936800808369330532" />
     <property role="TrG5h" value="ActionLCDAnalogReaderText" />
