@@ -80,6 +80,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -259,6 +265,42 @@
     <node concept="1YaCAy" id="2JnYSShTEIv" role="1YuTPh">
       <property role="TrG5h" value="state" />
       <ref role="1YaFvo" to="ge5j:62oRKDPzNri" resolve="State" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="44G9nFF2ooK">
+    <property role="TrG5h" value="lcd_analog_action_cant_print_lcd_actuator" />
+    <node concept="3clFbS" id="44G9nFF2ooL" role="18ibNy">
+      <node concept="3clFbJ" id="44G9nFF2yNJ" role="3cqZAp">
+        <node concept="2OqwBi" id="44G9nFF2zEn" role="3clFbw">
+          <node concept="2OqwBi" id="44G9nFF2yYy" role="2Oq$k0">
+            <node concept="1YBJjd" id="44G9nFF2yNV" role="2Oq$k0">
+              <ref role="1YBMHb" node="44G9nFF2ooN" resolve="actionLCDAnalogReaderText" />
+            </node>
+            <node concept="3TrEf2" id="44G9nFF2z8_" role="2OqNvi">
+              <ref role="3Tt5mk" to="ge5j:7Mto9RJ0fIU" resolve="brick" />
+            </node>
+          </node>
+          <node concept="1mIQ4w" id="44G9nFF2zYT" role="2OqNvi">
+            <node concept="chp4Y" id="44G9nFF2IjT" role="cj9EA">
+              <ref role="cht4Q" to="ge5j:5iaO0WrUz9o" resolve="ActuatorLCD" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="44G9nFF2yNL" role="3clFbx">
+          <node concept="2MkqsV" id="44G9nFF2$gC" role="3cqZAp">
+            <node concept="Xl_RD" id="44G9nFF2$gO" role="2MkJ7o">
+              <property role="Xl_RC" value="Can't print a LCD Screen" />
+            </node>
+            <node concept="1YBJjd" id="44G9nFF2$iF" role="1urrMF">
+              <ref role="1YBMHb" node="44G9nFF2ooN" resolve="actionLCDAnalogReaderText" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="44G9nFF2ooN" role="1YuTPh">
+      <property role="TrG5h" value="actionLCDAnalogReaderText" />
+      <ref role="1YaFvo" to="ge5j:O0bPWK9L_$" resolve="ActionLCDAnalogReaderText" />
     </node>
   </node>
 </model>
