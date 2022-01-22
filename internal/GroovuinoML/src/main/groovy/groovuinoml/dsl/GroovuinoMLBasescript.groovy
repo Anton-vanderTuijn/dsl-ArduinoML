@@ -58,18 +58,21 @@ abstract class GroovuinoMLBasescript extends Script {
                  action.setLcd(actuator instanceof String ? (Lcd) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Lcd) actuator)
                  action.setText(text)
                  actions.add(action)
+                 [and: closure]
              },
              displaySensor  : { sensor ->
                  ActionLcdSensor action = new ActionLcdSensor()
                  action.setLcd(actuator instanceof String ? (Lcd) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Lcd) actuator)
                  action.setSensor(sensor instanceof String ? (SensorDigital) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (SensorDigital) sensor)
                  actions.add(action)
+                 [and: closure]
              },
              displayActuator: { act ->
                  ActionLcdActuator action = new ActionLcdActuator()
                  action.setLcd(actuator instanceof String ? (Lcd) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Lcd) actuator)
                  action.setActuator(act instanceof String ? (Actuator) ((GroovuinoMLBinding) this.getBinding()).getVariable(act) : (Actuator) act)
                  actions.add(action)
+                 [and: closure]
              }
             ]
         }

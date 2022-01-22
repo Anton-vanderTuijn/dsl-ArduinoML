@@ -4,7 +4,7 @@ actuator "led" pin 8
 
 state "text" means "lcd" displayText "Hello World!"
 state "sensor" means "lcd" displaySensor "button"
-state "actuator" means "lcd" displayActuator "led"
+state "actuator" means "lcd" displayActuator "led" and "lcd" displayText "!"
 
 
 initial "text"

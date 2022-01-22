@@ -108,7 +108,14 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
         if (context.get("pass") == PASS.TWO) {
             w("\t\tcase " + state.getName() + ":\n");
+
+            boolean clearLCD = false;
+
             for (Action action : state.getActions()) {
+                if ((action instanceof ActionLcdSensor || action instanceof ActionLcdText || action instanceof ActionLcdActuator ) && !clearLCD){
+                    w("\t\t\tlcd.clear();\n");
+                    clearLCD = true;
+                }
                 action.accept(this);
             }
 
@@ -191,15 +198,11 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
         if (context.get("pass") == PASS.TWO) {
 
-            //TODO FOR LCD CHECK STRING SIZE
             if (action instanceof ActionLcdText) {
-                w("\t\t\tlcd.setCursor(0, 0);\n");
                 w(String.format("\t\t\tlcd.print(\"%s\");\n", ((ActionLcdText) action).getText()));
             } else if (action instanceof ActionLcdSensor) {
-                w("\t\t\tlcd.setCursor(0, 0);\n");
                 w(String.format("\t\t\tlcd.print(%s);\n", retrieveSensorStatus(((ActionLcdSensor) action).getSensor())));
             } else if (action instanceof ActionLcdActuator) {
-                w("\t\t\tlcd.setCursor(0, 0);\n");
                 w(String.format("\t\t\tlcd.print(%s);\n", retrieveActuatorStatus(((ActionLcdActuator) action).getActuator())));
             } else {
                 w(String.format("\t\t\tdigitalWrite(%d, %s);\n", ((ActionDigital) action).getActuator().getPin(), ((ActionDigital) action).getValue()));
@@ -209,11 +212,11 @@ public class ToWiring extends Visitor<StringBuffer> {
     }
 
     private String retrieveActuatorStatus(Actuator actuator) {
-        return "digitalRead(" + actuator.getPin() + ")";
+        return "\"" + actuator.getName() + ":= \" + digitalRead(" + actuator.getPin() + ")";
     }
 
     private String retrieveSensorStatus(SensorDigital sensor) {
-        return "digitalRead(" + sensor.getPin() + ")";
+        return "\"" + sensor.getName() + ":= \" + digitalRead(" + sensor.getPin() + ")";
     }
 
 }

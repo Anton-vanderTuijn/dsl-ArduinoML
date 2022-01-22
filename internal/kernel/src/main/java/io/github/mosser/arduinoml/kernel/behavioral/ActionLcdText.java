@@ -17,7 +17,12 @@ public class ActionLcdText extends Action {
     }
 
     public String getText() {
-        return text;
+
+        if (text.length() > (lcd.getCols() * lcd.getRow())) {
+            return "too long";
+        } else {
+            return text;
+        }
     }
 
     public void setText(String text) {
