@@ -64,19 +64,19 @@
     <node concept="PrWs8" id="62oRKDPzNr4" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="62oRKDPzNrp" role="1TKVEi">
-      <property role="IQ2ns" value="6960558460116088537" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="states" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="6LAVG$wQHxa" resolve="IState" />
-    </node>
     <node concept="1TJgyj" id="1QS_xBSr5UP" role="1TKVEi">
       <property role="IQ2ns" value="2141626661100871349" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="bricks" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="O0bPWK9L_P" resolve="IBrick" />
+    </node>
+    <node concept="1TJgyj" id="7W0bUzHUPA9" role="1TKVEi">
+      <property role="IQ2ns" value="9151366845409483145" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="7W0bUzHUPA1" resolve="Task" />
     </node>
     <node concept="PrWs8" id="62oRKDP_8HH" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
@@ -322,14 +322,6 @@
       <ref role="20lvS9" node="62oRKDPEcmR" resolve="SensorDigital" />
     </node>
   </node>
-  <node concept="1TIwiD" id="508e52S08mg">
-    <property role="EcuMT" value="5766921242183501200" />
-    <property role="TrG5h" value="SensorButtonDigital" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="PrWs8" id="508e52S08mh" role="PzmwI">
-      <ref role="PrY4T" node="62oRKDPEyDQ" resolve="ISensor" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="O0bPWK9L_$">
     <property role="EcuMT" value="936800808369330532" />
     <property role="TrG5h" value="ActionLCDAnalogReaderText" />
@@ -424,6 +416,29 @@
     </node>
     <node concept="PrWs8" id="2JnYSShP1DV" role="PzmwI">
       <ref role="PrY4T" node="508e52RTjbA" resolve="ITransition" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7W0bUzHUPA1">
+    <property role="EcuMT" value="9151366845409483137" />
+    <property role="TrG5h" value="Task" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="7W0bUzHUPA4" role="1TKVEi">
+      <property role="IQ2ns" value="9151366845409483140" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="states" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="6LAVG$wQHxa" resolve="IState" />
+    </node>
+    <node concept="PrWs8" id="7W0bUzHUPA2" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="3_0fBbHRRU0" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+    <node concept="1TJgyi" id="3_0fBbHUuxz" role="1TKVEl">
+      <property role="IQ2nx" value="4125365922010097763" />
+      <property role="TrG5h" value="period" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>

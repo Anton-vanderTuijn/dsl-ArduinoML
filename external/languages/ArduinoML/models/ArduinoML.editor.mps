@@ -100,20 +100,21 @@
         </node>
         <node concept="l2Vlx" id="1QS_xBSr61V" role="2iSdaV" />
       </node>
-      <node concept="35HoNQ" id="62oRKDP$t57" role="3EZMnx" />
-      <node concept="3EZMnI" id="62oRKDP$hEY" role="3EZMnx">
-        <node concept="VPM3Z" id="62oRKDP$hF0" role="3F10Kt" />
-        <node concept="3XFhqQ" id="62oRKDP$hF9" role="3EZMnx" />
-        <node concept="3F2HdR" id="62oRKDP$hFc" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:62oRKDPzNrp" resolve="states" />
-          <node concept="2iRkQZ" id="62oRKDP$hFf" role="2czzBx" />
-          <node concept="VPM3Z" id="62oRKDP$hFg" role="3F10Kt" />
-          <node concept="3F0ifn" id="62oRKDP$hFi" role="2czzBI">
-            <property role="3F0ifm" value="[no states defined]" />
+      <node concept="35HoNQ" id="7W0bUzHUPB0" role="3EZMnx" />
+      <node concept="3EZMnI" id="7W0bUzHUPBO" role="3EZMnx">
+        <node concept="VPM3Z" id="7W0bUzHUPBQ" role="3F10Kt" />
+        <node concept="3XFhqQ" id="7W0bUzHUPCn" role="3EZMnx" />
+        <node concept="3F2HdR" id="7W0bUzHUPCt" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:7W0bUzHUPA9" resolve="tasks" />
+          <node concept="2iRkQZ" id="7W0bUzHUPCw" role="2czzBx" />
+          <node concept="VPM3Z" id="7W0bUzHUPCx" role="3F10Kt" />
+          <node concept="3F0ifn" id="7W0bUzHUPCC" role="2czzBI">
+            <property role="3F0ifm" value="[no tasks defined]" />
           </node>
         </node>
-        <node concept="l2Vlx" id="62oRKDP$hF3" role="2iSdaV" />
+        <node concept="l2Vlx" id="7W0bUzHUPBT" role="2iSdaV" />
       </node>
+      <node concept="35HoNQ" id="7W0bUzHUPDK" role="3EZMnx" />
       <node concept="2iRkQZ" id="62oRKDP$hDK" role="2iSdaV" />
     </node>
   </node>
@@ -456,28 +457,6 @@
       <node concept="2iRkQZ" id="508e52RUUB1" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="508e52S08mj">
-    <ref role="1XX52x" to="ge5j:508e52S08mg" resolve="SensorButtonDigital" />
-    <node concept="3EZMnI" id="508e52S08ml" role="2wV5jI">
-      <node concept="3EZMnI" id="508e52S08ms" role="3EZMnx">
-        <node concept="VPM3Z" id="508e52S08mu" role="3F10Kt" />
-        <node concept="3F0ifn" id="508e52S08mE" role="3EZMnx">
-          <property role="3F0ifm" value="digital button:" />
-        </node>
-        <node concept="3F0A7n" id="508e52S08mK" role="3EZMnx">
-          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        </node>
-        <node concept="3F0ifn" id="508e52S08mX" role="3EZMnx">
-          <property role="3F0ifm" value="on pin" />
-        </node>
-        <node concept="3F0A7n" id="508e52S08n7" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:O0bPWKaXTl" resolve="pin" />
-        </node>
-        <node concept="l2Vlx" id="508e52S08mx" role="2iSdaV" />
-      </node>
-      <node concept="2iRfu4" id="508e52S08mo" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="1QS_xBSvF0S">
     <ref role="1XX52x" to="ge5j:O0bPWK9L_B" resolve="ActionLCDDigitalReaderText" />
     <node concept="3EZMnI" id="1QS_xBSvF0U" role="2wV5jI">
@@ -610,6 +589,50 @@
       <node concept="3F0ifn" id="2JnYSShP1Fo" role="3EZMnx">
         <property role="3F0ifm" value="ms" />
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7W0bUzHUPEj">
+    <ref role="1XX52x" to="ge5j:7W0bUzHUPA1" resolve="Task" />
+    <node concept="3EZMnI" id="7W0bUzHUPEl" role="2wV5jI">
+      <node concept="3EZMnI" id="7W0bUzHW35d" role="3EZMnx">
+        <node concept="VPM3Z" id="7W0bUzHW35f" role="3F10Kt" />
+        <node concept="3F0ifn" id="7W0bUzHW35J" role="3EZMnx">
+          <property role="3F0ifm" value="Task" />
+        </node>
+        <node concept="3F0A7n" id="7W0bUzHW35x" role="3EZMnx">
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+        <node concept="3F0ifn" id="7W0bUzHW35B" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+        </node>
+        <node concept="l2Vlx" id="7W0bUzHW35i" role="2iSdaV" />
+        <node concept="3XFhqQ" id="3_0fBbHUuxE" role="3EZMnx" />
+        <node concept="3XFhqQ" id="3_0fBbHUuyb" role="3EZMnx" />
+        <node concept="3F0ifn" id="3_0fBbHUuyx" role="3EZMnx">
+          <property role="3F0ifm" value="run every" />
+        </node>
+        <node concept="3F0A7n" id="3_0fBbHUuyL" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:3_0fBbHUuxz" resolve="period" />
+        </node>
+        <node concept="3F0ifn" id="3_0fBbHUuz3" role="3EZMnx">
+          <property role="3F0ifm" value="ms" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="7W0bUzHUPEs" role="3EZMnx">
+        <node concept="VPM3Z" id="7W0bUzHUPEu" role="3F10Kt" />
+        <node concept="3XFhqQ" id="7W0bUzHUPEW" role="3EZMnx" />
+        <node concept="3F2HdR" id="7W0bUzHUPF0" role="3EZMnx">
+          <ref role="1NtTu8" to="ge5j:7W0bUzHUPA4" resolve="states" />
+          <node concept="2iRkQZ" id="7W0bUzHUPF3" role="2czzBx" />
+          <node concept="VPM3Z" id="7W0bUzHUPF4" role="3F10Kt" />
+          <node concept="3F0ifn" id="7W0bUzHUPFb" role="2czzBI">
+            <property role="3F0ifm" value="[no states defined]" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="7W0bUzHUPEx" role="2iSdaV" />
+      </node>
+      <node concept="35HoNQ" id="7W0bUzHUPFo" role="3EZMnx" />
+      <node concept="2iRkQZ" id="7W0bUzHUPEo" role="2iSdaV" />
     </node>
   </node>
 </model>
