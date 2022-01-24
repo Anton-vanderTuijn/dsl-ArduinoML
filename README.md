@@ -31,17 +31,17 @@ TBD
 ### Scenarios supported
 
 Basic scenarios:
-- [ ] Very simple alarm
-- [ ] Dual-check alarm
-- [ ] State-based alarm
-- [ ] Multi-state alarm
+- [X] Very simple alarm
+- [X] Dual-check alarm
+- [X] State-based alarm
+- [X] Multi-state alarm
 
 “A la carte” features:
-- [ ] Exception Throwing
-- [ ] Temporal transitions
-- [ ] Supporting the LCD screen
-- [ ] Handling Analogical Bricks
-- [ ] Parallel periodic Region
+- [X] Exception Throwing
+- [X] Temporal transitions
+- [X] Supporting the LCD screen
+- [X] Handling Analogical Bricks
+- [X] Parallel periodic Region
 
 ### Requirements
 - [MPS](https://www.jetbrains.com/mps/)
