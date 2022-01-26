@@ -37,7 +37,7 @@ abstract class GroovuinoMLBasescript extends Script {
     }
 
     /**
-     * state "name" means "actuator" {becomes "signal" | displayText "text" | displaySensor "sensor" | displayActuator "act"} [and "actuator" {becomes "signal" | displayText "text" | displaySensor "sensor" | displayActuator "act"}]*n
+     * state "name" means "actuator" {becomes "signal" | displayText "text" | displayDigitalSensor "sensor" | displayActuator "act"} [and "actuator" {becomes "signal" | displayText "text" | displayDigitalSensor "sensor" | displayActuator "act"}]*n
      */
     def state(String name) {
 
@@ -46,28 +46,35 @@ abstract class GroovuinoMLBasescript extends Script {
         // recursive closure to allow multiple and statements
         def closure
         closure = { actuator ->
-            [becomes        : { signal ->
+            [becomes                : { signal ->
                 ActionDigital action = new ActionDigital()
                 action.setActuator(actuator instanceof String ? (Actuator) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Actuator) actuator)
                 action.setValue(signal instanceof String ? (Signal) ((GroovuinoMLBinding) this.getBinding()).getVariable(signal) : (Signal) signal)
                 actions.add(action)
                 [and: closure]
             },
-             displayText    : { text ->
+             displayText            : { text ->
                  ActionLcdText action = new ActionLcdText()
                  action.setLcd(actuator instanceof String ? (Lcd) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Lcd) actuator)
                  action.setText(text)
                  actions.add(action)
                  [and: closure]
              },
-             displaySensor  : { sensor ->
-                 ActionLcdSensor action = new ActionLcdSensor()
+             displayDigitalSensor   : { sensor ->
+                 ActionLcdSensor action = new ActionLcdDigitalSensor()
                  action.setLcd(actuator instanceof String ? (Lcd) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Lcd) actuator)
                  action.setSensor(sensor instanceof String ? (SensorDigital) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (SensorDigital) sensor)
                  actions.add(action)
                  [and: closure]
              },
-             displayActuator: { act ->
+             displayAnalogicalSensor: { sensor ->
+                 ActionLcdSensor action = new ActionLcdAnalogicalSensor()
+                 action.setLcd(actuator instanceof String ? (Lcd) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Lcd) actuator)
+                 action.setSensor(sensor instanceof String ? (SensorAnalogical) ((GroovuinoMLBinding) this.getBinding()).getVariable(sensor) : (SensorAnalogical) sensor)
+                 actions.add(action)
+                 [and: closure]
+             },
+             displayActuator        : { act ->
                  ActionLcdActuator action = new ActionLcdActuator()
                  action.setLcd(actuator instanceof String ? (Lcd) ((GroovuinoMLBinding) this.getBinding()).getVariable(actuator) : (Lcd) actuator)
                  action.setActuator(act instanceof String ? (Actuator) ((GroovuinoMLBinding) this.getBinding()).getVariable(act) : (Actuator) act)

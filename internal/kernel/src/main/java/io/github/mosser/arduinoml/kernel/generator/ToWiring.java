@@ -112,8 +112,10 @@ public class ToWiring extends Visitor<StringBuffer> {
             boolean clearLCD = false;
 
             for (Action action : state.getActions()) {
-                if ((action instanceof ActionLcdSensor || action instanceof ActionLcdText || action instanceof ActionLcdActuator ) && !clearLCD){
-                    w("\t\t\tlcd.clear();\n");
+                if ((action instanceof ActionLcdSensor || action instanceof ActionLcdText || action instanceof ActionLcdActuator) && !clearLCD) {
+                    w("\t\t\tlcd.setCursor(0, 0);\n");
+                    w(String.format("\t\t\tlcd.print(\"                                  \");\n", ""));
+                    w("\t\t\tlcd.setCursor(0, 0);\n");
                     clearLCD = true;
                 }
                 action.accept(this);
@@ -200,8 +202,10 @@ public class ToWiring extends Visitor<StringBuffer> {
 
             if (action instanceof ActionLcdText) {
                 w(String.format("\t\t\tlcd.print(\"%s\");\n", ((ActionLcdText) action).getText()));
-            } else if (action instanceof ActionLcdSensor) {
-                w(String.format("\t\t\tlcd.print(%s);\n", retrieveSensorStatus(((ActionLcdSensor) action).getSensor())));
+            } else if (action instanceof ActionLcdDigitalSensor) {
+                w(String.format("\t\t\tlcd.print(%s);\n", retrieveDigitalSensorStatus(((ActionLcdDigitalSensor) action).getSensor())));
+            } else if (action instanceof ActionLcdAnalogicalSensor) {
+                w(String.format("\t\t\tlcd.print(%s);\n", retrieveAnalogicalSensorStatus(((ActionLcdAnalogicalSensor) action).getSensor())));
             } else if (action instanceof ActionLcdActuator) {
                 w(String.format("\t\t\tlcd.print(%s);\n", retrieveActuatorStatus(((ActionLcdActuator) action).getActuator())));
             } else {
@@ -215,8 +219,13 @@ public class ToWiring extends Visitor<StringBuffer> {
         return "\"" + actuator.getName() + ":= \" + digitalRead(" + actuator.getPin() + ")";
     }
 
-    private String retrieveSensorStatus(SensorDigital sensor) {
+    private String retrieveDigitalSensorStatus(SensorDigital sensor) {
         return "\"" + sensor.getName() + ":= \" + digitalRead(" + sensor.getPin() + ")";
     }
+
+    private String retrieveAnalogicalSensorStatus(SensorAnalogical sensor) {
+        return "\"" + sensor.getName() + ":= \" + String(analogRead(" + sensor.getPin() + "))";
+    }
+
 
 }

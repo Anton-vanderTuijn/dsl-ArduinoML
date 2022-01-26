@@ -3,7 +3,7 @@ sensorDigital "button" pin 9
 actuator "led" pin 8
 
 state "text" means "lcd" displayText "Hello World!"
-state "sensor" means "lcd" displaySensor "button"
+state "sensor" means "lcd" displayDigitalSensor "button"
 state "actuator" means "lcd" displayActuator "led" and "lcd" displayText "!"
 
 

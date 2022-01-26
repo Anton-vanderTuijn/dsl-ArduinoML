@@ -4,8 +4,9 @@ import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.Lcd;
 import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
 
-public abstract class ActionLcdSensor extends Action {
+public class ActionLcdDigitalSensor extends ActionLcdSensor {
 
+    private SensorDigital sensor;
     private Lcd lcd;
 
     public Lcd getLcd() {
@@ -14,6 +15,14 @@ public abstract class ActionLcdSensor extends Action {
 
     public void setLcd(Lcd lcd) {
         this.lcd = lcd;
+    }
+
+    public SensorDigital getSensor() {
+        return sensor;
+    }
+
+    public void setSensor(SensorDigital sensor) {
+        this.sensor = sensor;
     }
 
     @Override
