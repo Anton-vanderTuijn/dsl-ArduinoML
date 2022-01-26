@@ -138,7 +138,7 @@
     <property role="EcuMT" value="6960558460117854838" />
     <property role="TrG5h" value="ISensor" />
     <node concept="PrWs8" id="508e52RKbsM" role="PrDN$">
-      <ref role="PrY4T" node="O0bPWK9L_P" resolve="IBrick" />
+      <ref role="PrY4T" node="6qpGXj2UpFy" resolve="IBrickPin" />
     </node>
   </node>
   <node concept="1TIwiD" id="62oRKDPEyEi">
@@ -153,15 +153,15 @@
     <property role="EcuMT" value="6091910209283437140" />
     <property role="TrG5h" value="IActuator" />
     <node concept="PrWs8" id="508e52RJCQK" role="PrDN$">
-      <ref role="PrY4T" node="O0bPWK9L_P" resolve="IBrick" />
+      <ref role="PrY4T" node="6qpGXj2UpFy" resolve="IBrickPin" />
     </node>
   </node>
   <node concept="1TIwiD" id="5iaO0WrUz9o">
     <property role="EcuMT" value="6091910209283437144" />
-    <property role="TrG5h" value="ActuatorLCD" />
+    <property role="TrG5h" value="LCD" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5iaO0WrUz9r" role="PzmwI">
-      <ref role="PrY4T" node="5iaO0WrUz9k" resolve="IActuator" />
+      <ref role="PrY4T" node="6qpGXj2UpF_" resolve="IBrickBus" />
     </node>
     <node concept="1TJgyi" id="508e52RKHj9" role="1TKVEl">
       <property role="IQ2nx" value="5766921242179458249" />
@@ -353,11 +353,6 @@
   <node concept="PlHQZ" id="O0bPWK9L_P">
     <property role="EcuMT" value="936800808369330549" />
     <property role="TrG5h" value="IBrick" />
-    <node concept="1TJgyi" id="O0bPWKaXTl" role="1TKVEl">
-      <property role="IQ2nx" value="936800808369643093" />
-      <property role="TrG5h" value="pin" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="PrWs8" id="O0bPWKaXTn" role="PrDN$">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -369,7 +364,7 @@
       <property role="IQ2ns" value="8979439463483866766" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5iaO0WrUz9o" resolve="ActuatorLCD" />
+      <ref role="20lvS9" node="5iaO0WrUz9o" resolve="LCD" />
     </node>
     <node concept="1TJgyi" id="7Mto9RJ57Ub" role="1TKVEl">
       <property role="IQ2nx" value="8979439463483866763" />
@@ -401,7 +396,7 @@
     </node>
     <node concept="1TJgyi" id="6LAVG$wRSgN" role="1TKVEl">
       <property role="IQ2nx" value="7811193151328060467" />
-      <property role="TrG5h" value="errorValue" />
+      <property role="TrG5h" value="code" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
@@ -439,6 +434,30 @@
       <property role="IQ2nx" value="4125365922010097763" />
       <property role="TrG5h" value="period" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6qpGXj2UpFy">
+    <property role="EcuMT" value="7393137989689907938" />
+    <property role="TrG5h" value="IBrickPin" />
+    <node concept="1TJgyi" id="O0bPWKaXTl" role="1TKVEl">
+      <property role="IQ2nx" value="936800808369643093" />
+      <property role="TrG5h" value="pin" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="PrWs8" id="6qpGXj2UpFz" role="PrDN$">
+      <ref role="PrY4T" node="O0bPWK9L_P" resolve="IBrick" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6qpGXj2UpF_">
+    <property role="EcuMT" value="7393137989689907941" />
+    <property role="TrG5h" value="IBrickBus" />
+    <node concept="1TJgyi" id="6qpGXj2UsJ1" role="1TKVEl">
+      <property role="IQ2nx" value="7393137989689920449" />
+      <property role="TrG5h" value="bus" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="PrWs8" id="6qpGXj2UpFA" role="PrDN$">
+      <ref role="PrY4T" node="O0bPWK9L_P" resolve="IBrick" />
     </node>
   </node>
 </model>

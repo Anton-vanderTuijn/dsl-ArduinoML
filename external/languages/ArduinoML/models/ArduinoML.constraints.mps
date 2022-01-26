@@ -292,9 +292,9 @@
     </node>
   </node>
   <node concept="1M2fIO" id="508e52RJoWI">
-    <ref role="1M2myG" to="ge5j:5iaO0WrUz9o" resolve="ActuatorLCD" />
+    <ref role="1M2myG" to="ge5j:5iaO0WrUz9o" resolve="LCD" />
     <node concept="EnEH3" id="508e52RJpPF" role="1MhHOB">
-      <ref role="EomxK" to="ge5j:O0bPWKaXTl" resolve="pin" />
+      <ref role="EomxK" to="ge5j:6qpGXj2UsJ1" resolve="bus" />
       <node concept="QB0g5" id="508e52RJpR7" role="QCWH9">
         <node concept="3clFbS" id="508e52RJpR8" role="2VODD2">
           <node concept="3clFbF" id="508e52RJpWy" role="3cqZAp">
@@ -524,7 +524,7 @@
   <node concept="1M2fIO" id="6LAVG$wVsPG">
     <ref role="1M2myG" to="ge5j:6LAVG$wRSgK" resolve="StateError" />
     <node concept="EnEH3" id="6LAVG$wVsPH" role="1MhHOB">
-      <ref role="EomxK" to="ge5j:6LAVG$wRSgN" resolve="errorValue" />
+      <ref role="EomxK" to="ge5j:6LAVG$wRSgN" resolve="code" />
       <node concept="QB0g5" id="6LAVG$wVsQu" role="QCWH9">
         <node concept="3clFbS" id="6LAVG$wVsQv" role="2VODD2">
           <node concept="3clFbF" id="6LAVG$wVsVd" role="3cqZAp">

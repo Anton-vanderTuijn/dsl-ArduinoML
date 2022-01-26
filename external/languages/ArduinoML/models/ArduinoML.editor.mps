@@ -233,7 +233,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="508e52RJhgR">
-    <ref role="1XX52x" to="ge5j:5iaO0WrUz9o" resolve="ActuatorLCD" />
+    <ref role="1XX52x" to="ge5j:5iaO0WrUz9o" resolve="LCD" />
     <node concept="3EZMnI" id="508e52RJhgT" role="2wV5jI">
       <node concept="3EZMnI" id="508e52RJhh0" role="3EZMnx">
         <node concept="VPM3Z" id="508e52RJhh2" role="3F10Kt" />
@@ -262,7 +262,7 @@
           <property role="3F0ifm" value="on bus" />
         </node>
         <node concept="3F0A7n" id="508e52RJhhF" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:O0bPWKaXTl" resolve="pin" />
+          <ref role="1NtTu8" to="ge5j:6qpGXj2UsJ1" resolve="bus" />
         </node>
         <node concept="l2Vlx" id="508e52RJhh5" role="2iSdaV" />
       </node>
@@ -555,7 +555,7 @@
           <property role="3F0ifm" value="error value:" />
         </node>
         <node concept="3F0A7n" id="6LAVG$wRSiB" role="3EZMnx">
-          <ref role="1NtTu8" to="ge5j:6LAVG$wRSgN" resolve="errorValue" />
+          <ref role="1NtTu8" to="ge5j:6LAVG$wRSgN" resolve="code" />
         </node>
         <node concept="l2Vlx" id="6LAVG$wRShu" role="2iSdaV" />
       </node>
