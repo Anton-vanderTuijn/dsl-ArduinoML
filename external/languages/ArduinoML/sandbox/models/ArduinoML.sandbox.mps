@@ -47,7 +47,7 @@
       <concept id="7811193151327754314" name="ArduinoML.structure.IState" flags="ng" index="1cJ3q3">
         <property id="7811193151327754319" name="isInitial" index="1cJ3q6" />
       </concept>
-      <concept id="6091910209283437144" name="ArduinoML.structure.ActuatorLCD" flags="ng" index="1foe9n">
+      <concept id="6091910209283437144" name="ArduinoML.structure.LCD" flags="ng" index="1foe9n">
         <property id="5766921242179458249" name="rows" index="3BMIMp" />
         <property id="5766921242179458252" name="columns" index="3BMIMs" />
       </concept>
@@ -219,8 +219,8 @@
           <node concept="3BS04E" id="3_0fBbI95bF" role="3BS8aA">
             <ref role="3BS07h" node="7QYskAWfA90" resolve="btn1" />
           </node>
-          <node concept="3BS04E" id="3_0fBbI95bG" role="3BS8aA">
-            <ref role="3BS07h" node="7QYskAWfA97" resolve="btn2" />
+          <node concept="3BS04E" id="7QYskAWoCTf" role="3BS8aA">
+            <ref role="3BS07h" node="7QYskAWfA90" resolve="btn1" />
           </node>
         </node>
       </node>
