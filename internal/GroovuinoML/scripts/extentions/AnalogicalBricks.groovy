@@ -1,12 +1,31 @@
-sensorAnalogical "temperature" pin 1
-actuator "buzzer" pin 11
+sensorAnalog "temperature" pin 1
+actuatorDigital "buzzer" pin 11
 
-state "overheat" means "buzzer" becomes "high"
-state "normal" means "buzzer" becomes "low"
+task {
+    taskName "task"
+    period 1000
 
-initial "normal"
+    state {
+        name "overheat"
+        initial "false"
+        actions {
+            actionDigital "buzzer" becomes "high"
+        }
+        transitions {
+            toState "normal" when "temperature" "<" 220
+        }
+    }
 
-from "normal" to "overheat" when "temperature" ">=" 220
-from "overheat" to "normal" when "temperature" "<" 220
+    state {
+        name "normal"
+        initial "true"
+        actions {
+            actionDigital "buzzer" becomes "low"
+        }
+        transitions {
+            toState "overheat" when "temperature" ">=" 220
+        }
+    }
+}
 
-export "Analogical Bricks"
+application "Analogical Bricks"

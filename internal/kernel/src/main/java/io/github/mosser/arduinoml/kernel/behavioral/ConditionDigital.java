@@ -1,22 +1,23 @@
 package io.github.mosser.arduinoml.kernel.behavioral;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
-import io.github.mosser.arduinoml.kernel.structural.Lcd;
 import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
+import io.github.mosser.arduinoml.kernel.structural.Signal;
 
-public class ActionLcdDigitalSensor extends ActionLcdSensor {
+public class ConditionDigital implements ICondition {
 
+    private Signal signal;
     private SensorDigital sensor;
-    private Lcd lcd;
 
-    public Lcd getLcd() {
-        return lcd;
+    public Signal getSignal() {
+        return signal;
     }
 
-    public void setLcd(Lcd lcd) {
-        this.lcd = lcd;
+    public void setSignal(Signal signal) {
+        this.signal = signal;
     }
 
+    @Override
     public SensorDigital getSensor() {
         return sensor;
     }

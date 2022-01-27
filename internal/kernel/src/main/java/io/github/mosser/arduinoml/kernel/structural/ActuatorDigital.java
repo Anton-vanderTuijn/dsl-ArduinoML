@@ -2,7 +2,7 @@ package io.github.mosser.arduinoml.kernel.structural;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
 
-public class SensorDigital implements ISensor {
+public class ActuatorDigital implements IActuator {
 
     private int pin;
     private String name;
@@ -31,5 +31,4 @@ public class SensorDigital implements ISensor {
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
-
 }

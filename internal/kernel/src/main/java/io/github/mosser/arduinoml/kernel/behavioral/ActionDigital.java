@@ -1,28 +1,27 @@
 package io.github.mosser.arduinoml.kernel.behavioral;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
-import io.github.mosser.arduinoml.kernel.structural.Actuator;
+import io.github.mosser.arduinoml.kernel.structural.ActuatorDigital;
 import io.github.mosser.arduinoml.kernel.structural.Signal;
 
-public class ActionDigital extends Action {
+public class ActionDigital implements IAction {
 
-    private Signal value;
-    private Actuator actuator;
+    private Signal signal;
+    private ActuatorDigital actuator;
 
-
-    public Signal getValue() {
-        return value;
+    public Signal getSignal() {
+        return signal;
     }
 
-    public void setValue(Signal value) {
-        this.value = value;
+    public void setSignal(Signal signal) {
+        this.signal = signal;
     }
 
-    public Actuator getActuator() {
+    public ActuatorDigital getActuator() {
         return actuator;
     }
 
-    public void setActuator(Actuator actuator) {
+    public void setActuator(ActuatorDigital actuator) {
         this.actuator = actuator;
     }
 

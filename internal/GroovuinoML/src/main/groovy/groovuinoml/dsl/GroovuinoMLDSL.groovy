@@ -1,6 +1,6 @@
 package groovuinoml.dsl
 
-import io.github.mosser.arduinoml.kernel.structural.MathOperator
+import io.github.mosser.arduinoml.kernel.structural.Comparator
 import io.github.mosser.arduinoml.kernel.structural.Signal
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.codehaus.groovy.control.customizers.SecureASTCustomizer
@@ -21,19 +21,19 @@ class GroovuinoMLDSL {
         binding.setVariable("high", Signal.HIGH)
         binding.setVariable("low", Signal.LOW)
 
-        binding.setVariable("==", MathOperator.EQUAL)
-        binding.setVariable("!=", MathOperator.NOT_EQUAL)
-        binding.setVariable(">", MathOperator.GREATER)
-        binding.setVariable(">=", MathOperator.GREATER_OR_EQUAL)
-        binding.setVariable("<", MathOperator.LESS)
-        binding.setVariable("<=", MathOperator.LESS_OR_EQUAL)
+        binding.setVariable("==", Comparator.EQUAL)
+        binding.setVariable("!=", Comparator.NOT_EQUAL)
+        binding.setVariable(">", Comparator.GREATER)
+        binding.setVariable(">=", Comparator.GREATER_OR_EQUAL)
+        binding.setVariable("<", Comparator.LESS)
+        binding.setVariable("<=", Comparator.LESS_OR_EQUAL)
     }
 
     private static CompilerConfiguration getDSLConfiguration() {
         def secure = new SecureASTCustomizer()
         secure.with {
             //disallow closure creation
-            closuresAllowed = false
+            closuresAllowed = true
             //disallow method definitions
             methodDefinitionAllowed = true
             //empty white list => forbid imports

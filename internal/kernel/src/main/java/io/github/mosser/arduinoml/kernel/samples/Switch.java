@@ -2,13 +2,15 @@ package io.github.mosser.arduinoml.kernel.samples;
 
 import io.github.mosser.arduinoml.kernel.App;
 import io.github.mosser.arduinoml.kernel.behavioral.ActionDigital;
+import io.github.mosser.arduinoml.kernel.behavioral.ConditionDigital;
 import io.github.mosser.arduinoml.kernel.behavioral.State;
 import io.github.mosser.arduinoml.kernel.behavioral.Transition;
 import io.github.mosser.arduinoml.kernel.generator.ToWiring;
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
-import io.github.mosser.arduinoml.kernel.structural.Actuator;
+import io.github.mosser.arduinoml.kernel.structural.ActuatorDigital;
 import io.github.mosser.arduinoml.kernel.structural.SensorDigital;
 import io.github.mosser.arduinoml.kernel.structural.Signal;
+import io.github.mosser.arduinoml.kernel.structural.Task;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,7 +24,7 @@ public class Switch {
         button.setName("button");
         button.setPin(9);
 
-        Actuator led = new Actuator();
+        ActuatorDigital led = new ActuatorDigital();
         led.setName("LED");
         led.setPin(12);
 
@@ -32,15 +34,16 @@ public class Switch {
 
         State off = new State();
         off.setName("off");
+        off.setInitial(true);
 
         // Creating actions
         ActionDigital switchTheLightOn = new ActionDigital();
         switchTheLightOn.setActuator(led);
-        switchTheLightOn.setValue(Signal.HIGH);
+        switchTheLightOn.setSignal(Signal.HIGH);
 
         ActionDigital switchTheLightOff = new ActionDigital();
         switchTheLightOff.setActuator(led);
-        switchTheLightOff.setValue(Signal.LOW);
+        switchTheLightOff.setSignal(Signal.LOW);
 
         // Binding actions to states
         on.setActions(Arrays.asList(switchTheLightOn));
@@ -48,25 +51,32 @@ public class Switch {
 
         // Creating transitions
         Transition on2off = new Transition();
-        on2off.setNext(off);
-        on2off.setSensor(Collections.singletonList(button));
-        on2off.setOperators(Collections.singletonList(Signal.HIGH));
+        on2off.setTarget(off);
+        ConditionDigital conditionDigital = new ConditionDigital();
+        conditionDigital.setSignal(Signal.HIGH);
+        conditionDigital.setSensor(button);
+        on2off.setConditions(Collections.singletonList(conditionDigital));
 
         Transition off2on = new Transition();
-        off2on.setNext(on);
-        off2on.setSensor(Collections.singletonList(button));
-        off2on.setOperators(Collections.singletonList(Signal.HIGH));
+        off2on.setTarget(on);
+        ConditionDigital conditionDigital2 = new ConditionDigital();
+        conditionDigital2.setSignal(Signal.LOW);
+        conditionDigital2.setSensor(button);
+        off2on.setConditions(Collections.singletonList(conditionDigital2));
 
         // Binding transitions to states
-        on.setTransition(Collections.singletonList(on2off));
-        off.setTransition(Collections.singletonList(off2on));
+        on.setTransitions(Collections.singletonList(on2off));
+        off.setTransitions(Collections.singletonList(off2on));
 
         // Building the App
         App theSwitch = new App();
         theSwitch.setName("Switch!");
+        Task task = new Task();
+        task.setStates(Arrays.asList(on, off));
+
+        theSwitch.setTasks(Collections.singletonList(task));
         theSwitch.setBricks(Arrays.asList(button, led));
-        theSwitch.setStates(Arrays.asList(on, off));
-        theSwitch.setInitial(off);
+
 
         // Generating Code
         Visitor codeGenerator = new ToWiring();

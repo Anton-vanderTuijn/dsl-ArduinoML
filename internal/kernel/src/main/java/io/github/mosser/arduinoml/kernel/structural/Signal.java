@@ -1,16 +1,15 @@
 package io.github.mosser.arduinoml.kernel.structural;
 
-public enum Signal implements Operators {
+public enum Signal {
     HIGH("HIGH"),
     LOW("LOW");
 
-    private String value;
+    private final String value;
 
     Signal(String value) {
         this.value = value;
     }
 
-    @Override
     public String getValue() {
         return value;
     }

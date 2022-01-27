@@ -1,29 +1,35 @@
 package io.github.mosser.arduinoml.kernel.structural;
 
-import io.github.mosser.arduinoml.kernel.NamedElement;
-import io.github.mosser.arduinoml.kernel.generator.Visitable;
+import io.github.mosser.arduinoml.kernel.generator.Visitor;
 
-public abstract class Brick implements NamedElement, Visitable {
+public class SensorAnalog implements ISensor {
 
-    private String name;
     private int pin;
+    private String name;
 
+    @Override
     public int getPin() {
-        return pin;
+        return this.pin;
     }
 
+    @Override
     public void setPin(int pin) {
         this.pin = pin;
     }
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
 }

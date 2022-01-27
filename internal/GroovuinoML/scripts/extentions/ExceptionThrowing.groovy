@@ -1,19 +1,41 @@
 sensorDigital "button_right" pin 9
 sensorDigital "button_left" pin 10
-actuator "door_led" pin 12
+actuatorDigital "door_led" pin 12
 
-state "open" means "door_led" becomes "high"
-state "close" means "door_led" becomes "low"
-error "door_exception" code 3
+task {
+    taskName "task"
+    period 1000
 
-initial "close"
+    state {
+        name "open"
+        initial "false"
+        actions {
+            actionDigital "door_led" becomes "high"
+        }
+        transitions {
+            toState "close" when "button_right" becomes "low"
+            toState "close" when "button_left" becomes "low"
+            toState "door_exception" when "button_right" becomes "high" and "button_left" becomes "high"
+        }
+    }
 
-from "close" to "open" when "button_right" becomes "high"
-from "close" to "open" when "button_left" becomes "high"
-from "open" to "close" when "button_right" becomes "low"
-from "open" to "close" when "button_left" becomes "low"
+    state {
+        name "close"
+        initial "true"
+        actions {
+            actionDigital "door_led" becomes "low"
+        }
+        transitions {
+            toState "open" when "button_right" becomes "high"
+            toState "open" when "button_left" becomes "high"
+            toState "door_exception" when "button_right" becomes "high" and "button_left" becomes "high"
+        }
+    }
 
-from "close" to "door_exception" when "button_right" becomes "high" and "button_left" becomes "high"
-from "open" to "door_exception" when "button_right" becomes "high" and "button_left" becomes "high"
+    stateError {
+        name "door_exception"
+        code 3
+    }
+}
 
-export "Exception Throwing"
+application "Exception Throwing"

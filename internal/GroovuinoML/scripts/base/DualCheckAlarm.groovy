@@ -1,17 +1,44 @@
 sensorDigital "button_1" pin 9
 sensorDigital "button_2" pin 10
-actuator "led" pin 12
+actuatorDigital "led" pin 12
 
-state "off_1" means "led" becomes "low"
-state "off_2" means "led" becomes "low"
-state "on" means "led" becomes "high"
+task {
+    taskName "task"
+    period 1000
 
-initial "off_1"
+    state {
+        name "off_1"
+        initial "true"
+        actions {
+            actionDigital "led" becomes "low"
+        }
+        transitions {
+            toState "on" when "button_1" becomes "high" and "button_2" becomes "high"
+        }
+    }
 
-from "on" to "off_1" when "button_1" becomes "low"
-from "on" to "off_2" when "button_2" becomes "low"
+    state {
+        name "off_2"
+        initial "false"
+        actions {
+            actionDigital "led" becomes "low"
+        }
+        transitions {
+            toState "on" when "button_1" becomes "high" and "button_2" becomes "high"
+        }
+    }
 
-from "off_1" to "on" when "button_1" becomes "high" and "button_2" becomes "high"
-from "off_2" to "on" when "button_1" becomes "high" and "button_2" becomes "high"
+    state {
+        name "on"
+        initial "false"
+        actions {
+            actionDigital "led" becomes "high"
+        }
+        transitions {
+            toState "off_1" when "button_1" becomes "low"
+            toState "off_2" when "button_2" becomes "low"
+        }
+    }
+}
 
-export "Dual check Alarm"
+application "Dual check Alarm"

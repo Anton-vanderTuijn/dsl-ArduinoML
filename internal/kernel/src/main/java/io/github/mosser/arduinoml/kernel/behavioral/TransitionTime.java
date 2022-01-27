@@ -4,21 +4,17 @@ import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.IState;
 import io.github.mosser.arduinoml.kernel.structural.ITransition;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Transition implements ITransition {
+public class TransitionTime implements ITransition {
 
     private IState target;
-    private List<ICondition> conditions = new ArrayList<>();
+    private int timeBeforeTransition;
 
-
-    public List<ICondition> getConditions() {
-        return conditions;
+    public int getTimeBeforeTransition() {
+        return timeBeforeTransition;
     }
 
-    public void setConditions(List<ICondition> conditions) {
-        this.conditions = conditions;
+    public void setTimeBeforeTransition(int timeBeforeTransition) {
+        this.timeBeforeTransition = timeBeforeTransition;
     }
 
     @Override
