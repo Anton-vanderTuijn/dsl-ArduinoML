@@ -17,8 +17,6 @@ public abstract class Visitor<T> {
 
     public abstract void visit(Transition transition);
 
-    public abstract void visit(ISensor sensor);
-
     public abstract void visit(Task task);
 
     public abstract void visit(ActuatorDigital actuatorDigital);
@@ -26,6 +24,10 @@ public abstract class Visitor<T> {
     public abstract void visit(ActuatorAnalog actuatorAnalog);
 
     public abstract void visit(TransitionTime transitionTime);
+
+    public abstract void visit(SensorAnalog sensorAnalog);
+
+    public abstract void visit(SensorDigital sensorDigital);
 
     public abstract void visit(ConditionDigital condition);
 
@@ -57,6 +59,5 @@ public abstract class Visitor<T> {
     public T getResult() {
         return result;
     }
-
 }
 

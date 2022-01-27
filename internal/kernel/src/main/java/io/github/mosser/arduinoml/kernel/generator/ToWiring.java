@@ -70,21 +70,6 @@ public class ToWiring extends Visitor<StringBuffer> {
     }
 
     @Override
-    public void visit(ISensor sensor) {
-        if (context.get("pass") == PASS.ONE) {
-            w(String.format("\nboolean %sBounceGuard = false;\n", sensor.getName()));
-            w(String.format("long %sLastDebounceTime = 0;\n", sensor.getName()));
-            return;
-        }
-        if (context.get("pass") == PASS.TWO) {
-            if (sensor instanceof SensorDigital) {
-                w(String.format("\tpinMode(%d, INPUT);  // %s [Sensor]\n", sensor.getPin(), sensor.getName()));
-            }
-            return;
-        }
-    }
-
-    @Override
     public void visit(LCD lcd) {
         if (context.get("pass") == PASS.ONE) {
             w("\n#include <LiquidCrystal.h>\n");
@@ -113,6 +98,7 @@ public class ToWiring extends Visitor<StringBuffer> {
     @Override
     public void visit(ActuatorDigital actuatorDigital) {
         if (context.get("pass") == PASS.ONE) {
+            w(String.format("int %s = %d; // [ActuatorDigital]\n", actuatorDigital.getName(), actuatorDigital.getPin()));
             return;
         }
         if (context.get("pass") == PASS.TWO) {
@@ -124,6 +110,7 @@ public class ToWiring extends Visitor<StringBuffer> {
     @Override
     public void visit(ActuatorAnalog actuatorAnalog) {
         if (context.get("pass") == PASS.ONE) {
+            w(String.format("int %s = %d; // [ActuatorAnalog]\n", actuatorAnalog.getName(), actuatorAnalog.getPin()));
             return;
         }
         if (context.get("pass") == PASS.TWO) {
@@ -138,6 +125,33 @@ public class ToWiring extends Visitor<StringBuffer> {
     }
 
     @Override
+    public void visit(SensorAnalog sensorAnalog) {
+        if (context.get("pass") == PASS.ONE) {
+            w(String.format("int %s = %d; // [SensorAnalog]\n", sensorAnalog.getName(), sensorAnalog.getPin()));
+            w(String.format("boolean %sBounceGuard = false;\n", sensorAnalog.getName()));
+            w(String.format("long %sLastDebounceTime = 0;\n", sensorAnalog.getName()));
+            return;
+        }
+        if (context.get("pass") == PASS.TWO) {
+            return;
+        }
+    }
+
+    @Override
+    public void visit(SensorDigital sensorDigital) {
+        if (context.get("pass") == PASS.ONE) {
+            w(String.format("int %s = %d; // [SensorDigital]\n", sensorDigital.getName(), sensorDigital.getPin()));
+            w(String.format("boolean %sBounceGuard = false;\n", sensorDigital.getName()));
+            w(String.format("long %sLastDebounceTime = 0;\n", sensorDigital.getName()));
+            return;
+        }
+        if (context.get("pass") == PASS.TWO) {
+            w(String.format("\tpinMode(%d, INPUT);  // %s [Sensor]\n", sensorDigital.getPin(), sensorDigital.getName()));
+            return;
+        }
+    }
+
+    @Override
     public void visit(ConditionDigital condition) {
         if (context.get("pass") == PASS.ONE) {
             return;
@@ -146,7 +160,7 @@ public class ToWiring extends Visitor<StringBuffer> {
 
             String sensorName = condition.getSensor().getName();
 
-            w(String.format("(digitalRead(%d) == %s && %sBounceGuard)", condition.getSensor().getPin(), condition.getSignal(), sensorName));
+            w(String.format("(digitalRead(%s) == %s && %sBounceGuard)", sensorName, condition.getSignal(), sensorName));
             return;
         }
     }
@@ -160,7 +174,7 @@ public class ToWiring extends Visitor<StringBuffer> {
 
             String sensorName = condition.getSensor().getName();
 
-            w(String.format("(analogRead(A%d) %s %s && %sBounceGuard)", condition.getSensor().getPin(), condition.getComparator().getValue(), condition.getValue(), sensorName));
+            w(String.format("(analogRead(A + %s) %s %s && %sBounceGuard)", sensorName, condition.getComparator().getValue(), condition.getValue(), sensorName));
             return;
         }
     }
@@ -184,7 +198,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
         if (context.get("pass") == PASS.TWO) {
             w("\t\t\tlcd.setCursor(0, " + action.getRowToDisplay() + ");\n");
-            w(String.format("\t\t\tlcd.print(%s);\n", "\"" + action.getBrick().getName() + ":= \" + String(analogRead(" + action.getBrick().getPin() + "))"));
+            w(String.format("\t\t\tlcd.print(%s);\n", "\"" + action.getBrick().getName() + ":= \" + String(analogRead(" + action.getBrick().getName() + "))"));
             return;
         }
     }
@@ -196,7 +210,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
         if (context.get("pass") == PASS.TWO) {
             w("\t\t\tlcd.setCursor(0, " + action.getRowToDisplay() + ");\n");
-            w(String.format("\t\t\tlcd.print(%s);\n", "\"" + action.getBrick().getName() + ":= \" + digitalRead(" + action.getBrick().getPin() + ")"));
+            w(String.format("\t\t\tlcd.print(%s);\n", "\"" + action.getBrick().getName() + ":= \" + digitalRead(" + action.getBrick().getName() + ")"));
             return;
         }
     }
@@ -208,7 +222,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
         if (context.get("pass") == PASS.TWO) {
 
-            w(String.format("\t\t\tdigitalWrite(%d, %s);\n", action.getActuator().getPin(), action.getSignal()));
+            w(String.format("\t\t\tdigitalWrite(%s, %s);\n", action.getActuator().getName(), action.getSignal()));
             return;
         }
     }
@@ -220,7 +234,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
         if (context.get("pass") == PASS.TWO) {
 
-            w(String.format("\t\t\tanalogWrite(%d, %s);\n", action.getActuator().getPin(), action.getSignal()));
+            w(String.format("\t\t\tanalogWrite(%s, %s);\n", action.getActuator().getName(), action.getSignal()));
             return;
         }
     }
