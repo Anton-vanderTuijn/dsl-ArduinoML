@@ -55,9 +55,6 @@
         <property id="5766921242180082541" name="signal" index="3BL6cX" />
         <reference id="5766921242180082543" name="target" index="3BL6cZ" />
       </concept>
-      <concept id="5766921242180872304" name="ArduinoML.structure.ActionLCDSimpleText" flags="ng" index="3BO50w">
-        <property id="5766921242180872307" name="text" index="3BO50z" />
-      </concept>
       <concept id="5766921242181908858" name="ArduinoML.structure.ConditionDigital" flags="ng" index="3BS04E">
         <property id="5766921242181908863" name="signal" index="3BS04J" />
         <reference id="5766921242181908865" name="sensor" index="3BS07h" />
@@ -445,11 +442,6 @@
         <node concept="X9NoS" id="7QYskAWfAa$" role="l5YBu">
           <property role="2jyhSm" value="0" />
           <ref role="X9NoH" node="7QYskAWfA9I" resolve="led" />
-          <ref role="2jyhSj" node="7QYskAWfA9o" resolve="lcd" />
-        </node>
-        <node concept="3BO50w" id="7QYskAWCSRJ" role="l5YBu">
-          <property role="3BO50z" value="Hellow World" />
-          <property role="2jyhSm" value="1" />
           <ref role="2jyhSj" node="7QYskAWfA9o" resolve="lcd" />
         </node>
       </node>

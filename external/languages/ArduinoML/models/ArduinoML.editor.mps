@@ -515,7 +515,10 @@
         </node>
       </node>
       <node concept="3F0ifn" id="508e52RN5Jx" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;=" />
+        <property role="3F0ifm" value="set to" />
+        <node concept="VechU" id="7QYskAWG9pe" role="3F10Kt">
+          <property role="Vb096" value="fLwANPp/orange" />
+        </node>
       </node>
       <node concept="3F0A7n" id="508e52RN5JH" role="3EZMnx">
         <ref role="1NtTu8" to="ge5j:508e52RN5HH" resolve="signal" />
@@ -542,7 +545,10 @@
         </node>
       </node>
       <node concept="3F0ifn" id="508e52RN5Kx" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;=" />
+        <property role="3F0ifm" value="set to" />
+        <node concept="VechU" id="7QYskAWG9pc" role="3F10Kt">
+          <property role="Vb096" value="fLwANPp/orange" />
+        </node>
       </node>
       <node concept="3F0A7n" id="508e52RN5KH" role="3EZMnx">
         <ref role="1NtTu8" to="ge5j:508e52RN5HM" resolve="signal" />
