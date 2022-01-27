@@ -22,6 +22,11 @@ Members | Contact
 
 ---
 
+## Domain model represented as a class diagram
+
+![Domain model](assets/domainModel.png)
+
+
 ## External DSL: MPS <a name="MPS"></a>
 TBD: how to run
 
@@ -57,41 +62,43 @@ Then in the GroovuinoML folder you can launch a script using ```run.sh```. </br>
 The scenarios emplemented can be found under ```./scripts/base``` and ```./scripts/extensions```. </br>
 The script code for the arduino will be outputed in the ```program.ino``` file. </br>
 
-### Syntax language
-
-```groovy
-sensorDigital "name" pin "n"
-sensorAnalogical "name" pin "n"
-actuator "name" pin "n"
-lcd "name" cols "c" rows "r"
-
-state "name" means "actuator" {becomes "signal" | displayText "text" | displayDigital "sensor" | displayActuator "act"} [and "actuator" {becomes "signal" | displayText "text" | displayDigital "sensor" | displayActuator "act"}]*n
-
-error "name" code "number"
-
-initial "state"
-
-from "state1" to "state2" when "sensor" {becomes "signal" | >= "value" | <= "value" | > "value" | < "value" | == "value" | != "value"} [and "sensor" {becomes "signal" | >= "value" | <= "value" | > "value" | < "value" | == "value" | != "value"}]*n
-
-export "name"
-```
-
-#### Syntax exemple
+### Syntax exemple
 
 ```groovy
 sensorDigital "button" pin 9
-actuator "led" pin 12
-actuator "buzzer" pin 11
+actuatorDigital "led" pin 12
+actuatorDigital "buzzer" pin 11
 
-state "on" means "led" becomes "high" and "buzzer" becomes "high"
-state "off" means "led" becomes "low" and "buzzer" becomes "low"
+task {
+    taskName "task"
+    period 1000
 
-initial "off"
+    state {
+        name "on"
+        initial "false"
+        actions {
+            actionDigital "led" becomes "high"
+            actionDigital "buzzer" becomes "high"
+        }
+        transitions {
+            toState "off" when "button" becomes "low"
+        }
+    }
 
-from "on" to "off" when "button" becomes "low"
-from "off" to "on" when "button" becomes "high"
+    state {
+        name "off"
+        initial "true"
+        actions {
+            actionDigital "led" becomes "low"
+            actionDigital "buzzer" becomes "low"
+        }
+        transitions {
+            toState "on" when "button" becomes "high"
+        }
+    }
+}
 
-export "Very Simple Alarm"
+application "Very Simple Alarm"
 ```
 
 ### Scenarios supported
