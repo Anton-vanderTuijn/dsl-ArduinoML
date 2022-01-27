@@ -1,6 +1,6 @@
 package io.github.mosser.arduinoml.kernel.structural;
 
-public enum MathOperator implements Operators {
+public enum Comparator {
     EQUAL("=="),
     NOT_EQUAL("!="),
     GREATER(">"),
@@ -9,13 +9,12 @@ public enum MathOperator implements Operators {
     LESS_OR_EQUAL("<="),
     ;
 
-    private String value;
+    private final String value;
 
-    MathOperator(String value) {
+    Comparator(String value) {
         this.value = value;
     }
 
-    @Override
     public String getValue() {
         return value;
     }

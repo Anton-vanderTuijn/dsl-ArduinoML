@@ -1,15 +1,44 @@
 sensorDigital "button" pin 9
-actuator "buzzer" pin 11
-actuator "led" pin 12
+actuatorDigital "buzzer" pin 11
+actuatorDigital "led" pin 12
 
-state "on_buzzer" means "buzzer" becomes "high"
-state "off_buzzer_on_led" means "buzzer" becomes "low" and "led" becomes "high"
-state "off_led" means "led" becomes "low"
+task {
+    taskName "task"
+    period 1000
 
-initial "off_led"
+    state {
+        name "on_buzzer"
+        initial "false"
+        actions {
+            actionDigital "buzzer" becomes "high"
+        }
+        transitions {
+            toState "off_buzzer_on_led" when "button" becomes "high"
+        }
+    }
 
-from "off_led" to "on_buzzer" when "button" becomes "high"
-from "on_buzzer" to "off_buzzer_on_led" when "button" becomes "high"
-from "off_buzzer_on_led" to "off_led" when "button" becomes "high"
+    state {
+        name "off_buzzer_on_led"
+        initial "false"
+        actions {
+            actionDigital "led" becomes "high"
+            actionDigital "buzzer" becomes "low"
+        }
+        transitions {
+            toState "off_led" when "button" becomes "high"
+        }
+    }
 
-export "Multi State Alarm"
+    state {
+        name "off_led"
+        initial "true"
+        actions {
+            actionDigital "led" becomes "low"
+        }
+        transitions {
+            toState "on_buzzer" when "button" becomes "high"
+        }
+    }
+}
+
+application "Multi State Alarm"

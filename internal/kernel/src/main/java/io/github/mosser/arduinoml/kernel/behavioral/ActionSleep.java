@@ -2,18 +2,16 @@ package io.github.mosser.arduinoml.kernel.behavioral;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
 
-public class ExitError extends State {
+public class ActionSleep implements IAction {
 
-    public static final int LED_ERROR_PIN = 8;
+    private int time;
 
-    private int code;
-
-    public int getCode() {
-        return code;
+    public int getTime() {
+        return time;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setTime(int time) {
+        this.time = time;
     }
 
     @Override

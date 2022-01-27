@@ -65,7 +65,7 @@ sensorAnalogical "name" pin "n"
 actuator "name" pin "n"
 lcd "name" cols "c" rows "r"
 
-state "name" means "actuator" {becomes "signal" | displayText "text" | displaySensor "sensor" | displayActuator "act"} [and "actuator" {becomes "signal" | displayText "text" | displaySensor "sensor" | displayActuator "act"}]*n
+state "name" means "actuator" {becomes "signal" | displayText "text" | displayDigital "sensor" | displayActuator "act"} [and "actuator" {becomes "signal" | displayText "text" | displayDigital "sensor" | displayActuator "act"}]*n
 
 error "name" code "number"
 

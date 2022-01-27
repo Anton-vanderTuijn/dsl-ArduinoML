@@ -2,33 +2,21 @@ package io.github.mosser.arduinoml.kernel.behavioral;
 
 import io.github.mosser.arduinoml.kernel.generator.Visitor;
 import io.github.mosser.arduinoml.kernel.structural.IState;
-import io.github.mosser.arduinoml.kernel.structural.ITransition;
 
-import java.util.ArrayList;
-import java.util.List;
+public class StateError implements IState {
 
-public class State implements IState {
+    public static final int LED_ERROR_PIN = 8;
 
     private String name;
     private boolean isInitial;
-    private List<IAction> actions = new ArrayList<>();
-    private List<ITransition> transitions = new ArrayList<>();
+    private int code;
 
-
-    public List<IAction> getActions() {
-        return actions;
+    public int getCode() {
+        return code;
     }
 
-    public void setActions(List<IAction> actions) {
-        this.actions = actions;
-    }
-
-    public List<ITransition> getTransitions() {
-        return transitions;
-    }
-
-    public void setTransitions(List<ITransition> transitions) {
-        this.transitions = transitions;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     @Override
