@@ -122,7 +122,7 @@ StateError =
     "stateError" "{"
         "name" String
         "code" Integer
-    "}"
+    "}";
 
 Actions =
     "actions" "{"
@@ -134,15 +134,15 @@ Actions =
     "}";
 
 ActionDigital =
-    "actionDigital" String "becomes" Signal
+    "actionDigital" String "becomes" Signal;
 ActionAnalog =
-    "actionAnalog" String "becomes" Integer
+    "actionAnalog" String "becomes" Integer;
 PrintText =
-    "printText" String "on" String "row" Integer
+    "printText" String "on" String "row" Integer;
 PrintDigital =
-    "printDigital" String "valueOn" String "row" Integer
+    "printDigital" String "valueOn" String "row" Integer;
 PrintAnalog =
-    "printAnalog" String "valueOn" String "row" Integer
+    "printAnalog" String "valueOn" String "row" Integer;
 
 Transitions =
     "transitions" "{"
@@ -150,7 +150,7 @@ Transitions =
     "}";
 
 ToState =
-    "toState" String "when" String (("becomes" Signal) | ("==" Integer) | ("!=" Integer) | (">=" Integer) | ("<=" Integer) | (">" Integer) | ("<" Integer))  
+    "toState" String "when" String (("becomes" Signal) | ("==" Integer) | ("!=" Integer) | (">=" Integer) | ("<=" Integer) | (">" Integer) | ("<" Integer));
 
 Signal =
     "high" | "low";
@@ -165,7 +165,7 @@ Grammar =
     (ActuatorAnalog)*
     (Lcd)*
     (Task)+
-    Application
+    Application;
 ```
 
 #### Table of symbols
