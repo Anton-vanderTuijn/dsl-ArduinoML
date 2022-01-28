@@ -241,7 +241,7 @@ class GroovyActions {
         ActionLCDDigitalReader action = new ActionLCDDigitalReader();
         action.setBrick((IBrickPin) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(digitalSource))
 
-        [on: { lcd ->
+        ["valueOn": { lcd ->
             action.setLCD(lcd instanceof String ? (LCD) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(lcd) : (LCD) lcd)
             [row: { number ->
                 action.setRowToDisplay(number)
@@ -258,7 +258,7 @@ class GroovyActions {
         ActionLCDAnalogReader action = new ActionLCDAnalogReader();
         action.setBrick((IBrickPin) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(analogSource))
 
-        [on: { lcd ->
+        ["valueOn": { lcd ->
             action.setLCD(lcd instanceof String ? (LCD) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(lcd) : (LCD) lcd)
             [row: { number ->
                 action.setRowToDisplay(number)

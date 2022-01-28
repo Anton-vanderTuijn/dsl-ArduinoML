@@ -22,7 +22,7 @@ task {
         name "sensor"
         initial "false"
         actions {
-            printDigital "button" on "lcd" row 2
+            printDigital "button" valueOn "lcd" row 2
         }
         transitions {
             toState "actuator" when "button" becomes "high"
@@ -33,7 +33,7 @@ task {
         name "actuator"
         initial "false"
         actions {
-            printAnalog "led" on "lcd" row 1
+            printAnalog "led" valueOn "lcd" row 1
         }
         transitions {
             toState "text" when "button" becomes "high"
