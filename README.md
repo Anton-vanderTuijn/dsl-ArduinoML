@@ -12,7 +12,6 @@ Members | Contact
 [Guillaume Savornin](https://github.com/GuillaumeSavornin)  | [guillaume.savornin@etu.univ-cotedazur.fr](mailto:guillaume.savornin@etu.univ-cotedazur.fr)
 [Anton van der Tuijn](https://github.com/Anton-vanderTuijn) | [anton.van-der-tuijn@etu.univ-cotedazur.fr](mailto:anton.van-der-tuijn@etu.univ-cotedazur.fr)
 
-
 ## Project structure
 
 - The ```external``` directory contains an approach using MPS (more [here](#MPS))
@@ -26,22 +25,48 @@ Members | Contact
 
 ![Domain model](assets/domainModel.png)
 
-
 ## External DSL: MPS <a name="MPS"></a>
+
 TBD: how to run
 
-### Syntax language
+### Syntax (Extended Backus–Naur form)
+
+```java
 TBD
+```
+
+#### Table of symbols
+
+Notation | Usage
+------------------ | ---------------- 
+=                  | definition
+;                  | termination
+&#124;             | alternation
+( ... )            | grouping
+" ... "            | terminal string
+' ... '            | terminal string
+(* ... *)          | comment
+( ... )*           | zero or more
+( ... )+           | one or more
+( ... )?           | zero or one
+
+#### Syntax example
+
+```
+TBD
+```
 
 ### Scenarios supported
 
 Basic scenarios:
+
 - [X] Very simple alarm
 - [X] Dual-check alarm
 - [X] State-based alarm
 - [X] Multi-state alarm
 
 “A la carte” features:
+
 - [X] Exception Throwing
 - [X] Temporal transitions
 - [X] Supporting the LCD screen
@@ -49,6 +74,7 @@ Basic scenarios:
 - [X] Parallel periodic Region
 
 ### Requirements
+
 - [MPS](https://www.jetbrains.com/mps/)
 
 ## Internal DSL: Groovy <a name="Groovy"></a>
@@ -62,7 +88,102 @@ Then in the GroovuinoML folder you can launch a script using ```run.sh```. </br>
 The scenarios emplemented can be found under ```./scripts/base``` and ```./scripts/extensions```. </br>
 The script code for the arduino will be outputed in the ```program.ino``` file. </br>
 
-### Syntax exemple
+### Syntax (Extended Backus–Naur form)
+
+```java
+SensorDigital =
+    "sensorDigital" String "pin" Integer;
+SensorAnalog =
+    "sensorAnalog" String "pin" Integer;
+ActuatorDigital =
+    "actuatorDigital" String "pin" Integer;
+ActuatorAnalog =
+    "actuatorAnalog" String "pin" Integer;
+Lcd =
+    "lcd" String "cols" Integer "rows" Integer "onBus" Integer;
+
+Task =
+    "task" "{"
+        "taskName" String
+        "period" Integer
+        (State)+
+        (StateError)*
+    "}";
+       
+State =
+    "state" "{"
+        "name" String
+        "initial" String
+        Actions
+        Transitions
+    "}";
+       
+StateError =
+    "stateError" "{"
+        "name" String
+        "code" Integer
+    "}"
+
+Actions =
+    "actions" "{"
+        (ActionDigital)*
+        (ActionAnalog)*
+        (PrintText)*
+        (PrintDigital)*
+        (PrintAnalog)*
+    "}";
+
+ActionDigital =
+    "actionDigital" String "becomes" Signal
+ActionAnalog =
+    "actionAnalog" String "becomes" Integer
+PrintText =
+    "printText" String "on" String "row" Integer
+PrintDigital =
+    "printDigital" String "valueOn" String "row" Integer
+PrintAnalog =
+    "printAnalog" String "valueOn" String "row" Integer
+
+Transitions =
+    "transitions" "{"
+        (ToState)+
+    "}";
+
+ToState =
+    "toState" String "when" String (("becomes" Signal) | ("==" Integer) | ("!=" Integer) | (">=" Integer) | ("<=" Integer) | (">" Integer) | ("<" Integer))  
+
+Signal =
+    "high" | "low";
+
+Application =
+    "application" String;
+
+Grammar =
+    (SensorDigital)*
+    (SensorAnalog)*
+    (ActuatorDigital)*
+    (ActuatorAnalog)*
+    (Lcd)*
+    (Task)+
+    Application
+```
+
+#### Table of symbols
+
+Notation | Usage
+------------------ | ---------------- 
+=                  | definition
+;                  | termination
+&#124;             | alternation
+( ... )            | grouping
+" ... "            | terminal string
+' ... '            | terminal string
+(* ... *)          | comment
+( ... )*           | zero or more
+( ... )+           | one or more
+( ... )?           | zero or one
+
+#### Syntax example
 
 ```groovy
 sensorDigital "button" pin 9
@@ -104,12 +225,14 @@ application "Very Simple Alarm"
 ### Scenarios supported
 
 Basic scenarios:
+
 - [X] Very simple alarm
 - [X] Dual-check alarm
 - [X] State-based alarm
 - [X] Multi-state alarm
 
 “A la carte” features:
+
 - [X] Exception Throwing
 - [ ] Temporal transitions
 - [X] Supporting the LCD screen
@@ -117,6 +240,7 @@ Basic scenarios:
 - [ ] Parallel periodic Region
 
 ### Requirements
+
 - [Groovy](https://groovy-lang.org/)
 - Maven
 - Java 8
@@ -125,8 +249,8 @@ Basic scenarios:
 
 ## Arduino sensor and actuators connection <a name="Arduino"></a>
 
-The following table was used to define the sensor and actuators connection pins for all the scenarios implemented.
-Of course, you can change the configuration to suit your needs
+The following table was used to define the sensor and actuators connection pins for all the scenarios implemented. Of
+course, you can change the configuration to suit your needs
 
 Component | Type | Pin(s)
 ------------------ | ---------------- | ---------------------------------
@@ -137,7 +261,7 @@ Led 1              | actuator         | 12
 Led 2              | actuator         | 13
 Error Led          | actuator         | 8
 Temperature sensor | sensorAnalogical | A1
-LCD screen         | lcd              | 10, 11, 12, 13, 14, 15, 16 (bus2)* 
+LCD screen         | lcd              | 10, 11, 12, 13, 14, 15, 16 (bus2)*
 
 *Lcd screen pins for bus 2 are hardcoded, so no need to give them
 

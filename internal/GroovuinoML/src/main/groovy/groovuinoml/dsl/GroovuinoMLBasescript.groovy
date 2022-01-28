@@ -217,6 +217,20 @@ class GroovyActions {
     }
 
     /**
+     * actionAnalog "actuator" ...
+     */
+    def actionAnalog(String actuator) {
+
+        ActionAnalog action = new ActionAnalog();
+        action.setActuator((ActuatorAnalog) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(actuator))
+
+        [becomes: { value ->
+            action.setSignal(value)
+            actions.add(action)
+        }]
+    }
+
+    /**
      * printText "text" on "lcd" row number ...
      */
     def printText(String text) {
