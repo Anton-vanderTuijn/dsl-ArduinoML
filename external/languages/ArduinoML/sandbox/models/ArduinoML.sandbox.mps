@@ -842,32 +842,6 @@
         <property role="1cImFU" value="3" />
       </node>
     </node>
-    <node concept="2iURoD" id="5YNRb5VV0bs" role="2iURox">
-      <property role="TrG5h" value="errorProgram" />
-      <property role="3kEtoh" value="1" />
-      <node concept="l5YBo" id="5YNRb5VV0bX" role="2iURoG">
-        <property role="TrG5h" value="error1" />
-        <property role="1cJ3q6" value="true" />
-        <node concept="U0Y7O" id="5YNRb5VV0bY" role="3BVhZf">
-          <property role="U0Y7N" value="300" />
-          <ref role="U685f" node="5YNRb5VV0c0" />
-        </node>
-        <node concept="3BL1Gj" id="5YNRb5VV0bZ" role="l5YBu">
-          <ref role="3BL6cZ" node="5YNRb5VV09n" resolve="led" />
-        </node>
-      </node>
-      <node concept="l5YBo" id="5YNRb5VV0c0" role="2iURoG">
-        <property role="TrG5h" value="error2" />
-        <node concept="U0Y7O" id="5YNRb5VV0c1" role="3BVhZf">
-          <property role="U0Y7N" value="300" />
-          <ref role="U685f" node="5YNRb5VV0bX" resolve="error1" />
-        </node>
-        <node concept="3BL1Gj" id="5YNRb5VV0c2" role="l5YBu">
-          <property role="3BL6cX" value="62oRKDPzNre/LOW" />
-          <ref role="3BL6cZ" node="5YNRb5VV09n" resolve="led" />
-        </node>
-      </node>
-    </node>
     <node concept="l5YBf" id="5YNRb5VV09n" role="3_PcyG">
       <property role="TrG5h" value="led" />
       <property role="XaZ4a" value="9" />
