@@ -727,27 +727,6 @@
       <node concept="2iRfu4" id="7Mto9RJ3UuA" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="508e52RTjJO">
-    <ref role="1XX52x" to="ge5j:508e52RTjJJ" resolve="ActionSleep" />
-    <node concept="3EZMnI" id="508e52RTjJQ" role="2wV5jI">
-      <node concept="3F0ifn" id="508e52RTjK0" role="3EZMnx">
-        <property role="3F0ifm" value="wait" />
-        <node concept="VechU" id="7QYskAWFIEq" role="3F10Kt">
-          <property role="Vb096" value="fLwANPp/orange" />
-        </node>
-      </node>
-      <node concept="3F0A7n" id="508e52RTjK6" role="3EZMnx">
-        <ref role="1NtTu8" to="ge5j:508e52RTjJM" resolve="time_ms" />
-        <node concept="VechU" id="3phm7rX8WIo" role="3F10Kt">
-          <property role="Vb096" value="hGRnIZc/lightBlue" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="508e52RTjKe" role="3EZMnx">
-        <property role="3F0ifm" value="ms" />
-      </node>
-      <node concept="2iRfu4" id="508e52RTjJT" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="508e52RTZfm">
     <ref role="1XX52x" to="ge5j:508e52RTY3y" resolve="ConditionAnalog" />
     <node concept="3EZMnI" id="508e52RTZfo" role="2wV5jI">

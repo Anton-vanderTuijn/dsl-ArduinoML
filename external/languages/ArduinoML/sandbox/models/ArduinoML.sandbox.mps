@@ -789,5 +789,97 @@
       <property role="XaZ4a" value="11" />
     </node>
   </node>
+  <node concept="l5YB9" id="5YNRb5VV094">
+    <property role="TrG5h" value="Parallel Program With Error &amp; Analog" />
+    <node concept="2iURoD" id="5YNRb5VV095" role="2iURox">
+      <property role="TrG5h" value="program1" />
+      <property role="3kEtoh" value="500" />
+      <node concept="l5YBo" id="5YNRb5VV096" role="2iURoG">
+        <property role="TrG5h" value="stateOff" />
+        <property role="1cJ3q6" value="true" />
+        <node concept="3BVgER" id="5YNRb5VV097" role="3BVhZf">
+          <ref role="U685f" node="5YNRb5VV09a" resolve="stateOn" />
+          <node concept="3BS04E" id="5YNRb5VV098" role="3BS8aA">
+            <ref role="3BS07h" node="5YNRb5VV09p" resolve="btn1" />
+          </node>
+        </node>
+        <node concept="3BL1Gj" id="5YNRb5VV099" role="l5YBu">
+          <property role="3BL6cX" value="62oRKDPzNre/LOW" />
+          <ref role="3BL6cZ" node="5YNRb5VV09n" resolve="led1" />
+        </node>
+      </node>
+      <node concept="l5YBo" id="5YNRb5VV09a" role="2iURoG">
+        <property role="TrG5h" value="stateOn" />
+        <node concept="3BVgER" id="5YNRb5VV09b" role="3BVhZf">
+          <ref role="U685f" node="5YNRb5VV096" resolve="stateOff" />
+          <node concept="3BS04E" id="5YNRb5VV09c" role="3BS8aA">
+            <property role="3BS04J" value="62oRKDPzNre/LOW" />
+            <ref role="3BS07h" node="5YNRb5VV09p" resolve="btn1" />
+          </node>
+        </node>
+        <node concept="3BL1Gj" id="5YNRb5VV09d" role="l5YBu">
+          <ref role="3BL6cZ" node="5YNRb5VV09n" resolve="led1" />
+        </node>
+      </node>
+    </node>
+    <node concept="2iURoD" id="5YNRb5VV09e" role="2iURox">
+      <property role="TrG5h" value="programWithError" />
+      <property role="3kEtoh" value="50" />
+      <node concept="l5YBo" id="5YNRb5VV09f" role="2iURoG">
+        <property role="TrG5h" value="stateOff2" />
+        <property role="1cJ3q6" value="true" />
+        <node concept="3BVgER" id="5YNRb5VV09M" role="3BVhZf">
+          <ref role="U685f" node="5YNRb5VV0a$" resolve="errorState" />
+          <node concept="3BVXyM" id="5YNRb5VV09V" role="3BS8aA">
+            <property role="3BVWI4" value="&lt;" />
+            <property role="3BVWLm" value="30" />
+            <ref role="3BVXyP" node="5YNRb5VV09$" resolve="light" />
+          </node>
+        </node>
+      </node>
+      <node concept="1cImFT" id="5YNRb5VV0a$" role="2iURoG">
+        <property role="TrG5h" value="errorState" />
+        <property role="1cImFU" value="3" />
+      </node>
+    </node>
+    <node concept="2iURoD" id="5YNRb5VV0bs" role="2iURox">
+      <property role="TrG5h" value="errorProgram" />
+      <property role="3kEtoh" value="1" />
+      <node concept="l5YBo" id="5YNRb5VV0bX" role="2iURoG">
+        <property role="TrG5h" value="error1" />
+        <property role="1cJ3q6" value="true" />
+        <node concept="U0Y7O" id="5YNRb5VV0bY" role="3BVhZf">
+          <property role="U0Y7N" value="300" />
+          <ref role="U685f" node="5YNRb5VV0c0" />
+        </node>
+        <node concept="3BL1Gj" id="5YNRb5VV0bZ" role="l5YBu">
+          <ref role="3BL6cZ" node="5YNRb5VV09n" resolve="led" />
+        </node>
+      </node>
+      <node concept="l5YBo" id="5YNRb5VV0c0" role="2iURoG">
+        <property role="TrG5h" value="error2" />
+        <node concept="U0Y7O" id="5YNRb5VV0c1" role="3BVhZf">
+          <property role="U0Y7N" value="300" />
+          <ref role="U685f" node="5YNRb5VV0bX" resolve="error1" />
+        </node>
+        <node concept="3BL1Gj" id="5YNRb5VV0c2" role="l5YBu">
+          <property role="3BL6cX" value="62oRKDPzNre/LOW" />
+          <ref role="3BL6cZ" node="5YNRb5VV09n" resolve="led" />
+        </node>
+      </node>
+    </node>
+    <node concept="l5YBf" id="5YNRb5VV09n" role="3_PcyG">
+      <property role="TrG5h" value="led" />
+      <property role="XaZ4a" value="9" />
+    </node>
+    <node concept="lc1EX" id="5YNRb5VV09p" role="3_PcyG">
+      <property role="TrG5h" value="btn" />
+      <property role="XaZ4a" value="8" />
+    </node>
+    <node concept="lcJmo" id="5YNRb5VV09$" role="3_PcyG">
+      <property role="TrG5h" value="light" />
+      <property role="XaZ4a" value="1" />
+    </node>
+  </node>
 </model>
 

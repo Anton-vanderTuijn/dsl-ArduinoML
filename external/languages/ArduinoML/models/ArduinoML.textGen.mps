@@ -1963,34 +1963,6 @@
       </node>
     </node>
   </node>
-  <node concept="WtQ9Q" id="508e52RTjKj">
-    <ref role="WuzLi" to="ge5j:508e52RTjJJ" resolve="ActionSleep" />
-    <node concept="11bSqf" id="508e52RTjKk" role="11c4hB">
-      <node concept="3clFbS" id="508e52RTjKl" role="2VODD2">
-        <node concept="lc7rE" id="508e52RTjKC" role="3cqZAp">
-          <node concept="la8eA" id="508e52RTjKW" role="lcghm">
-            <property role="lacIc" value="delay(" />
-          </node>
-          <node concept="l9hG8" id="508e52RTjM3" role="lcghm">
-            <node concept="2YIFZM" id="508e52RTkHu" role="lb14g">
-              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
-              <node concept="2OqwBi" id="508e52RTkUm" role="37wK5m">
-                <node concept="117lpO" id="508e52RTkJH" role="2Oq$k0" />
-                <node concept="3TrcHB" id="508e52RTlcy" role="2OqNvi">
-                  <ref role="3TsBF5" to="ge5j:508e52RTjJM" resolve="time_ms" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="la8eA" id="508e52RTlZL" role="lcghm">
-            <property role="lacIc" value=");" />
-          </node>
-          <node concept="l8MVK" id="508e52RTm2w" role="lcghm" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="WtQ9Q" id="508e52RTZg9">
     <ref role="WuzLi" to="ge5j:508e52RTY3y" resolve="ConditionAnalog" />
     <node concept="11bSqf" id="508e52RTZgb" role="11c4hB">
