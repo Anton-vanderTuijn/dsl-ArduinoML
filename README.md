@@ -256,10 +256,10 @@ Component | Type | Pin(s)
 ------------------ | ---------------- | ---------------------------------
 Button 1           | sensorDigital    | 9
 Button 2           | sensorDigital    | 10
-Buzzer             | actuator         | 11
-Led 1              | actuator         | 12
-Led 2              | actuator         | 13
-Error Led          | actuator         | 8
+Buzzer             | actuatorDigital  | 11
+Led 1              | actuatorDigital  | 12
+Led 2              | actuatorDigital  | 13
+Error Led          | actuatorDigital  | 8
 Temperature sensor | sensorAnalogical | A1
 LCD screen         | lcd              | 10, 11, 12, 13, 14, 15, 16 (bus2)*
 
