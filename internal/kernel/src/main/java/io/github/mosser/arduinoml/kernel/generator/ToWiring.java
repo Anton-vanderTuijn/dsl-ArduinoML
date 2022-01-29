@@ -8,8 +8,7 @@ import io.github.mosser.arduinoml.kernel.structural.*;
  * Quick and dirty visitor to support the generation of Wiring code
  */
 public class ToWiring extends Visitor<StringBuffer> {
-    enum PASS {ONE, TWO}
-
+    enum PASS {ONE, TWO, SETUP, PROGRAM}
 
     public ToWiring() {
         this.result = new StringBuffer();
@@ -39,11 +38,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         w("};\n");
 
         for (Task task : app.getTasks()) {
-            for (IState state : task.getStates()) {
-                if (state.isInitial()) {
-                    w("STATE currentState = " + state.getName() + ";\n");
-                }
-            }
+            task.accept(this);
         }
 
         for (IBrick brick : app.getBricks()) {
@@ -52,21 +47,37 @@ public class ToWiring extends Visitor<StringBuffer> {
 
         //second pass, setup and loop
         context.put("pass", PASS.TWO);
+        w("Scheduler runner;\n");
+        for (Task task : app.getTasks()) {
+            task.accept(this);
+        }
         w("\nvoid setup(){\n");
         for (IBrick brick : app.getBricks()) {
             brick.accept(this);
         }
+        w("\n");
+        context.put("pass", PASS.SETUP);
+        for (Task task : app.getTasks()) {
+            task.accept(this);
+        }
+        context.put("pass", PASS.TWO);
         w("}\n");
 
-        w("\nvoid loop() {\n" +
-                "\tswitch(currentState){\n");
+//        w("\nvoid loop() {\n" +
+//                "\tswitch(currentState){\n");
+//        for (Task task : app.getTasks()) {
+//            for (IState state : task.getStates()) {
+//                state.accept(this);
+//            }
+//        }
+//        w("\t}\n" +
+//                "}");
+
+        w("\nvoid loop() {\n\trunner.execute();\n}\n");
+        context.put("pass", PASS.PROGRAM);
         for (Task task : app.getTasks()) {
-            for (IState state : task.getStates()) {
-                state.accept(this);
-            }
+            task.accept(this);
         }
-        w("\t}\n" +
-                "}");
     }
 
     @Override
@@ -92,8 +103,39 @@ public class ToWiring extends Visitor<StringBuffer> {
 
     @Override
     public void visit(Task task) {
+        if (context.get("pass") == PASS.ONE) {
+            w("void "+task.getName()+"_FSM();\n\n");
+        }else if (context.get("pass") == PASS.TWO) {
+            w("STATE currentState_"+task.getName()+" = "+ getInitial(task).getName() +";\n");
+            w("Task task_"+task.getName()+"("+task.getPeriod()+", TASK_FOREVER, &"+task.getName()+"_FSM);\n");
+            w("long timeStartState_" + task.getName() + " = 0;\n");
+            w("boolean hasStateChanged_" + task.getName() + " = true;\n\n");
+        }else if(context.get("pass") == PASS.SETUP) {
+            w("\trunner.addTask(task_"+task.getName()+");\n");
+            w("\ttask_"+task.getName()+".enable();\n\n");
+        }else if(context.get("pass") == PASS.PROGRAM) {
+            w("\nvoid "+task.getName()+"_FSM(){\n");
+            w("\tswitch(currentState_"+task.getName()+"){\n");
+            context.put("pass", PASS.TWO);
+            for (IState state : task.getStates()) {
+                state.accept(this);
+            }
+            w("\t}\n");
+            context.put("pass", PASS.PROGRAM);
+            w("}\n");
+        }
 
     }
+
+    private IState getInitial(Task task){
+        for (IState state : task.getStates()) {
+            if (state.isInitial()) {
+                return state;
+            }
+        }
+        return null;
+    }
+
 
     @Override
     public void visit(ActuatorDigital actuatorDigital) {
