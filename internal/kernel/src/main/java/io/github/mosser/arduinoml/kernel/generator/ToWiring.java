@@ -135,6 +135,7 @@ public class ToWiring extends Visitor<StringBuffer> {
             w("\ttask_"+task.getName()+".enable();\n\n");
         }else if(context.get("pass") == PASS.PROGRAM) {
             w("\nvoid "+task.getName()+"_FSM(){\n");
+            context.put("task", task.getName());
             w("\tswitch(currentState_"+task.getName()+"){\n");
             context.put("pass", PASS.TWO);
             for (IState state : task.getStates()) {
@@ -183,7 +184,7 @@ public class ToWiring extends Visitor<StringBuffer> {
 
     @Override
     public void visit(TransitionTime condition) {
-        // TODO
+        w("TIME TIME" + condition.getTimeBeforeTransition());
     }
 
     @Override
@@ -393,7 +394,7 @@ public class ToWiring extends Visitor<StringBuffer> {
                 String sensorName = condition.getSensor().getName();
                 w(String.format("\t\t\t\t%sLastDebounceTime = millis();\n", sensorName));
             }
-            w("\t\t\t\tcurrentState = " + transition.getTarget().getName() + ";\n");
+            w("\t\t\t\tcurrentState_"+context.get("task")+" = " + transition.getTarget().getName() + ";\n");
             w("\t\t\t}\n");
 
             return;
