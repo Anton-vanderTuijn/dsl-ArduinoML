@@ -32,8 +32,39 @@ TBD: how to run
 ### Syntax (Extended Backus–Naur form)
 
 ```java
-TBD
+
+Brick = 
+    ("Sensor Digital" | "Sensor Analog" | "Actuator Digital" | "Actuator Analog") String "on pin" Integer
+    | "LCD" String "(" Integer "cols," Integer "rows ) on bus" Integer;
+
+Task =
+    "Task" String ":"
+        "Period :" Integer "ms"
+        (State)+
+        (StateError)*;
+       
+State =
+    "State" String ":"
+        "initial :" Boolean
+        "actions :" (Action)*
+        "transitions :" (Transition)*;
+       
+StateError = "Error State" String ": error code: " Integer;
+
+Action = 
+    String "becomes" (Integer | Signal)
+    | "print" ((String "value") |  ("'" String "'")) "on" String "row n°" Integer)
+
+Transition = "to" String "when" String ( ("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer) | ("after" Integer "ms") ));
+
+Signal = "high" | "low";
+
+App =
+    "Application" String
+    (Brick)*
+    (Task)+;
 ```
+
 
 #### Table of symbols
 
@@ -52,8 +83,29 @@ Notation | Usage
 
 #### Syntax example
 
-```
-TBD
+```java
+Application Dual-check alarm
+
+  Actuator Digital buzzer on pin 8
+  Sensor Digital btn1 on pin 9
+  Sensor Digital btn2 on pin 10
+
+  Task program :
+    Period : 1 ms
+    State alarm_off :
+      initial : true
+      actions :
+        buzzer becomes low
+      transitions :
+        to alarm_on when btn1 becomes high and
+                         btn1 becomes high
+
+    State alarm_on :
+      actions :
+        buzzer becomes high
+      transitions :
+        to alarm_off when btn1 becomes low
+        to alarm_off when btn2 becomes low
 ```
 
 ### Scenarios supported
