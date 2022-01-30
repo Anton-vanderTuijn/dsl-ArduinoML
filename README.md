@@ -119,7 +119,7 @@ Application Dual-check alarm
         buzzer becomes low
       transitions :
         to alarm_on when btn1 becomes high and
-                         btn1 becomes high
+                         btn2 becomes high
 
     State alarm_on :
       actions :
