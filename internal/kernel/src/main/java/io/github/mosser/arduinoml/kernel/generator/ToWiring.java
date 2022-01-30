@@ -183,11 +183,6 @@ public class ToWiring extends Visitor<StringBuffer> {
     }
 
     @Override
-    public void visit(TransitionTime condition) {
-        w("TIME TIME" + condition.getTimeBeforeTransition());
-    }
-
-    @Override
     public void visit(SensorAnalog sensorAnalog) {
         if (context.get("pass") == PASS.ONE) {
             w(String.format("int %s = %d; // [SensorAnalog]\n", sensorAnalog.getName(), sensorAnalog.getPin()));
@@ -314,7 +309,11 @@ public class ToWiring extends Visitor<StringBuffer> {
             return;
         }
         if (context.get("pass") == PASS.TWO) {
-            w("\t\tcase " + state.getName() + ":\n");
+            w("\t\t\tcase " + state.getName() + ":\n");
+            w("\t\t\tif(hasStateChanged_" + context.get("task") + "){\n");
+            w("\t\t\t\ttimeStartState_" + context.get("task") + " = millis();\n");
+            w("\t\t\t\thasStateChanged_" + context.get("task") + " = false;\n");
+            w("\t\t\t}\n");
 
             boolean clearLCD = false;
 
@@ -363,6 +362,13 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
     }
 
+    @Override
+    public void visit(TransitionTime transition) {
+        w("\t\t\tif(millis() - timeStartState_"+context.get("task")+" > "+ transition.getTimeBeforeTransition()+"){\n");
+        w("\t\t\t\tcurrentState_"+context.get("task")+" = " + transition.getTarget().getName() + ";\n");
+        w("\t\t\t\thasStateChanged_"+context.get("task")+" = true;\n");
+        w("\t\t\t}\n");
+    }
 
     @Override
     public void visit(Transition transition) {
@@ -395,6 +401,7 @@ public class ToWiring extends Visitor<StringBuffer> {
                 w(String.format("\t\t\t\t%sLastDebounceTime = millis();\n", sensorName));
             }
             w("\t\t\t\tcurrentState_"+context.get("task")+" = " + transition.getTarget().getName() + ";\n");
+            w("\t\t\t\thasStateChanged_"+context.get("task")+" = true;\n");
             w("\t\t\t}\n");
 
             return;
