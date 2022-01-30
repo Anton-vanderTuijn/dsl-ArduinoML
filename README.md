@@ -185,7 +185,8 @@ State =
             (Action)*
         "}";
         "transitions" "{"
-            (ToState)+
+            (ToState)*
+            (After)*
         "}";
     "}";
 
@@ -201,6 +202,9 @@ Action =
 
 ToState =
     "toState" String "when" Condition ("and" Condition)*;
+
+After = 
+    "after" Integer "goTo" String;
 
 Condition =
     String (("becomes" Signal) | (("==" | "!=" | ">=" | "<=" | ">" | "<") Integer));
@@ -290,10 +294,10 @@ Basic scenarios:
 “A la carte” features:
 
 - [X] Exception Throwing
-- [ ] Temporal transitions
+- [X] Temporal transitions
 - [X] Supporting the LCD screen
 - [X] Handling Analogical Bricks
-- [ ] Parallel periodic Region
+- [X] Parallel periodic Region
 
 ### Requirements
 
