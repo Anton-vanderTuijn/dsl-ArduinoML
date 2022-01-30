@@ -279,8 +279,6 @@ task {
 }
 
 application "Dual check Alarm"
-
-application "Very Simple Alarm"
 ```
 
 ### Scenarios supported
