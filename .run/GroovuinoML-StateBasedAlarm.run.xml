@@ -1,12 +1,12 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="GroovuinoML-StateBasedAlarm" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="groovuinoml.main.GroovuinoML" />
+    <option name="MAIN_CLASS_NAME" value="GroovuinoML" />
     <module name="dsl-groovy" />
     <option name="PROGRAM_PARAMETERS" value="GroovuinoML\scripts\base\StateBasedAlarm.groovy" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/internal" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="groovuinoml.main.*" />
+        <option name="PATTERN" value=".*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

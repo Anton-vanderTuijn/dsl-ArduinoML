@@ -8,8 +8,7 @@ import io.github.mosser.arduinoml.kernel.structural.*;
  * Quick and dirty visitor to support the generation of Wiring code
  */
 public class ToWiring extends Visitor<StringBuffer> {
-    enum PASS {ONE, TWO}
-
+    enum PASS {ONE, TWO, DECLARATION, SETUP, PROGRAM, RUNNER}
 
     public ToWiring() {
         this.result = new StringBuffer();
@@ -22,10 +21,20 @@ public class ToWiring extends Visitor<StringBuffer> {
     @Override
     public void visit(App app) {
         //first pass, create global vars
-        context.put("pass", PASS.ONE);
+        w("#include <avr/io.h>\n" +
+                "#include <util/delay.h>\n" +
+                "#include <Arduino.h>\n" +
+                "#include <LiquidCrystal.h>\n" +
+                "#include <TaskScheduler.h>\n\n");
+
         w("// Wiring code generated from an ArduinoML model\n");
         w(String.format("// Application name: %s\n", app.getName()) + "\n");
 
+        context.put("pass", PASS.DECLARATION);
+        for (Task task : app.getTasks()) {
+            task.accept(this);
+        }
+        context.put("pass", PASS.ONE);
         w("long debounce = 200;\n");
         w("\nenum STATE {");
         String sep = "";
@@ -36,37 +45,57 @@ public class ToWiring extends Visitor<StringBuffer> {
                 sep = ", ";
             }
         }
-        w("};\n");
+        w("};\n\n");
 
         for (Task task : app.getTasks()) {
-            for (IState state : task.getStates()) {
-                if (state.isInitial()) {
-                    w("STATE currentState = " + state.getName() + ";\n");
-                }
-            }
+            task.accept(this);
         }
-
+        w("\n");
         for (IBrick brick : app.getBricks()) {
             brick.accept(this);
         }
+        w("\n");
 
         //second pass, setup and loop
+        context.put("pass", PASS.RUNNER);
+        w("Scheduler runner;\n");
+        for (Task task : app.getTasks()) {
+            task.accept(this);
+        }
+
+        w("\n");
         context.put("pass", PASS.TWO);
-        w("\nvoid setup(){\n");
+        for (Task task : app.getTasks()) {
+            task.accept(this);
+        }
+
+        w("void setup(){\n");
         for (IBrick brick : app.getBricks()) {
             brick.accept(this);
         }
+        w("\n");
+        context.put("pass", PASS.SETUP);
+        for (Task task : app.getTasks()) {
+            task.accept(this);
+        }
+        context.put("pass", PASS.TWO);
         w("}\n");
 
-        w("\nvoid loop() {\n" +
-                "\tswitch(currentState){\n");
+//        w("\nvoid loop() {\n" +
+//                "\tswitch(currentState){\n");
+//        for (Task task : app.getTasks()) {
+//            for (IState state : task.getStates()) {
+//                state.accept(this);
+//            }
+//        }
+//        w("\t}\n" +
+//                "}");
+
+        w("\nvoid loop() {\n\trunner.execute();\n}\n");
+        context.put("pass", PASS.PROGRAM);
         for (Task task : app.getTasks()) {
-            for (IState state : task.getStates()) {
-                state.accept(this);
-            }
+            task.accept(this);
         }
-        w("\t}\n" +
-                "}");
     }
 
     @Override
@@ -92,8 +121,42 @@ public class ToWiring extends Visitor<StringBuffer> {
 
     @Override
     public void visit(Task task) {
+        if (context.get("pass") == PASS.DECLARATION) {
+            w("void "+task.getName()+"_FSM();\n\n");
+        }else if (context.get("pass") == PASS.ONE){
+            w("STATE currentState_"+task.getName()+" = "+ getInitial(task).getName() +";\n");
+        }else if (context.get("pass") == PASS.RUNNER) {
+            w("Task task_"+task.getName()+"("+task.getPeriod()+", TASK_FOREVER, &"+task.getName()+"_FSM);\n");
+        }else if (context.get("pass") == PASS.TWO) {
+            w("long timeStartState_" + task.getName() + " = 0;\n");
+            w("boolean hasStateChanged_" + task.getName() + " = true;\n\n");
+        }else if(context.get("pass") == PASS.SETUP) {
+            w("\trunner.addTask(task_"+task.getName()+");\n");
+            w("\ttask_"+task.getName()+".enable();\n\n");
+        }else if(context.get("pass") == PASS.PROGRAM) {
+            w("\nvoid "+task.getName()+"_FSM(){\n");
+            context.put("task", task.getName());
+            w("\tswitch(currentState_"+task.getName()+"){\n");
+            context.put("pass", PASS.TWO);
+            for (IState state : task.getStates()) {
+                state.accept(this);
+            }
+            w("\t}\n");
+            context.put("pass", PASS.PROGRAM);
+            w("}\n");
+        }
 
     }
+
+    private IState getInitial(Task task){
+        for (IState state : task.getStates()) {
+            if (state.isInitial()) {
+                return state;
+            }
+        }
+        return null;
+    }
+
 
     @Override
     public void visit(ActuatorDigital actuatorDigital) {
@@ -117,11 +180,6 @@ public class ToWiring extends Visitor<StringBuffer> {
             w(String.format("\tpinMode(%d, OUTPUT); // %s [Actuator]\n", actuatorAnalog.getPin(), actuatorAnalog.getName()));
             return;
         }
-    }
-
-    @Override
-    public void visit(TransitionTime condition) {
-        // TODO
     }
 
     @Override
@@ -251,7 +309,11 @@ public class ToWiring extends Visitor<StringBuffer> {
             return;
         }
         if (context.get("pass") == PASS.TWO) {
-            w("\t\tcase " + state.getName() + ":\n");
+            w("\t\t\tcase " + state.getName() + ":\n");
+            w("\t\t\tif(hasStateChanged_" + context.get("task") + "){\n");
+            w("\t\t\t\ttimeStartState_" + context.get("task") + " = millis();\n");
+            w("\t\t\t\thasStateChanged_" + context.get("task") + " = false;\n");
+            w("\t\t\t}\n");
 
             boolean clearLCD = false;
 
@@ -300,6 +362,13 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
     }
 
+    @Override
+    public void visit(TransitionTime transition) {
+        w("\t\t\tif(millis() - timeStartState_"+context.get("task")+" > "+ transition.getTimeBeforeTransition()+"){\n");
+        w("\t\t\t\tcurrentState_"+context.get("task")+" = " + transition.getTarget().getName() + ";\n");
+        w("\t\t\t\thasStateChanged_"+context.get("task")+" = true;\n");
+        w("\t\t\t}\n");
+    }
 
     @Override
     public void visit(Transition transition) {
@@ -331,7 +400,8 @@ public class ToWiring extends Visitor<StringBuffer> {
                 String sensorName = condition.getSensor().getName();
                 w(String.format("\t\t\t\t%sLastDebounceTime = millis();\n", sensorName));
             }
-            w("\t\t\t\tcurrentState = " + transition.getTarget().getName() + ";\n");
+            w("\t\t\t\tcurrentState_"+context.get("task")+" = " + transition.getTarget().getName() + ";\n");
+            w("\t\t\t\thasStateChanged_"+context.get("task")+" = true;\n");
             w("\t\t\t}\n");
 
             return;

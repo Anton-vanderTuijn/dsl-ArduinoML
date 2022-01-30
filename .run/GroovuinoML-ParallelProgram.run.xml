@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="GroovuinoML-Switch2" type="Application" factoryName="Application">
+  <configuration default="false" name="GroovuinoML-ParallelProgram" type="Application" factoryName="Application">
     <option name="ALTERNATIVE_JRE_PATH" value="11" />
     <option name="MAIN_CLASS_NAME" value="groovuinoml.main.GroovuinoML" />
     <module name="dsl-groovy" />
-    <option name="PROGRAM_PARAMETERS" value="GroovuinoML\scripts\Switch2.groovy" />
+    <option name="PROGRAM_PARAMETERS" value="GroovuinoML\scripts\extentions\ParallelProgramDemo.groovy" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/internal" />
     <extension name="coverage">
       <pattern>

@@ -293,10 +293,26 @@ class GroovyTransitions {
     public List<ITransition> transitions = new ArrayList<>()
 
     /**
+     * after {time} ...
+     */
+    def after(int time){
+        [goTo:{state ->
+            TransitionTime transition = new TransitionTime();
+            try {
+                transition.setTarget((IState) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(state))
+            } catch (MissingPropertyException ignored) {
+                ((GroovuinoMLBinding) baseScript.getBinding()).getGroovuinoMLModel().createState(state, null, null, false)
+                transition.setTarget((IState) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(state))
+            }
+            transition.setTimeBeforeTransition((Integer) time)
+            transitions.add(transition)
+        }]
+    }
+
+    /**
      * toState "state" ...
      */
     def toState(String state) {
-
         Transition transition = new Transition();
         try {
             transition.setTarget((IState) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(state))
@@ -304,7 +320,6 @@ class GroovyTransitions {
             ((GroovuinoMLBinding) baseScript.getBinding()).getGroovuinoMLModel().createState(state, null, null, false)
             transition.setTarget((IState) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(state))
         }
-
         List<ICondition> conditions = new ArrayList<>()
 
         // recursive closure to allow multiple and statements
