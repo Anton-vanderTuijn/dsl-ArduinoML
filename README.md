@@ -67,8 +67,8 @@ Signal =
 
 App =
     "Application" String
-    (Brick)*
-    (Task)+;
+        (Brick)*
+        (Task)+;
 ```
 <!---
 // TODO Remove once figured out the best way to display the transitions
@@ -167,7 +167,7 @@ The script code for the arduino will be outputed in the ```program.ino``` file. 
 
 Brick =
     (("sensorDigital" | "sensorAnalog" | "actuatorDigital" | "actuatorAnalog") String "pin" Integer) 
-        | ("lcd" String "cols" Integer "rows" Integer "onBus" Integer);
+    | ("lcd" String "cols" Integer "rows" Integer "onBus" Integer);
 
 Task =
     "task" "{"
@@ -197,24 +197,21 @@ StateError =
 
 Action =
     ("actionDigital" String "becomes" Signal | "actionAnalog" String "becomes" Integer) 
-        | (("printText" | "printDigital" | "printAnalog") String "valueOn" String "row" Integer);
+    | (("printText" | "printDigital" | "printAnalog") String "valueOn" String "row" Integer);
 
 ToState =
     "toState" String "when" Condition ("and" Condition)*;
 
 Condition =
-        String (("becomes" Signal) | (("==" | "!=" | ">=" | "<=" | ">" | "<") Integer))
+    String (("becomes" Signal) | (("==" | "!=" | ">=" | "<=" | ">" | "<") Integer))
 
 Signal =
     "high" | "low";
 
-Application =
-    "application" String;
-
-Grammar =
+App =
     (Brick)*
     (Task)+
-    Application;
+    "application" String;
 ```
 
 #### Table of symbols
