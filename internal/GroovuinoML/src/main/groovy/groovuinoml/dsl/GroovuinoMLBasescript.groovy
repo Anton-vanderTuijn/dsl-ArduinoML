@@ -295,7 +295,7 @@ class GroovyTransitions {
     /**
      * after {time} ...
      */
-    def after(Integer time){
+    def after(int time){
         [goTo:{state ->
             TransitionTime transition = new TransitionTime();
             try {
@@ -313,7 +313,13 @@ class GroovyTransitions {
      * toState "state" ...
      */
     def toState(String state) {
-
+        Transition transition = new Transition();
+        try {
+            transition.setTarget((IState) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(state))
+        } catch (MissingPropertyException ignored) {
+            ((GroovuinoMLBinding) baseScript.getBinding()).getGroovuinoMLModel().createState(state, null, null, false)
+            transition.setTarget((IState) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(state))
+        }
         List<ICondition> conditions = new ArrayList<>()
 
         // recursive closure to allow multiple and statements
@@ -376,19 +382,9 @@ class GroovyTransitions {
              }
             ]
         }
-
-        [when: {
-             Transition transition = new Transition();
-             try {
-                 transition.setTarget((IState) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(state))
-             } catch (MissingPropertyException ignored) {
-                 ((GroovuinoMLBinding) baseScript.getBinding()).getGroovuinoMLModel().createState(state, null, null, false)
-                 transition.setTarget((IState) ((GroovuinoMLBinding) baseScript.getBinding()).getVariable(state))
-             }
-             transition.setConditions(conditions)
-             transitions.add(transition)
-             closure()
-         }]
+        transition.setConditions(conditions)
+        transitions.add(transition)
+        [when: closure]
 
     }
 }
