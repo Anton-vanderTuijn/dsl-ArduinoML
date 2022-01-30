@@ -303,7 +303,7 @@ Basic scenarios:
 
 ## Arduino sensor and actuators connection <a name="Arduino"></a>
 
-The following table was used to define the sensor and actuators connection pins for all the scenarios implemented. Of
+The following table was used (most of the time) to define the sensor and actuators connection pins for all the scenarios implemented. Of
 course, you can change the configuration to suit your needs
 
 Component | Type | Pin(s)
