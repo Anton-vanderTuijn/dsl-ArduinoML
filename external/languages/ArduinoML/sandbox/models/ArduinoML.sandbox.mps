@@ -220,7 +220,7 @@
             <ref role="3BS07h" node="7QYskAWfA90" resolve="btn1" />
           </node>
           <node concept="3BS04E" id="7QYskAWoCTf" role="3BS8aA">
-            <ref role="3BS07h" node="7QYskAWfA90" resolve="btn1" />
+            <ref role="3BS07h" node="7QYskAWfA97" resolve="btn2" />
           </node>
         </node>
       </node>
