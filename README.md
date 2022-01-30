@@ -192,7 +192,10 @@ Action =
         | (("printText" | "printDigital" | "printAnalog") String "valueOn" String "row" Integer);
 
 ToState =
-    "toState" String "when" String (("becomes" Signal) | (("==" | "!=" | ">=" | "<=" | ">" | "<") Integer));
+    "toState" String "when" Condition ("and" Condition)*;
+
+Condition =
+        String (("becomes" Signal) | (("==" | "!=" | ">=" | "<=" | ">" | "<") Integer))
 
 Signal =
     "high" | "low";
