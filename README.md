@@ -34,8 +34,8 @@ TBD: how to run
 ```java
 
 Brick = 
-    ("Sensor Digital" | "Sensor Analog" | "Actuator Digital" | "Actuator Analog") String "on pin" Integer
-    | "LCD" String "(" Integer "cols," Integer "rows ) on bus" Integer;
+    (("Sensor Digital" | "Sensor Analog" | "Actuator Digital" | "Actuator Analog") String "on pin" Integer)
+    | ("LCD" String "(" Integer "cols," Integer "rows ) on bus" Integer);
 
 Task =
     "Task" String ":"
@@ -49,22 +49,35 @@ State =
         "actions :" (Action)*
         "transitions :" (Transition)*;
        
-StateError = "Error State" String ": error code: " Integer;
+StateError = 
+    "Error State" String ": error code:" Integer;
 
 Action = 
-    String "becomes" (Integer | Signal)
-    | "print" ((String "value") |  ("'" String "'")) "on" String "row n°" Integer)
+    (String "becomes" (Integer | Signal))
+    | ("print" ((String "value") |  ("'" String "'")) "on" String "row n°" Integer);
 
-Transition = "to" String "when" String ( ("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer) | ("after" Integer "ms") ));
-
-Signal = "high" | "low";
+Transition = 
+    "to" String (("when" String (("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer))) | ("after" Integer "ms"));
+    
+Signal = 
+    "high" | "low";
 
 App =
     "Application" String
     (Brick)*
     (Task)+;
 ```
-
+<!---
+// TODO Remove once figured out the best way to display the transitions
+Transition = 
+      "to" String "when" String "becomes" Signal
+    | "to" String "when" String ("=="|"!="|">="|"<="|">"|"<") Integer
+    | "to" String "after" Integer "ms";
+    
+ Transition = 
+      "to" String "when" String ("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer)
+    | "to" String "after" Integer "ms";
+ -->
 
 #### Table of symbols
 
