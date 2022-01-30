@@ -42,23 +42,26 @@ Task =
         "Period :" Integer "ms"
         (State)+
         (StateError)*;
-       
+
 State =
     "State" String ":"
         "initial :" Boolean
         "actions :" (Action)*
         "transitions :" (Transition)*;
-       
-StateError = 
+
+StateError =
     "Error State" String ": error code:" Integer;
 
-Action = 
+Action =
     (String "becomes" (Integer | Signal))
     | ("print" ((String "value") |  ("'" String "'")) "on" String "row n°" Integer);
 
-Transition = 
-    "to" String (("when" String (("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer))) | ("after" Integer "ms"));
-    
+Transition =
+      "to" String ("when" (Condition ("and" Condition)*)) | ("after" Integer "ms");
+
+Condition =
+    String ("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer)
+
 Signal = 
     "high" | "low";
 
@@ -69,6 +72,10 @@ App =
 ```
 <!---
 // TODO Remove once figured out the best way to display the transitions
+
+Transition = 
+    "to" String (("when" String (("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer))) | ("after" Integer "ms"));
+
 Transition = 
       "to" String "when" String "becomes" Signal
     | "to" String "when" String ("=="|"!="|">="|"<="|">"|"<") Integer
@@ -78,6 +85,7 @@ Transition =
       "to" String "when" String ("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer)
     | "to" String "after" Integer "ms";
  -->
+
 
 #### Table of symbols
 
@@ -227,38 +235,50 @@ Notation | Usage
 #### Syntax example
 
 ```groovy
-sensorDigital "button" pin 9
+sensorDigital "button_1" pin 9
+sensorDigital "button_2" pin 10
 actuatorDigital "led" pin 12
-actuatorDigital "buzzer" pin 11
 
 task {
     taskName "task"
     period 1000
 
     state {
-        name "on"
-        initial "false"
+        name "off_1"
+        initial "true"
         actions {
-            actionDigital "led" becomes "high"
-            actionDigital "buzzer" becomes "high"
+            actionDigital "led" becomes "low"
         }
         transitions {
-            toState "off" when "button" becomes "low"
+            toState "on" when "button_1" becomes "high" and "button_2" becomes "high"
         }
     }
 
     state {
-        name "off"
-        initial "true"
+        name "off_2"
+        initial "false"
         actions {
             actionDigital "led" becomes "low"
-            actionDigital "buzzer" becomes "low"
         }
         transitions {
-            toState "on" when "button" becomes "high"
+            toState "on" when "button_1" becomes "high" and "button_2" becomes "high"
+        }
+    }
+
+    state {
+        name "on"
+        initial "false"
+        actions {
+            actionDigital "led" becomes "high"
+        }
+        transitions {
+            toState "off_1" when "button_1" becomes "low"
+            toState "off_2" when "button_2" becomes "low"
         }
     }
 }
+
+application "Dual check Alarm"
 
 application "Very Simple Alarm"
 ```
