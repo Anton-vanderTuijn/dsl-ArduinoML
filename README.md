@@ -156,16 +156,10 @@ The script code for the arduino will be outputed in the ```program.ino``` file. 
 ### Syntax (Extended Backus–Naur form)
 
 ```java
-SensorDigital =
-    "sensorDigital" String "pin" Integer;
-SensorAnalog =
-    "sensorAnalog" String "pin" Integer;
-ActuatorDigital =
-    "actuatorDigital" String "pin" Integer;
-ActuatorAnalog =
-    "actuatorAnalog" String "pin" Integer;
-Lcd =
-    "lcd" String "cols" Integer "rows" Integer "onBus" Integer;
+
+Brick =
+    (("sensorDigital" | "sensorAnalog" | "actuatorDigital" | "actuatorAnalog") String "pin" Integer) 
+        | ("lcd" String "cols" Integer "rows" Integer "onBus" Integer);
 
 Task =
     "task" "{"
@@ -174,48 +168,31 @@ Task =
         (State)+
         (StateError)*
     "}";
-       
+
 State =
     "state" "{"
         "name" String
         "initial" String
-        Actions
-        Transitions
+        "actions" "{"
+            (Action)*
+        "}";
+        "transitions" "{"
+            (ToState)+
+        "}";
     "}";
-       
+
 StateError =
     "stateError" "{"
         "name" String
         "code" Integer
     "}";
 
-Actions =
-    "actions" "{"
-        (ActionDigital)*
-        (ActionAnalog)*
-        (PrintText)*
-        (PrintDigital)*
-        (PrintAnalog)*
-    "}";
-
-ActionDigital =
-    "actionDigital" String "becomes" Signal;
-ActionAnalog =
-    "actionAnalog" String "becomes" Integer;
-PrintText =
-    "printText" String "on" String "row" Integer;
-PrintDigital =
-    "printDigital" String "valueOn" String "row" Integer;
-PrintAnalog =
-    "printAnalog" String "valueOn" String "row" Integer;
-
-Transitions =
-    "transitions" "{"
-        (ToState)+
-    "}";
+Action =
+    ("actionDigital" String "becomes" Signal | "actionAnalog" String "becomes" Integer) 
+        | (("printText" | "printDigital" | "printAnalog") String "valueOn" String "row" Integer);
 
 ToState =
-    "toState" String "when" String (("becomes" Signal) | ("==" Integer) | ("!=" Integer) | (">=" Integer) | ("<=" Integer) | (">" Integer) | ("<" Integer));
+    "toState" String "when" String (("becomes" Signal) | (("==" | "!=" | ">=" | "<=" | ">" | "<") Integer));
 
 Signal =
     "high" | "low";
@@ -224,11 +201,7 @@ Application =
     "application" String;
 
 Grammar =
-    (SensorDigital)*
-    (SensorAnalog)*
-    (ActuatorDigital)*
-    (ActuatorAnalog)*
-    (Lcd)*
+    (Brick)*
     (Task)+
     Application;
 ```
