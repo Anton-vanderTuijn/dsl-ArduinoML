@@ -55,6 +55,9 @@
         <property id="5766921242180082541" name="signal" index="3BL6cX" />
         <reference id="5766921242180082543" name="target" index="3BL6cZ" />
       </concept>
+      <concept id="5766921242180872304" name="ArduinoML.structure.ActionLCDSimpleText" flags="ng" index="3BO50w">
+        <property id="5766921242180872307" name="text" index="3BO50z" />
+      </concept>
       <concept id="5766921242181908858" name="ArduinoML.structure.ConditionDigital" flags="ng" index="3BS04E">
         <property id="5766921242181908863" name="signal" index="3BS04J" />
         <reference id="5766921242181908865" name="sensor" index="3BS07h" />
@@ -717,7 +720,7 @@
     <property role="TrG5h" value="Parallel Program With Time Transition" />
     <node concept="2iURoD" id="3_0fBbI95b3" role="2iURox">
       <property role="TrG5h" value="program1" />
-      <property role="3kEtoh" value="500" />
+      <property role="3kEtoh" value="50" />
       <node concept="l5YBo" id="3_0fBbI95b4" role="2iURoG">
         <property role="TrG5h" value="stateOff" />
         <property role="1cJ3q6" value="true" />
@@ -780,12 +783,8 @@
       <property role="TrG5h" value="led2" />
       <property role="XaZ4a" value="9" />
     </node>
-    <node concept="lc1EX" id="7QYskAWfAfz" role="3_PcyG">
-      <property role="TrG5h" value="btn1" />
-      <property role="XaZ4a" value="10" />
-    </node>
     <node concept="lc1EX" id="7QYskAWfAf$" role="3_PcyG">
-      <property role="TrG5h" value="btn2" />
+      <property role="TrG5h" value="btn" />
       <property role="XaZ4a" value="11" />
     </node>
   </node>
@@ -793,7 +792,7 @@
     <property role="TrG5h" value="Parallel Program With Error &amp; Analog" />
     <node concept="2iURoD" id="5YNRb5VV095" role="2iURox">
       <property role="TrG5h" value="program1" />
-      <property role="3kEtoh" value="500" />
+      <property role="3kEtoh" value="50" />
       <node concept="l5YBo" id="5YNRb5VV096" role="2iURoG">
         <property role="TrG5h" value="stateOff" />
         <property role="1cJ3q6" value="true" />
@@ -853,6 +852,37 @@
     <node concept="lcJmo" id="5YNRb5VV09$" role="3_PcyG">
       <property role="TrG5h" value="light" />
       <property role="XaZ4a" value="1" />
+    </node>
+  </node>
+  <node concept="l5YB9" id="3Ijn7keIzcJ">
+    <property role="TrG5h" value="LCD Screen Acceptance Scenario" />
+    <node concept="2iURoD" id="3Ijn7keIzcK" role="2iURox">
+      <property role="TrG5h" value="progam" />
+      <property role="3kEtoh" value="50" />
+      <node concept="l5YBo" id="3Ijn7keIzcL" role="2iURoG">
+        <property role="TrG5h" value="start" />
+        <property role="1cJ3q6" value="true" />
+        <node concept="3BO50w" id="3Ijn7keIzd$" role="l5YBu">
+          <property role="3BO50z" value="Hello World" />
+          <property role="2jyhSm" value="0" />
+          <ref role="2jyhSj" node="3Ijn7keIzcZ" resolve="lcd" />
+        </node>
+        <node concept="X9NoV" id="3Ijn7keIzcP" role="l5YBu">
+          <property role="2jyhSm" value="1" />
+          <ref role="2jyhSj" node="3Ijn7keIzcZ" resolve="lcd" />
+          <ref role="2jBpGB" node="3Ijn7keIzd6" resolve="btn" />
+        </node>
+      </node>
+    </node>
+    <node concept="lc1EX" id="3Ijn7keIzd6" role="3_PcyG">
+      <property role="TrG5h" value="btn" />
+      <property role="XaZ4a" value="8" />
+    </node>
+    <node concept="1foe9n" id="3Ijn7keIzcZ" role="3_PcyG">
+      <property role="TrG5h" value="lcd" />
+      <property role="3BMIMs" value="16" />
+      <property role="3BMIMp" value="2" />
+      <property role="2$s7wl" value="2" />
     </node>
   </node>
 </model>
