@@ -97,8 +97,8 @@
         </node>
         <node concept="X9NoS" id="3_0fBbI95fe" role="l5YBu">
           <property role="2jyhSm" value="0" />
-          <ref role="X9NoH" node="7QYskAWfAbP" resolve="led" />
           <ref role="2jyhSj" node="7QYskAWfAcn" resolve="lcd" />
+          <ref role="X9NoH" node="7QYskAWfAbP" resolve="led" />
         </node>
         <node concept="X9NoV" id="3_0fBbI95ff" role="l5YBu">
           <property role="2jyhSm" value="1" />

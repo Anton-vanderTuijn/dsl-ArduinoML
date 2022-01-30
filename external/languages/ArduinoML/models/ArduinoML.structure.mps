@@ -317,7 +317,7 @@
       <property role="IQ2ns" value="8979439463482588090" />
       <property role="20kJfa" value="brick" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="O0bPWK9L_P" resolve="IBrick" />
+      <ref role="20lvS9" node="6qpGXj2UpFy" resolve="IBrickPin" />
     </node>
     <node concept="PrWs8" id="O0bPWK9L__" role="PzmwI">
       <ref role="PrY4T" node="7Mto9RJ57U7" resolve="IActionLCD" />
@@ -331,7 +331,7 @@
       <property role="IQ2ns" value="936800808369330546" />
       <property role="20kJfa" value="brick" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="O0bPWK9L_P" resolve="IBrick" />
+      <ref role="20lvS9" node="6qpGXj2UpFy" resolve="IBrickPin" />
     </node>
     <node concept="PrWs8" id="O0bPWK9L_C" role="PzmwI">
       <ref role="PrY4T" node="7Mto9RJ57U7" resolve="IActionLCD" />
