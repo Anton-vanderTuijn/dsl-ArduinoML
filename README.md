@@ -96,11 +96,8 @@ Notation | Usage
 &#124;             | alternation
 ( ... )            | grouping
 " ... "            | terminal string
-' ... '            | terminal string
-(* ... *)          | comment
 ( ... )*           | zero or more
 ( ... )+           | one or more
-( ... )?           | zero or one
 
 #### Syntax example
 
@@ -227,11 +224,8 @@ Notation | Usage
 &#124;             | alternation
 ( ... )            | grouping
 " ... "            | terminal string
-' ... '            | terminal string
-(* ... *)          | comment
 ( ... )*           | zero or more
 ( ... )+           | one or more
-( ... )?           | zero or one
 
 #### Syntax example
 
