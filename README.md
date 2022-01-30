@@ -60,7 +60,7 @@ Transition =
       "to" String ("when" (Condition ("and" Condition)*)) | ("after" Integer "ms");
 
 Condition =
-    String ("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer)
+    String ("becomes" Signal) | (("=="|"!="|">="|"<="|">"|"<") Integer);
 
 Signal = 
     "high" | "low";
@@ -203,7 +203,7 @@ ToState =
     "toState" String "when" Condition ("and" Condition)*;
 
 Condition =
-    String (("becomes" Signal) | (("==" | "!=" | ">=" | "<=" | ">" | "<") Integer))
+    String (("becomes" Signal) | (("==" | "!=" | ">=" | "<=" | ">" | "<") Integer));
 
 Signal =
     "high" | "low";
