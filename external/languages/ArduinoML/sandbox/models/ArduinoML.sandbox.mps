@@ -55,6 +55,9 @@
         <property id="5766921242180082541" name="signal" index="3BL6cX" />
         <reference id="5766921242180082543" name="target" index="3BL6cZ" />
       </concept>
+      <concept id="5766921242180872304" name="ArduinoML.structure.ActionLCDSimpleText" flags="ng" index="3BO50w">
+        <property id="5766921242180872307" name="text" index="3BO50z" />
+      </concept>
       <concept id="5766921242181908858" name="ArduinoML.structure.ConditionDigital" flags="ng" index="3BS04E">
         <property id="5766921242181908863" name="signal" index="3BS04J" />
         <reference id="5766921242181908865" name="sensor" index="3BS07h" />
@@ -97,8 +100,8 @@
         </node>
         <node concept="X9NoS" id="3_0fBbI95fe" role="l5YBu">
           <property role="2jyhSm" value="0" />
-          <ref role="X9NoH" node="7QYskAWfAbP" resolve="led" />
           <ref role="2jyhSj" node="7QYskAWfAcn" resolve="lcd" />
+          <ref role="X9NoH" node="7QYskAWfAbP" resolve="led" />
         </node>
         <node concept="X9NoV" id="3_0fBbI95ff" role="l5YBu">
           <property role="2jyhSm" value="1" />
@@ -220,7 +223,7 @@
             <ref role="3BS07h" node="7QYskAWfA90" resolve="btn1" />
           </node>
           <node concept="3BS04E" id="7QYskAWoCTf" role="3BS8aA">
-            <ref role="3BS07h" node="7QYskAWfA90" resolve="btn1" />
+            <ref role="3BS07h" node="7QYskAWfA97" resolve="btn2" />
           </node>
         </node>
       </node>
@@ -717,7 +720,7 @@
     <property role="TrG5h" value="Parallel Program With Time Transition" />
     <node concept="2iURoD" id="3_0fBbI95b3" role="2iURox">
       <property role="TrG5h" value="program1" />
-      <property role="3kEtoh" value="500" />
+      <property role="3kEtoh" value="50" />
       <node concept="l5YBo" id="3_0fBbI95b4" role="2iURoG">
         <property role="TrG5h" value="stateOff" />
         <property role="1cJ3q6" value="true" />
@@ -780,13 +783,106 @@
       <property role="TrG5h" value="led2" />
       <property role="XaZ4a" value="9" />
     </node>
-    <node concept="lc1EX" id="7QYskAWfAfz" role="3_PcyG">
-      <property role="TrG5h" value="btn1" />
-      <property role="XaZ4a" value="10" />
-    </node>
     <node concept="lc1EX" id="7QYskAWfAf$" role="3_PcyG">
-      <property role="TrG5h" value="btn2" />
+      <property role="TrG5h" value="btn" />
       <property role="XaZ4a" value="11" />
+    </node>
+  </node>
+  <node concept="l5YB9" id="5YNRb5VV094">
+    <property role="TrG5h" value="Parallel Program With Error &amp; Analog" />
+    <node concept="2iURoD" id="5YNRb5VV095" role="2iURox">
+      <property role="TrG5h" value="program1" />
+      <property role="3kEtoh" value="50" />
+      <node concept="l5YBo" id="5YNRb5VV096" role="2iURoG">
+        <property role="TrG5h" value="stateOff" />
+        <property role="1cJ3q6" value="true" />
+        <node concept="3BVgER" id="5YNRb5VV097" role="3BVhZf">
+          <ref role="U685f" node="5YNRb5VV09a" resolve="stateOn" />
+          <node concept="3BS04E" id="5YNRb5VV098" role="3BS8aA">
+            <ref role="3BS07h" node="5YNRb5VV09p" resolve="btn1" />
+          </node>
+        </node>
+        <node concept="3BL1Gj" id="5YNRb5VV099" role="l5YBu">
+          <property role="3BL6cX" value="62oRKDPzNre/LOW" />
+          <ref role="3BL6cZ" node="5YNRb5VV09n" resolve="led1" />
+        </node>
+      </node>
+      <node concept="l5YBo" id="5YNRb5VV09a" role="2iURoG">
+        <property role="TrG5h" value="stateOn" />
+        <node concept="3BVgER" id="5YNRb5VV09b" role="3BVhZf">
+          <ref role="U685f" node="5YNRb5VV096" resolve="stateOff" />
+          <node concept="3BS04E" id="5YNRb5VV09c" role="3BS8aA">
+            <property role="3BS04J" value="62oRKDPzNre/LOW" />
+            <ref role="3BS07h" node="5YNRb5VV09p" resolve="btn1" />
+          </node>
+        </node>
+        <node concept="3BL1Gj" id="5YNRb5VV09d" role="l5YBu">
+          <ref role="3BL6cZ" node="5YNRb5VV09n" resolve="led1" />
+        </node>
+      </node>
+    </node>
+    <node concept="2iURoD" id="5YNRb5VV09e" role="2iURox">
+      <property role="TrG5h" value="programWithError" />
+      <property role="3kEtoh" value="50" />
+      <node concept="l5YBo" id="5YNRb5VV09f" role="2iURoG">
+        <property role="TrG5h" value="stateOff2" />
+        <property role="1cJ3q6" value="true" />
+        <node concept="3BVgER" id="5YNRb5VV09M" role="3BVhZf">
+          <ref role="U685f" node="5YNRb5VV0a$" resolve="errorState" />
+          <node concept="3BVXyM" id="5YNRb5VV09V" role="3BS8aA">
+            <property role="3BVWI4" value="&lt;" />
+            <property role="3BVWLm" value="30" />
+            <ref role="3BVXyP" node="5YNRb5VV09$" resolve="light" />
+          </node>
+        </node>
+      </node>
+      <node concept="1cImFT" id="5YNRb5VV0a$" role="2iURoG">
+        <property role="TrG5h" value="errorState" />
+        <property role="1cImFU" value="3" />
+      </node>
+    </node>
+    <node concept="l5YBf" id="5YNRb5VV09n" role="3_PcyG">
+      <property role="TrG5h" value="led" />
+      <property role="XaZ4a" value="9" />
+    </node>
+    <node concept="lc1EX" id="5YNRb5VV09p" role="3_PcyG">
+      <property role="TrG5h" value="btn" />
+      <property role="XaZ4a" value="8" />
+    </node>
+    <node concept="lcJmo" id="5YNRb5VV09$" role="3_PcyG">
+      <property role="TrG5h" value="light" />
+      <property role="XaZ4a" value="1" />
+    </node>
+  </node>
+  <node concept="l5YB9" id="3Ijn7keIzcJ">
+    <property role="TrG5h" value="LCD Screen Acceptance Scenario" />
+    <node concept="2iURoD" id="3Ijn7keIzcK" role="2iURox">
+      <property role="TrG5h" value="progam" />
+      <property role="3kEtoh" value="50" />
+      <node concept="l5YBo" id="3Ijn7keIzcL" role="2iURoG">
+        <property role="TrG5h" value="start" />
+        <property role="1cJ3q6" value="true" />
+        <node concept="3BO50w" id="3Ijn7keIzd$" role="l5YBu">
+          <property role="3BO50z" value="Hello World" />
+          <property role="2jyhSm" value="0" />
+          <ref role="2jyhSj" node="3Ijn7keIzcZ" resolve="lcd" />
+        </node>
+        <node concept="X9NoV" id="3Ijn7keIzcP" role="l5YBu">
+          <property role="2jyhSm" value="1" />
+          <ref role="2jyhSj" node="3Ijn7keIzcZ" resolve="lcd" />
+          <ref role="2jBpGB" node="3Ijn7keIzd6" resolve="btn" />
+        </node>
+      </node>
+    </node>
+    <node concept="lc1EX" id="3Ijn7keIzd6" role="3_PcyG">
+      <property role="TrG5h" value="btn" />
+      <property role="XaZ4a" value="8" />
+    </node>
+    <node concept="1foe9n" id="3Ijn7keIzcZ" role="3_PcyG">
+      <property role="TrG5h" value="lcd" />
+      <property role="3BMIMs" value="16" />
+      <property role="3BMIMp" value="2" />
+      <property role="2$s7wl" value="2" />
     </node>
   </node>
 </model>
