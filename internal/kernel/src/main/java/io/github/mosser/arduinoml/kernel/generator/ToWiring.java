@@ -232,7 +232,7 @@ public class ToWiring extends Visitor<StringBuffer> {
 
             String sensorName = condition.getSensor().getName();
 
-            w(String.format("(analogRead(A + %s) %s %s && %sBounceGuard)", sensorName, condition.getComparator().getValue(), condition.getValue(), sensorName));
+            w(String.format("(analogRead(%s) %s %s && %sBounceGuard)", sensorName, condition.getComparator().getValue(), condition.getValue(), sensorName));
             return;
         }
     }
@@ -268,7 +268,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         }
         if (context.get("pass") == PASS.TWO) {
             w("\t\t\tlcd.setCursor(0, " + action.getRowToDisplay() + ");\n");
-            w(String.format("\t\t\tlcd.print(%s);\n", "\"" + action.getBrick().getName() + ":= \" + digitalRead(" + action.getBrick().getName() + ")"));
+            w(String.format("\t\t\tlcd.print(%s);\n", "\"" + action.getBrick().getName() + ":= \" + String(digitalRead(" + action.getBrick().getName() + "))"));
             return;
         }
     }
@@ -309,7 +309,7 @@ public class ToWiring extends Visitor<StringBuffer> {
             return;
         }
         if (context.get("pass") == PASS.TWO) {
-            w("\t\t\tcase " + state.getName() + ":\n");
+            w("\t\tcase " + state.getName() + ":\n");
             w("\t\t\tif(hasStateChanged_" + context.get("task") + "){\n");
             w("\t\t\t\ttimeStartState_" + context.get("task") + " = millis();\n");
             w("\t\t\t\thasStateChanged_" + context.get("task") + " = false;\n");
@@ -320,7 +320,7 @@ public class ToWiring extends Visitor<StringBuffer> {
             for (IAction action : state.getActions()) {
                 if ((action instanceof ActionLCDAnalogReader || action instanceof ActionLCDSimpleText || action instanceof ActionLCDDigitalReader) && !clearLCD) {
                     w("\t\t\tlcd.setCursor(0, 0);\n");
-                    w(String.format("\t\t\tlcd.print(\"                                  \");\n", ""));
+                    w(String.format("\t\t\tlcd.clear();\n", ""));
                     w("\t\t\tlcd.setCursor(0, 0);\n");
                     clearLCD = true;
                 }

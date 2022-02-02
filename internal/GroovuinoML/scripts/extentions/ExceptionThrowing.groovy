@@ -4,16 +4,27 @@ actuatorDigital "door_led" pin 12
 
 task {
     taskName "task"
-    period 1000
+    period 10
 
     state {
-        name "open"
+        name "openright"
         initial "false"
         actions {
             actionDigital "door_led" becomes "high"
         }
         transitions {
             toState "close" when "button_right" becomes "low"
+            toState "door_exception" when "button_right" becomes "high" and "button_left" becomes "high"
+        }
+    }
+
+    state{
+        name "openleft"
+        initial "false"
+        actions {
+            actionDigital "door_led" becomes "high"
+        }
+        transitions {
             toState "close" when "button_left" becomes "low"
             toState "door_exception" when "button_right" becomes "high" and "button_left" becomes "high"
         }
@@ -26,8 +37,8 @@ task {
             actionDigital "door_led" becomes "low"
         }
         transitions {
-            toState "open" when "button_right" becomes "high"
-            toState "open" when "button_left" becomes "high"
+            toState "openright" when "button_right" becomes "high"
+            toState "openleft" when "button_left" becomes "high"
             toState "door_exception" when "button_right" becomes "high" and "button_left" becomes "high"
         }
     }

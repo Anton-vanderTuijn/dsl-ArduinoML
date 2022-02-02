@@ -4,7 +4,7 @@ actuatorDigital "buzzer" pin 11
 
 task {
     taskName "task"
-    period 1000
+    period 10
 
     state {
         name "on"

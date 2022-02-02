@@ -3,7 +3,7 @@ sensorDigital "btn" pin 9
 
 task{
     taskName "program"
-    period 1
+    period 10
 
     state{
         name "off"
@@ -31,7 +31,7 @@ task{
             actionDigital "led" becomes "high"
         }
         transitions{
-            after 800 goTo "off"
+            after 3000 goTo "off"
             toState "off_intermediary" when "btn" becomes "high"
         }
     }
