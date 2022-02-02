@@ -151,7 +151,7 @@ Basic scenarios:
 
 To run the project move into the internal directory which contain the Groovy implementation </br>
 First you must run ```build.sh``` to build the project. </br>
-Then in the GroovuinoML folder you can launch a script using ```run.sh```. </br>
+Then from the GroovuinoML folder you can launch a script using ```run.sh```. </br>
 
 > example: ./run.sh scripts/base/VerySimpleAlarm.groovy </br>
 
