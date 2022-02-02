@@ -3,7 +3,7 @@ actuatorDigital "led" pin 12
 
 task {
     taskName "task"
-    period 1000
+    period 10
 
     state {
         name "on"

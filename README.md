@@ -318,8 +318,8 @@ Button 1           | sensorDigital    | 9
 Button 2           | sensorDigital    | 10
 Buzzer             | actuatorDigital  | 11
 Led 1              | actuatorDigital  | 12
-Led 2              | actuatorDigital  | 13
-Error Led          | actuatorDigital  | 8
+Led 2              | actuatorDigital  | 13 
+Error Led          | actuatorDigital  | 8  (or LED_BUILTIN)
 Temperature sensor | sensorAnalogical | A1
 LCD screen         | lcd              | 10, 11, 12, 13, 14, 15, 16 (bus2)*
 
